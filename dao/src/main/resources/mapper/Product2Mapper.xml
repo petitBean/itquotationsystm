@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.orz.dao.Product2Dao">
+
+
+    <!--查询所有用户信息-->
+    <select id="findAllProduct2" resultType="com.orz.bean.Product2">
+        select * from tb_product2
+    </select>
+
+    <!--通过pFingeringEquipment查询一个Product2-->
+    <select id="findAllProduct2BypCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pCode=#{pCode}
+    </select>
+
+    <!--通过pFingeringEquipment查询一个Product2-->
+    <select id="findAllProduct2BypFingeringEquipment" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pFingeringEquipment=#{pFingeringEquipment}
+    </select>
+
+    <!--通过pKeyboard查询一个Product2-->
+    <select id="findAllProduct2BypKeyboard" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pKeyboard=#{pKeyboard}
+    </select>
+    <!--通过pFingerprintIdentification查询一个Product2-->
+    <select id="findAllProduct2BypFingerprintIdentification" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pFingerprintIdentification=#{pFingerprintIdentification}
+    </select>
+
+    <!--通过pBatteryType查询一个Product2-->
+    <select id="findAllProduct2BypBatteryType" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pBatteryType=#{pBatteryType}
+    </select>
+
+    <!--通过pDuration查询一个Product2-->
+    <select id="findAllProduct2BypDuration" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pDuration=#{pDuration}
+    </select>
+
+    <!--通过pPowerAdapter查询一个Product2-->
+    <select id="findAllProduct2BypPowerAdapter" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pPowerAdapter=#{pPowerAdapter}
+    </select>
+
+    <!--通过pWeight查询一个Product2-->
+    <select id="findAllProduct2BypWeight" parameterType="java.lang.Integer"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pWeight=#{pWeight}
+    </select>
+
+    <!--通过pLengh查询一个Product2-->
+    <select id="findAllProduct2BypLengh" parameterType="java.lang.Integer"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pLengh=#{pLengh}
+    </select>
+
+
+    <!--通过pWidth查询一个Product2-->
+    <select id="findAllProduct2BypWidth" parameterType="java.lang.Integer"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pWidth=#{pWidth}
+    </select>
+
+    <!--通过pThickness查询一个Product2-->
+    <select id="findAllProduct2BypThickness" parameterType="java.lang.Integer"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pThickness=#{pThickness}
+    </select>
+
+    <!--通过pShellMaterial查询一个Product2-->
+    <select id="findAllProduct2BypShellMaterial" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pShellMaterial=#{pShellMaterial}
+    </select>
+
+
+
+    <!--通过pShellDescription查询一个Product2-->
+    <select id="findAllProduct2BypShellDescription" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pShellDescription=#{pShellDescription}
+    </select>
+
+
+
+    <!--通过pSafety查询一个Product2-->
+    <select id="findAllProduct2BypSafety" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pSafety=#{pSafety}
+    </select>
+
+    <!--通过 pDissipation查询一个Product2-->
+    <select id="findAllProduct2BypDissipation" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where  pDissipation=#{pDissipation}
+    </select>
+
+
+    <!--通过 pSoftware查询一个Product2-->
+    <select id="findAllProduct2BypSoftware" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where  pSoftware=#{pSoftware}
+    </select>
+
+    <!--通过pPackagingList查询一个Product2-->
+    <select id="findAllProduct2BypPackagingList" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where  pPackagingList=#{pPackagingList}
+    </select>
+
+    <!--通过pGuarantee查询一个Product2-->
+    <select id="findAllProduct2BypGuarantee" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where  pGuarantee=#{pGuarantee}
+    </select>
+
+    <!--通过pWarranty查询一个Product2-->
+    <select id="findAllProduct2BypWarranty" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pWarranty=#{pWarranty}
+    </select>
+
+    <!--通过pWarrantyRemark查询一个Product2-->
+    <select id="findAllProduct2BypWarrantyRemark" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pWarrantyRemark=#{pWarrantyRemark}
+    </select>
+
+    <!--通过pTel查询一个Product2-->
+    <select id="findAllProduct2BypTel" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pTel=#{pTel}
+    </select>
+
+    <!--通过pTelRemark查询一个Product2-->
+    <select id="findAllProduct2BypTelRemark" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pTelRemark=#{pTelRemark}
+    </select>
+
+    <!--通过pDatail查询一个Product2-->
+    <select id="findAllProduct2BypDatail" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pDatail=#{pDatail}
+    </select>
+
+    <!--通过pPicture查询一个Product2-->
+    <select id="findAllProduct2BypPicture" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+        select * from tb_product2
+        where pPicture=#{pPicture}
+    </select>
+
+
+
+    <!--插入一个Product2-->
+    <insert id="insertOneProduct2" parameterType="com.orz.bean.Product2">
+        insert into tb_product2(
+        pCode,pFingeringEquipment,pKeyboard,pFingerprintIdentification,pBatteryType,
+        pDuration,pPowerAdapter,pWeight,pLengh,pWidth,pThickness,pShellMaterial,
+        pShellDescription,pSafety,pDissipation,pSoftware,pSoftware,pPackagingList,
+        pGuarantee,pWarranty,pWarrantyRemark,pTel,pTelRemark,pDatail,pPicture
+        )
+        values (#{pCode},#{pFingeringEquipment},#{pKeyboard},#{pFingerprintIdentification},#{pBatteryType},
+        #{pDuration},#{pPowerAdapter},#{pWeight},#{pLengh},#{pWidth},#{pThickness},#{pShellMaterial},
+        #{pShellDescription},#{pSafety},#{pDissipation},#{pSoftware},#{pPackagingList},#{pGuarantee},
+        #{pWarranty},#{pWarrantyRemark},#{pTel},#{pTelRemark},#{pDatail},#{pPicture})
+
+    </insert>
+
+
+
+    <update id="updateProduct2BypCode" parameterType="com.orz.bean.Product2" >
+        update tb_product2
+        set pCode=#{pCode},pFingeringEquipment=#{pFingeringEquipment},pKeyboard=#{pKeyboard},pFingerprintIdentification=#{pFingerprintIdentification},
+        pBatteryType=#{pBatteryType},pDuration=#{pDuration},pPowerAdapter=#{pPowerAdapter},pWeight=#{pWeight},pLengh=#{pLengh},pWidth=#{pWidth},
+        pThickness=#{pThickness},pShellMaterial=#{pShellMaterial},pShellDescription=#{pShellDescription},pSafety=#{pSafety},pDissipation=#{pDissipation},
+        pSoftware=#{pSoftware},pPackagingList=#{pPackagingList},pGuarantee=#{pGuarantee},pWarranty=#{pWarranty},pWarrantyRemark=#{pWarrantyRemark},
+        pTel=#{pTel},pTelRemark=#{pTelRemark},pDatail=#{pDatail},pPicture=#{pPicture}
+
+    </update>
+
+    <!--删除-->
+    <delete id="deleteProduct2BypCode"  parameterType="java.lang.String">
+        delete from tb_product2 where  pCode=#{pCode}
+    </delete>
+
+</mapper>

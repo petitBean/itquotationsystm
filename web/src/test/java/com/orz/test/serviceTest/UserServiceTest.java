@@ -18,6 +18,7 @@ import java.util.List;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
 public class UserServiceTest {
+
     @Autowired
     private UserService userService;
 
@@ -67,7 +68,6 @@ public class UserServiceTest {
         User user=userService.findOneUserByUserId(2);
         Assert.assertNotNull(user);
     }
-
 
 
 }

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.orz.dao.Product1Dao">
+
+
+    <!--查询所有Product1信息-->
+    <select id="findAllProduct1" parameterType="java.lang.Integer" resultType="com.orz.bean.Product1">
+    select * from tb_product1
+   </select>
+
+
+    <!--通过pCode查询Gpu-->
+    <select id="findAllProduct1BypCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pCode=#{pCode}
+    </select>
+
+    <!--通过tmCode查询Gpu-->
+    <select id="findAllProduct1BytmCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where tmCode=#{tmCode}
+    </select>
+
+    <!--通过publishTime查询Gpu-->
+    <select id="findAllProduct1BypublishTime" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where publishTime=#{publishTime}
+    </select>
+
+    <!--通过pType查询Gpu-->
+    <select id="findAllProduct1BypType" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pType=#{pType}
+    </select>
+
+    <!--通过pPosition查询Gpu-->
+    <select id="findAllProduct1BypPosition" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pPosition=#{pPosition}
+    </select>
+
+    <!--通过pOS查询Gpu-->
+    <select id="findAllProduct1BypOS" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pOS=#{pOS}
+    </select>
+
+    <!--通过pChipset查询Gpu-->
+    <select id="findAllProduct1BypChipset" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pChipset=#{pChipset}
+    </select>
+
+    <!--通过pTouch查询Gpu-->
+    <select id="findAllProduct1BypTouch" parameterType="java.lang.Integer"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pTouch=#{pTouch}
+    </select>
+
+    <!--通过pScreenSize查询Gpu-->
+    <select id="findAllProduct1BypScreenSize" parameterType="java.lang.Integer"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pScreenSize=#{pScreenSize}
+    </select>
+
+    <!--通过pScreenResolution查询Gpu-->
+    <select id="findAllProduct1BypScreenResolution" parameterType="java.lang.Integer"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pScreenResolution=#{pScreenResolution}
+    </select>
+
+    <!--通过pTechnology查询Gpu-->
+    <select id="findAllProduct1BypTechnology" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pTechnology=#{pTechnology}
+    </select>
+
+
+    <!--通过pCamera查询Gpu-->
+    <select id="findAllProduct1BypCamera" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pCamera=#{pCamera}
+    </select>
+
+    <!--通过pAudio查询Gpu-->
+    <select id="findAllProduct1BypAudio" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pAudio=#{pAudio}
+    </select>
+
+    <!--通过pSpeaker查询Gpu-->
+    <select id="findAllProduct1BypSpeaker" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pSpeaker=#{pSpeaker}
+    </select>
+
+    <!--通过pMike查询Gpu-->
+    <select id="findAllProduct1BypMike" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pMike=#{pMike}
+    </select>
+
+    <!--通过pWlan查询Gpu-->
+    <select id="findAllProduct1BypWlan" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pWlan=#{pWlan}
+    </select>
+
+    <!--通过pLan查询Gpu-->
+    <select id="findAllProduct1BypLan" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pLan=#{pLan}
+    </select>
+
+    <!--通过pBluetooth查询Gpu-->
+    <select id="findAllProduct1BypBluetooth" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pBluetooth=#{pBluetooth}
+    </select>
+
+    <!--通过pDataInterface查询Gpu-->
+    <select id="findAllProduct1BypDataInterface" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pDataInterface=#{pDataInterface}
+    </select>
+
+    <!--通过pAudioInterface查询Gpu-->
+    <select id="findAllProduct1BypAudioInterface" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pAudioInterface=#{pAudioInterface}
+    </select>
+
+    <!--通过pVideoInterface查询Gpu-->
+    <select id="findAllProduct1BypVideoInterface" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pVideoInterface=#{pVideoInterface}
+    </select>
+
+
+    <!--通过pOtherInterface查询Gpu-->
+    <select id="findAllProduct1BypOtherInterface" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+        select * from tb_product1
+        where pOtherInterface=#{pOtherInterface}
+    </select>
+
+
+
+    <!--插入一个Product1-->
+    <insert id="insertOneProduct1" parameterType="com.orz.bean.Product1">
+     insert into tb_product1 (pCode,tmCode,publishTime,pType,pPosition,pOS,pChipset,pTouch,pScreenSize, pScreenResolution,
+       pTechnology,pCamera,pAudio,pSpeaker,pMike,pWlan,pLan,pBluetooth,pDataInterface,pAudioInterface,pVideoInterface,pOtherInterface)
+      values (#{pCode},#{tmCode},#{publishTime},#{pType},#{pPosition},#{pOS},#{pChipset},#{pTouch},#{pScreenSize},#{pScreenResolution},
+      #{pTechnology},#{pCamera},#{pAudio},#{pSpeaker},#{pMike},#{pWlan},#{pLan},#{pBluetooth},#{pDataInterface},#{pAudioInterface},#{pVideoInterface},
+      #{pOtherInterface})
+    </insert>
+
+    <!--GpuName通过更新一个Gpu-->
+    <update id="updateProduct1BypCode" parameterType="com.orz.bean.Product1" >
+        update tb_product1
+        set pCode=#{pCode},tmCode=#{tmCode},publishTime=#{publishTime},pType=#{pType},pPosition=#{pPosition},pOS=#{pOS},pChipset=#{pChipset},
+        pTouch=#{pTouch},pScreenSize=#{pScreenSize},pScreenResolution=#{pScreenResolution},pTechnology=#{pTechnology},pCamera=#{pCamera},
+        pAudio=#{pAudio},pSpeaker=#{pSpeaker},pMike=#{pMike},pWlan=#{pWlan},pLan=#{pLan},pBluetooth=#{pBluetooth},pDataInterface=#{pDataInterface},
+        pAudioInterface=#{pAudioInterface},pVideoInterface=#{pVideoInterface},pOtherInterface=#{pOtherInterface}
+
+    </update>
+
+    <!--删除-->
+    <delete id="deleteProduct1BypCode"  parameterType="java.lang.String">
+        delete from tb_product1 where  pCode=#{pCode}
+    </delete>
+
+
+</mapper>

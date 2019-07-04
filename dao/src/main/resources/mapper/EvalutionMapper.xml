@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.orz.dao.EvalutionDao">
+
+    <select id="findAllEvalution"  resultType="com.orz.bean.Evalution">
+        select * from tb_evaluation
+    </select>
+
+    <select id="findAllEvalutionByuserId" parameterType="java.lang.Integer"  resultType="com.orz.bean.Evalution">
+        select * from tb_evaluation
+        where userId=#{userId}
+    </select>
+
+    <select id="findOneEvalutionBypCode" parameterType="java.lang.String"  resultType="com.orz.bean.Evalution">
+        select * from tb_evaluation
+        where pCode=#{pCode}
+    </select>
+
+    <select id="findAllEvalutionByeContent" parameterType="java.lang.String"  resultType="com.orz.bean.Evalution">
+        select * from tb_evaluation
+        where eContent=#{eContent}
+    </select>
+
+    <select id="findAllEvalutionByeTime " parameterType="java.util.Date"  resultType="com.orz.bean.Evalution">
+        select * from tb_evaluation
+        where eTime=#{eTime}
+    </select>
+
+
+
+    <insert id="insertOneEvalution" parameterType="com.orz.bean.Evalution">
+        insert into tb_evaluation (userId,pCode,eContent,eTime,other1,other2,other3,other4)
+        values (#{userId},#{pCode},#{eContent},#{eTime},#{other1},#{other2},#{other3},#{other4})
+    </insert>
+
+    <update id="updateEvalutionBypCode" parameterType="com.orz.bean.Evalution" >
+        update tb_evaluation
+        set eContent=#{eContent},eTime=#{eTime},other1=#{other1},other2=#{other2},other3=#{other3},other4=#{other4}
+    </update>
+
+
+    <delete id="deleteEvalutionBypCode" parameterType="com.orz.bean.Evalution" >
+    delete * from tb_evaluation
+        where pCode=#{pCode}
+      </delete>
+
+
+
+</mapper>

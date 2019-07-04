@@ -26,7 +26,7 @@ import javax.validation.Valid;
  * @date 2019-07-02 12:40
  */
 @Controller
-@RequestMapping(value = "/user")
+@RequestMapping(value = "/")
 public class UserController {
 
     @Autowired
@@ -37,10 +37,11 @@ public class UserController {
      * @param loginUserForm
      * @param request
      */
-    @RequestMapping(value = "/login.do",method = RequestMethod.POST)
-    public ModelAndView login(@Valid UserForm loginUserForm, BindingResult result,
+    @RequestMapping(value = "/login.do")
+    public ModelAndView login(@Valid UserForm loginUserForm,
                               HttpServletRequest request, HttpServletResponse response){
 
+        System.out.println("【开始登陆】");
         ModelAndView modelAndView=new ModelAndView();
         //1.验证输入
         try{
@@ -106,12 +107,12 @@ public class UserController {
 
     @RequestMapping(value = "/toLogin.do")
     public String  toLogin(){
-        return "user-login";
+        return "login";
     }
 
     @RequestMapping(value = "/toRegister.do")
     public String  toRegister(){
-        return "user-register";
+        return "loginAndRegister";
     }
 
     /**

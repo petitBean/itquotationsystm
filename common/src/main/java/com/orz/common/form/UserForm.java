@@ -1,7 +1,5 @@
 package com.orz.common.form;
 
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -16,13 +14,12 @@ public class UserForm {
     /**
      * 用户登录用户名
      */
-    @NotEmpty
     private String userName;
 
     /**
      * 用户登录密码
      */
-    @NotBlank
+
     private String userPsw;
 
     public UserForm() {

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+    <mapper namespace="com.orz.dao.CPUDao">
+
+        <select id="findAll"  resultType="com.orz.bean.CPU">
+           select * from tb_CPU
+       </select>
+
+    <select id="findOneCPUByCPUCode" parameterType="java.lang.String"  resultType="com.orz.bean.CPU">
+        select * from tb_CPU
+        where CPUCode=#{CPUCode}
+    </select>
+
+    <select id="findAllCPUByCPUFactory" parameterType="java.lang.String"  resultType="com.orz.bean.CPU">
+        select * from tb_CPU
+        where CPUFactory=#{CPUFactory}
+    </select>
+
+        <select id="findAllCPUByCPUSeries" parameterType="java.lang.String"  resultType="com.orz.bean.User">
+        select * from tb_CPU
+        where CPUSeries=#{CPUSeries}
+    </select>
+
+    <select id="findOneCPUByCPUi" parameterType="java.lang.String"  resultType="com.orz.bean.CPU">
+        select * from tb_CPU
+        where CPUi=#{CPUi}
+    </select>
+
+    <select id="findOneCPUByCPUGenerationn" parameterType="java.lang.Integer"  resultType="com.orz.bean.CPU">
+        select * from tb_CPU
+        where CPUGenerationn=#{CPUGenerationn}
+    </select>
+
+    <insert id="insertOneCPU" parameterType="com.orz.bean.CPU">
+        insert into tb_CPU (CPUCode,CPUFactory,CPUSeries,CPUi,CPUGenerationn,other1,other2,other3,other4)
+        values (#{CPUCode},#{CPUFactory},#{CPUSeries},#{CPUi},#{CPUGenerationn},#{other1},#{other2},#{other3},#{other4})
+    </insert>
+
+    <update id="updateCPUByCode" parameterType="com.orz.bean.CPU" >
+        update tb_CPU
+        set CPUFactory=#{CPUFactory},CPUSeries=#{CPUSeries},CPUi=#{CPUi},CPUGenerationn=#{CPUGenerationn},other1=#{other1},other2=#{other2},other3=#{other3},other4=#{other4}
+    </update>
+
+
+    </mapper>

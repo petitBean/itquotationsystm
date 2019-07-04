@@ -13,6 +13,9 @@ public enum OrzExceptionEnum {
     USER_USERPSW_REG_ERROR(004,"密码格式错误，应该为数字和字母组合"),
     USER_USERNAME_WRONG(105,"用户名错误"),
     USER_USERPSW_WROBG(106,"密码错误"),
+    INSERT_DATA_FAILED(107,"插入数据失败"),
+    UPDATE_DATA_FAILED(108,"更新数据数据失败"),
+    DELETE_DATA_FAILED(109,"删除数据数据失败"),
     ; //
 
     private Integer code;

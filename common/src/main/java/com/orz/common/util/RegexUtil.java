@@ -33,7 +33,7 @@ public class RegexUtil {
      * @return
      */
     public static boolean isFullDigit(String s){
-        String reg="\\d{5}";
+        String reg="\\d{11}";
         Pattern pattern=Pattern.compile(reg);
         try {
             Matcher mather = pattern.matcher(s);

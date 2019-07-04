@@ -27,7 +27,7 @@
     <!-- 3.视图的解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--静态资源路径前缀classpath：后面开始-->
-        <property name="prefix" value="/pages/"/>
+        <property name="prefix" value="/"/>
         <!--静态资源页面后缀-->
         <property name="suffix" value=".jsp"/>
     </bean>

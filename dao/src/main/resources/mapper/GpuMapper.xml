@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.orz.dao.GpuDao">
+
+    <!--查询所有Gpu信息-->
+    <select id="findAllGpu"  resultType="com.orz.bean.Gpu">
+        select * from tb_gpu
+    </select>
+
+
+    <!--通过Gpu名字查询Gpu-->
+    <select id="findAllGpuByGpuName" parameterType="java.lang.String"  resultType="com.orz.bean.Gpu">
+        select * from tb_gpu
+        where gpuName=#{gpuName}
+    </select>
+
+    <!--通过GpuFactory查找Gpu-->
+    <select id="findAllGpuByGpuFactory" parameterType="java.lang.String" resultType="com.orz.bean.Gpu">
+         select * from tb_gpu
+        where gpuFactory=#{gpuFactory}
+    </select>
+
+    <!--通过GpuCode查找Gpu-->
+    <select id="findAllGpuByGpuCode" parameterType="java.lang.String" resultType="com.orz.bean.Gpu">
+         select * from tb_gpu
+        where gpuCode=#{gpuCode}
+    </select>
+
+    <!--插入一个Gpu-->
+    <insert id="insertOneGpu" parameterType="com.orz.bean.Gpu">
+        insert into tb_gpu (gpuCode,gpuFactory,gpuName)
+        values (#{gpuCode},#{gpuFactory},#{gpuName})
+    </insert>
+
+    <!--GpuName通过更新一个Gpu-->
+    <update id="updateGpuByName" parameterType="com.orz.bean.Gpu" >
+        update tb_gpu
+        set gpuName=#{gpuName},gpuFactory=#{gpuFactory},gpuCode=#{gpuCode}
+    </update>
+
+
+    <!--删除-->
+    <delete id="deleteGpuByName"  parameterType="java.lang.Integer">
+        delete from tb_gpu where  gpuName=#{gpuName}
+    </delete>
+
+</mapper>

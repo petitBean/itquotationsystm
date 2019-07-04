@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.orz.dao.Product3Dao">
+
+
+    <!--查询所有product3信息-->
+    <select id="findAllProduct3" resultType="com.orz.bean.Product3">
+        select * from tb_product3
+    </select>
+    <!--通过pCode2查询一个product3-->
+    <select id="findOneProduct3pCode2" parameterType="java.lang.String"  resultType="com.orz.bean.Product3">
+        select * from tb_product3
+        where pCode2=#{pCode2}
+    </select>
+    <!--通过pCode查找一个product3-->
+    <select id="findOneProduct3BypCode" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCode=#{pCode}
+    </select>
+    <!--通过pCPUCode查找一个product3-->
+    <select id="findOneProduct3ByCPUCode" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCPUCode=#{pCPUCode}
+    </select>
+    <!--通过pGPUCode查找一个product3-->
+    <select id="findOneProduct3ByGPUCode" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pGPUCode=#{pGPUCode}
+    </select>
+    <!--通过pCPUFactory查找product3-->
+    <select id="findAllProduct3BypCpuFactory" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCpuFactory=#{pCpuFactory}
+    </select>
+    <!--通过pCPUSeries查找product3-->
+    <select id="findAllProduct3BypCpuSeries" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCpuSeries=#{pCpuSeries}
+    </select>
+    <!--通过CPUi查找一个product3-->
+    <select id="findOneProduct3BycpUi" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where cpUi=#{cpUi}
+    </select>
+    <!--通过pCPUGeneration查找一个product3-->
+    <select id="findOneProduct3BypCpuGeneration" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCpuGeneration=#{pCpuGeneration}
+    </select>
+    <!--通过pCPUType查找product3-->
+    <select id="findAllProduct3BypCpuType" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCpuType=#{pCpuType}
+    </select>
+    <!--通过pCPUHZ查找product3-->
+    <select id="findAllProduct3BypCpuhz" parameterType="java.lang.Double" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCpuhz=#{pCpuhz}
+    </select>
+    <!--通过pCPUMHZ查找product3-->
+    <select id="findAllProduct3BypCpumhz" parameterType="java.lang.Double" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCpumhz=#{pCpumhz}
+    </select>
+    <!--通过pCPUAmount查找product3-->
+    <select id="findAllProduct3BypCpuAmount" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCpuAmount=#{pCpuAmount}
+    </select>
+    <!--通过pTread查找product3-->
+    <select id="findAllProduct3BypTread" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pTread=#{pTread}
+    </select>
+    <!--通过pCache查找product3-->
+    <select id="findAllProduct3BypCache" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCache=#{pCache}
+    </select>
+    <!--通过pBus查找product3-->
+    <select id="findAllProduct3BypBus" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pBus=#{pBus}
+    </select>
+    <!--通过pStructure查找product3-->
+    <select id="findAllProduct3BypStructure" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pStructure=#{pStructure}
+    </select>
+    <!--通过pCraft查找product3-->
+    <select id="findAllProduct3BypCraft" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCraft=#{pCraft}
+    </select>
+    <!--通过pConsumption查找product3-->
+    <select id="findAllProduct3BypConsumption" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pConsumption=#{pConsumption}
+    </select>
+    <!--通过pRAM查找product3-->
+    <select id="findAllProduct3BypRam" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pRam=#{pRam}
+    </select>
+    <!--通过pRAMC查找product3-->
+    <select id="findAllProduct3BypRamc" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pRamc=#{pRamc}
+    </select>
+    <!--通过pRAMType查找product3-->
+    <select id="findAllProduct3BypRamType" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pRamType=#{pRamType}
+    </select>
+    <!--通过pSSD查找product3-->
+    <select id="findAllProduct3BypSsd" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pSsd=#{pSsd}
+    </select>
+    <!--通过pDisk查找product3-->
+    <select id="findAllProduct3BypDisk" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pDisk=#{pDisk}
+    </select>
+    <!--通过pROMDescription查找product3-->
+    <select id="findAllProduct3BypRomDescription" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pRomDescription=#{pRomDescription}
+    </select>
+    <!--通过pCD查找product3-->
+    <select id="findAllProduct3BypCd" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pCd=#{pCd}
+    </select>
+    <!--通过pGPUType查找product3-->
+    <select id="findAllProduct3BypGpuType" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pGpuType=#{pGpuType}
+    </select>
+    <!--通过pGPUName查找product3-->
+    <select id="findAllProduct3BypGpuName" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pGpuName=#{pGpuName}
+    </select>
+    <!--通过pGpuram查找product3-->
+    <select id="findAllProduct3BypGpuram" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pGpuram=#{pGpuram}
+    </select>
+    <!--通过pGddr查找product3-->
+    <select id="findAllProduct3BypGddr" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pGddr=#{pGddr}
+    </select>
+    <!--通过pGpuBit查找product3-->
+    <select id="findAllProduct3BypGpuBit" parameterType="java.lang.Integer" resultType="com.orz.bean.Product3">
+         select * from tb_product3
+        where pGpuBit=#{pGpuBit}
+    </select>
+    <!--插入一个product3-->
+    <insert id="insertOneProduct3" parameterType="com.orz.bean.Product3">
+        insert into tb_product3 (pCode2,pCode,CPUCode,GPUCode,pCpuFactory,pCpuSeries,cpUi,pCpuGeneration,pCpuType,pCpuhz,pCpumhz,pCpuAmount,pTread,pCache,pBus,pStructure,pCraft,pConsumption,pRam,pRamc,pRamType,pSsd,pDisk,pRomDescription,pCd,pGpuType,pGpuName,pGpuram,pGddr,pGpuBit,other1,other2,other3,other4,other5,other6,other7,other8,other9)
+        values (#{pCode2},#{pCode},#{CPUCode},#{GPUCode},#{pCpuFactory},#{pCpuSeries},#{cpUi},#{pCpuGeneration},#{pCpuType},#{pCpuhz},#{pCpumhz},#{pCpuAmount},#{pTread},#{pCache},#{pBus},#{pStructure},#{pCraft},#{pConsumption},#{pRam},#{pRamc},#{pRamType},#{pSsd},#{pDisk},#{pRomDescription},#{pCd},#{pGpuType},#{pGpuName},#{pGpuram},#{pGddr},#{pGpuBit},#{other1},#{other2},#{other3},#{other4},#{other5},#{other6},#{other7},#{other8},#{other9})
+
+    </insert>
+    <update id="updateProduct3BypCode2" parameterType="com.orz.bean.Product3" >
+        update tb_product3
+        set  pCode=#{pCode},CPUCode=#{CPUCode},GPUCode=#{GPUCode},pCpuFactory=#{pCpuFactory},pCpuSeries=#{pCpuSeries},cpUi=#{cpUi},pCpuGeneration=#{pCpuGeneration},pCpuType=#{pCpuType},pCpuhz=#{pCpuhz},pCpumhz=#{pCpumhz},pCpuAmount=#{pCpuAmount},pTread=#{pTread},pCache=#{pCache},pBus=#{pBus},pStructure=#{pStructure},pCraft=#{pCraft},pConsumption=#{pConsumption},pRam=#{pRam},pRamc=#{pRamc},pRamType=#{pRamType},pSsd=#{pSsd},pDisk=#{pDisk},pRomDescription=#{pRomDescription},pCd=#{pCd},pGpuType=#{pGpuType},pGpuName=#{pGpuName},pGpuram=#{pGpuram},pGddr=#{pGddr},pGpuBit=#{pGpuBit}
+
+    </update>
+    <update id="updateProduct3BypCode" parameterType="com.orz.bean.Product3" >
+        update tb_product3
+        set  pCode2=#{pCode2},CPUCode=#{CPUCode},GPUCode=#{GPUCode},pCpuFactory=#{pCpuFactory},pCpuSeries=#{pCpuSeries},cpUi=#{cpUi},pCpuGeneration=#{pCpuGeneration},pCpuType=#{pCpuType},pCpuhz=#{pCpuhz},pCpumhz=#{pCpumhz},pCpuAmount=#{pCpuAmount},pTread=#{pTread},pCache=#{pCache},pBus=#{pBus},pStructure=#{pStructure},pCraft=#{pCraft},pConsumption=#{pConsumption},pRam=#{pRam},pRamc=#{pRamc},pRamType=#{pRamType},pSsd=#{pSsd},pDisk=#{pDisk},pRomDescription=#{pRomDescription},pCd=#{pCd},pGpuType=#{pGpuType},pGpuName=#{pGpuName},pGpuram=#{pGpuram},pGddr=#{pGddr},pGpuBit=#{pGpuBit}
+
+    </update>
+    <delete id="deleteProduct3BypCode2" parameterType="com.orz.bean.Product3" >
+        delete * from tb_product3
+        where pCode2=#{pCode2}
+     </delete>
+    <delete id="deleteProduct3BypCode" parameterType="com.orz.bean.Product3" >
+      delete * from tb_product3
+        where pCode=#{pCode}
+        </delete>
+
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.orz.dao.TrademarkDao">
+    <!--查询所有Trademark信息-->
+    <select id="findAllTrademark" parameterType="java.lang.Integer" resultType="com.orz.bean.Trademark">
+         select * from tb_trademark
+    </select>
+
+    <!--通过tmCode查询所有Trademark信息-->
+    <select id="findAllTrademarkBytmCode" parameterType="java.lang.String" resultType="com.orz.bean.Trademark">
+        select * from tb_trademark where tmCode=#{tmCode}
+    </select>
+
+    <!--通过tmName查询所有Trademark信息-->
+    <select id="findAllTrademarkBytmName" parameterType="java.lang.String" resultType="com.orz.bean.Trademark">
+        select * from tb_trademark where tmName=#{tmName}
+    </select>
+
+    <!--通过tmWeb查询所有Trademark信息-->
+    <select id="findAllTrademarkBytmWeb" parameterType="java.lang.String" resultType="com.orz.bean.Trademark">
+        select * from tb_trademark where tmWeb=#{tmWeb}
+    </select>
+
+    <!--通过tmTel查询所有Trademark信息-->
+    <select id="findAllTrademarkBytmTel" parameterType="java.lang.String" resultType="com.orz.bean.Trademark">
+        select * from tb_trademark where tmTel=#{tmTel}
+    </select>
+
+
+    <!--插入一个Trademark -->
+    <insert id="insertOneTrademark" parameterType="com.orz.bean.Trademark">
+        insert into tb_trademark(tmCode,tmName,tmWeb,tmTel)
+        values (#{tmCode},#{tmName},#{tmWeb},#{tmTel})
+    </insert>
+
+    <!--通过tmCode更新一个Trademark -->
+    <update id="updateTrademarkBytmCode" parameterType="com.orz.bean.Trademark" >
+        update tb_trademark
+        set tmCode=#{tmCode},tmName=#{tmName},tmWeb=#{tmWeb},tmTel=#{tmTel}
+    </update>
+
+
+    <!--通过tmCode删除Trademark -->
+    <delete id="deleteTrademarkBytmCode"  parameterType="java.lang.String">
+        delete from tb_trademark where  tmCode=#{tmCode}
+    </delete>
+
+
+</mapper>
