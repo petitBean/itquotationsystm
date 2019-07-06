@@ -80,4 +80,15 @@ public class TrademarkServiceImpl implements TrademarkService {
             throw new OrzException(OrzExceptionEnum.DELETE_DATA_FAILED);
         }
     }
+
+
+    ///-----------------------业务逻辑-------------//
+
+    @Override
+    public List<String> findTmCodeListByTmNameList(List<String> tmNameList) {
+        if (tmNameList==null){
+            return null;
+        }
+        return trademarkDao.findTmCodeListByTmNameList(tmNameList);
+    }
 }

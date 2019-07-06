@@ -7,18 +7,55 @@ import java.util.List;
 public interface Product3Service {
 
 
+    /**
+     * 查询所有
+     * @param
+     * @return
+     */
     List<Product3> findAllProduct3();
 
-    Product3 findOneProduct3pCode2(String pCode2);
 
-    void insertOneProduct3(Product3 product3) throws Exception;
+    /**
+     * 通过主键查找
+     * @param pCode2
+     * @return
+     */
+    Product3 findOneProduct3BypCode2AndpCode(String pCode,String pCode2);
 
-    void updateProduct3BypCode2(Product3 product3) throws Exception;
+    /**
+     * 插入一个
+     * @param product3
+     */
+    void insertOneProduct3(Product3 product3)throws Exception;
 
-    void updateProduct3BypCode(Product3 product3) throws Exception;
+    /**
+     * 根主键更新
+     * @param product3
+     */
+    void updateProduct3BypCodeAndpCode2(Product3 product3) throws Exception;
 
-    void deleteProduct3BypCode(String pCode) throws Exception;
+    /**
+     * 根据code更新
+     * @param product3
+     */
+    void updateProduct3BypCode(Product3 product3)throws Exception;
 
-    void deleteProduct3BypCode2(String pCode2) throws Exception;
+    /**
+     * 根据code2更新
+     * @param product3
+     */
+    void updateProduct3BypCode2(Product3 product3)throws Exception;
+
+    /**
+     * 根据主键删除
+     * @param pCode2
+     */
+    void deleteProduct3BypCodeAndpCode2(String pCode,String pCode2)throws Exception;
+
+    /**
+     * 根据pCode删除
+     * @param pCode
+     */
+    void deleteProduct3BypCode(String pCode)throws Exception;
 
 }

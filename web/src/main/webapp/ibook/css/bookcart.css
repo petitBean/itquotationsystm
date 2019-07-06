@@ -1,0 +1,153 @@
+.infocontainer{
+    float:left;
+    background-color: whitesmoke;
+    width: 1500px;
+    height: 1000px;
+}
+.ibook_firstpage a{
+    text-decoration: none;
+    font-size: 15px;
+    font-family: 黑体;
+}
+
+.infoul{
+    background-color:#e7c3c3;
+    width: 800px;
+    height: 100px;
+}
+.ulcontainer{
+    margin:70px 150px ;
+    background-color: #e7c3c3 ;
+    width: 810px;
+    height: fit-content;
+}
+
+.cart_book_image{
+    float: left;
+    height: 70px;
+    width: 60px;
+    background-color: white;
+    margin: 15px;
+}
+.cart_book_image image{
+    height: 70px;
+    width: 60px;
+}
+.cart_book_indroduction{
+    float: left;
+    height: 70px;
+    width: 300px;
+    background-color: #e7c3c3;
+    margin: 15px;
+}
+
+.cart_book_price{
+    float: right;
+    height: 70px;
+    width: 100px;
+    background-color: #e7c3c3;
+    margin:  15px 0px 5px 15px;
+}
+
+.cart_book_operation{
+    text-align: center;
+    color: red;
+    float: right;
+    height: 70px;
+    width: 100px;
+    background-color: #e7c3c3;
+    margin: 15px 0px 5px 15px;
+}
+
+.cart_book_quantity{
+    float: right;
+    height: 70px;
+    width: 100px;
+    background-color: #e7c3c3;
+    margin: 15px 0px 5px 15px;
+}
+
+.cart_book_quantity_input{
+    margin: 15px 0px 20px 0px;
+    background-color: white;
+    height: 30px;
+    width: 100px;
+}
+.cart_book_price_input{
+    height: 30px;
+    width: 100px;
+    background-color:#e7c3c3 ;
+    border: none;
+}
+
+.cart_book_operation_del{
+    text-decoration: none;
+    display: block;
+    margin: 25px;
+    color: red;
+}
+
+.bottominfo{
+    margin:70px 150px ;
+    background-color: white;
+    width: 800px;
+    height: 50px;
+}
+.bottominfo_left{
+    background-color: white;
+    width: 300px;
+    float: left;
+    height:50px ;
+}
+
+.bottominfo_pay{
+    background-color: #d43f3a;
+    font-size: 20px;
+    padding: 6px;
+    color: green;
+    width: 100px;
+    float: right;
+    height:50px ;
+}
+
+.bottominfo_pay a{
+    text-decoration: none;
+    color:#FFFFFF;
+}
+
+.bottominfo_total_amount{
+    width: 200px;
+    float: left;
+    height:50px ;
+}
+
+.bottominfo_bookquantity{
+    width: 200px;
+    float: left;
+    height:50px ;
+}
+.bottominfo_bookquantity_cont{
+    padding: 10px;
+    float: left;
+    width: 65px;
+    height: 50px;
+}
+.bottominfo_total_amount_cont{
+    padding: 10px;
+    float: left;
+    width: 65px;
+    height: 50px;
+}
+
+.bottominfo_number{
+    padding: 10px 0px 10px 10px;
+    float: left;
+    width: 70px;
+    height: 50px;
+    font-size:18px ;
+    color: red;
+}
+
+.bottominfo_left{
+    padding: 6px;
+}

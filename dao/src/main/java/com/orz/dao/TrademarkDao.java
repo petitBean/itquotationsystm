@@ -20,6 +20,13 @@ public interface TrademarkDao {
     List<Trademark>findAllTrademarkBytmName(String tmName);
 
     /**
+     * 通过tmName列表tmCode
+     * @param tmNameList
+     * @return
+     */
+    List<String> findTmCodeListByTmNameList(List<String> tmNameList);
+
+    /**
      * 查询所有通过tmWeb
      * @return
      */

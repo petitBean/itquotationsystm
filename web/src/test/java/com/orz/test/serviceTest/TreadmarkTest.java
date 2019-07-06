@@ -37,4 +37,5 @@ public class TreadmarkTest {
         List<Trademark> trademarkList=trademarkService.findAllTrademark();
         Assert.assertEquals(2,trademarkList.size());
     }
+
 }

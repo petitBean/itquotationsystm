@@ -11,9 +11,7 @@ import com.orz.service.UserService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +24,7 @@ import javax.validation.Valid;
  * @date 2019-07-02 12:40
  */
 @Controller
-@RequestMapping(value = "/")
+@RequestMapping(value = "")
 public class UserController {
 
     @Autowired
@@ -65,6 +63,7 @@ public class UserController {
             return modelAndView;
         }
         //获取session
+        System.out.println("【用户密码】:"+user.getUserPsw());
         HttpSession session=request.getSession();
         //验证用户是否已经登录
         String lastCookieName=(String)session.getAttribute(OrzConStrantEnum.LOGIN_SESSION_CONSTANT.getValue());
@@ -91,7 +90,7 @@ public class UserController {
             //保存用户名到cookie
             CookieUtil.setCookie(response,cookieName,loginUserForm.getUserName());
             //跳转主页
-            modelAndView.setViewName(OrzViewNameContrant.mainPage);
+            modelAndView.setViewName("redirect:/mainPagelist.do");
             return modelAndView;
         }
         else {
@@ -101,19 +100,18 @@ public class UserController {
             modelAndView.addObject("message","密码不正确！");
             return modelAndView;
         }
-
-
     }
 
     @RequestMapping(value = "/toLogin.do")
     public String  toLogin(){
-        return "login";
+        return "user-login";
     }
 
     @RequestMapping(value = "/toRegister.do")
     public String  toRegister(){
-        return "loginAndRegister";
+        return "user-register";
     }
+
 
     /**
      * 用户退出登录
@@ -123,7 +121,7 @@ public class UserController {
     public ModelAndView logout(HttpServletRequest request,HttpServletResponse response){
         ModelAndView modelAndView=new ModelAndView();
         //跳转路径为首页
-        modelAndView.setViewName(OrzViewNameContrant.mainPage);
+        modelAndView.setViewName("redirect:/mainPagelist.do");
        //获取session中的值
         HttpSession session=request.getSession();
         String cookieName=(String)session.getAttribute(OrzConStrantEnum.LOGIN_SESSION_CONSTANT.getValue());
@@ -147,7 +145,6 @@ public class UserController {
      */
     @RequestMapping("/register.do")
     public ModelAndView register(@Valid UserForm userForm){
-
         ModelAndView modelAndView=new ModelAndView();
         //1.验证数据格式(jsp验证密码是否一致)
         try{

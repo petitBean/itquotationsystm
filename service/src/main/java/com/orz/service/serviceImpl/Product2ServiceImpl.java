@@ -27,6 +27,56 @@ public class Product2ServiceImpl implements Product2Service {
     }
 
     @Override
+    public List<Product2> findListBypCodeList(List<String> pCodeList) {
+        return product2Dao.findListBypCodeList(pCodeList);
+    }
+
+    @Override
+    public Product2 findOneProduct2BypCode(String pCode) {
+        return product2Dao.findOneProduct2BypCode(pCode);
+    }
+
+    @Override
+    @Transactional
+    public void insertOneProduct2(Product2 product2) throws Exception {
+        try{
+            product2Dao.insertOneProduct2(product2);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getCause());
+            throw new OrzException(OrzExceptionEnum.INSERT_DATA_FAILED);
+        }
+
+    }
+
+    @Override
+    @Transactional
+    public void updateProduct2BypCode(Product2 product2) throws Exception{
+        try{
+            product2Dao.updateProduct2BypCode(product2);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getCause());
+            throw new OrzException(OrzExceptionEnum.UPDATE_DATA_FAILED);
+        }
+    }
+
+    @Override
+    @Transactional
+    public void deleteProduct2BypCode(String pCode) throws Exception {
+        try{
+            product2Dao.deleteProduct2BypCode(pCode);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getCause());
+            throw new OrzException(OrzExceptionEnum.DELETE_DATA_FAILED);
+        }
+    }
+
+    @Override
     public List<Product2> findAllProduct2BypCode(String pCode) {
         return null;
     }
@@ -146,43 +196,4 @@ public class Product2ServiceImpl implements Product2Service {
         return null;
     }
 
-    @Override
-    @Transactional
-    public void insertOneProduct2(Product2 product2) throws Exception {
-        try{
-            product2Dao.insertOneProduct2(product2);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-            System.out.println(e.getCause());
-            throw new OrzException(OrzExceptionEnum.INSERT_DATA_FAILED);
-        }
-
-    }
-
-    @Override
-    @Transactional
-    public void updateProduct2BypCode(Product2 product2) throws Exception{
-        try{
-           product2Dao.updateProduct2BypCode(product2);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-            System.out.println(e.getCause());
-            throw new OrzException(OrzExceptionEnum.UPDATE_DATA_FAILED);
-        }
-    }
-
-    @Override
-    @Transactional
-    public void deleteProduct2BypCode(String pCode) throws Exception {
-        try{
-           product2Dao.deleteProduct2BypCode(pCode);
-        }
-        catch (Exception e){
-            e.printStackTrace();
-            System.out.println(e.getCause());
-            throw new OrzException(OrzExceptionEnum.DELETE_DATA_FAILED);
-        }
-    }
 }

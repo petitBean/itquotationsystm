@@ -23,6 +23,13 @@ public class UserServiceTest {
     private UserService userService;
 
     @Test
+    public void path(){
+        for(int i=0;i<10;i++){
+            System.out.println("路径："+System.getProperty("evan.webapp"));
+        }
+    }
+
+    @Test
     public void findAllTest(){
         List<User> users=userService.findAll();
         Assert.assertEquals(1,users.size());

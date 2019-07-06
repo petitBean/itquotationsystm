@@ -32,6 +32,13 @@ public interface Product2Service {
      */
     List<Product2> findAllProduct2BypKeyboard();
 
+    /**
+     * 通过多个pCodec查询多个produt2
+     * @param pCodeList
+     * @return
+     */
+    List<Product2> findListBypCodeList(List<String> pCodeList);
+
 
     /**
      * 查询所有通过pFingerprintIdentification
@@ -178,5 +185,21 @@ public interface Product2Service {
      *
      */
     void deleteProduct2BypCode(String pCode)throws Exception;
+
+    /**
+     * 查询一个通过pCode
+     * @return
+     */
+    Product2 findOneProduct2BypCode(String pCode);
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -21,9 +21,15 @@ public class GpuServiceImpl implements GpuService {
     @Autowired
     private GpuDao gpuDao;
 
+
     @Override
     public List<Gpu> findAllGpu() {
         return gpuDao.findAllGpu();
+    }
+
+    @Override
+    public Gpu findOneByGpuCode(String gpuCode) {
+        return gpuDao.findOneByGpuCode(gpuCode);
     }
 
     @Override
@@ -56,6 +62,17 @@ public class GpuServiceImpl implements GpuService {
 
     @Override
     @Transactional
+    public void updateGpuByGpuCode(Gpu gpu)throws Exception {
+        try{
+            gpuDao.updateGpuByGpuCode(gpu);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getCause());
+            throw new OrzException(OrzExceptionEnum.UPDATE_DATA_FAILED);
+        }
+    }
+
     public void updateGpuByName(Gpu gpu)throws Exception {
         try{
             gpuDao.updateGpuByName(gpu);
@@ -78,8 +95,18 @@ public class GpuServiceImpl implements GpuService {
             System.out.println(e.getCause());
             throw new OrzException(OrzExceptionEnum.DELETE_DATA_FAILED);
         }
-
     }
 
-
+    @Override
+    @Transactional
+    public void deleteGpuByGpuCode(String gpuCode) {
+        try{
+            gpuDao.deleteGpuByGpuCode(gpuCode);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getCause());
+            throw new OrzException(OrzExceptionEnum.DELETE_DATA_FAILED);
+        }
+    }
 }

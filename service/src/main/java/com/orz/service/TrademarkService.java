@@ -48,4 +48,11 @@ public interface TrademarkService {
      */
     void deleteTrademarkBytmCode(String trademarkId)throws Exception ;
 
+    /**
+     * 通过nameList查找codelst
+     * @param tmNameList
+     * @return
+     */
+    List<String>   findTmCodeListByTmNameList(List<String> tmNameList);
+
 }

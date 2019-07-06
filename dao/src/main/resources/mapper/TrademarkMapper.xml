@@ -7,6 +7,14 @@
          select * from tb_trademark
     </select>
 
+    <select id="findTmCodeListByTmNameList" resultType="java.lang.String">
+        select tmCode from tb_trademark
+        where tmName in
+        <foreach collection="list" index="index" item="ite" open="(" separator="," close=")">
+            #{ite}
+        </foreach>
+    </select>
+
     <!--通过tmCode查询所有Trademark信息-->
     <select id="findAllTrademarkBytmCode" parameterType="java.lang.String" resultType="com.orz.bean.Trademark">
         select * from tb_trademark where tmCode=#{tmCode}

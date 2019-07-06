@@ -1,0 +1,30 @@
+.createbook_container{
+    background-color: #f9f9f9;
+    width: 1500px;
+    height: 1000px;
+}
+
+.createbook_form_container{
+    float: left;
+    margin: 70px 0px 0px 100px;
+    width: 1000px;
+
+}
+
+.createbook_form_input{
+    margin: 7px;
+    width:900px ;
+    height: 30px;
+}
+
+#createbook_form_input_describe{
+    height: 70px;
+}
+
+
+.createbook_form_btn{
+    border: none;
+    background-color: white;
+    height: 30px;
+    width: 150px;
+}

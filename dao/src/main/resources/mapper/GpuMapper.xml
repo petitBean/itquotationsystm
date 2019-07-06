@@ -8,6 +8,11 @@
         select * from tb_gpu
     </select>
 
+    <select id="findOneByGpuCode" parameterType="java.lang.String" resultType="com.orz.bean.Gpu">
+        select * from tb_gpu
+        where GPUCode=#{gpuCode}
+    </select>
+
 
     <!--通过Gpu名字查询Gpu-->
     <select id="findAllGpuByGpuName" parameterType="java.lang.String"  resultType="com.orz.bean.Gpu">
@@ -36,13 +41,27 @@
     <!--GpuName通过更新一个Gpu-->
     <update id="updateGpuByName" parameterType="com.orz.bean.Gpu" >
         update tb_gpu
-        set gpuName=#{gpuName},gpuFactory=#{gpuFactory},gpuCode=#{gpuCode}
+        set gpuFactory=#{gpuFactory},gpuCode=#{gpuCode}
+        where gpuName=#{gpuName}
     </update>
 
+
+    <!--GpuName通过更新一个Gpu-->
+    <update id="updateGpuByGpuCode" parameterType="com.orz.bean.Gpu" >
+        update tb_gpu
+        set gpuName=#{gpuName},gpuFactory=#{gpuFactory}
+        where gpuCode=#{gpuCode}
+
+    </update>
 
     <!--删除-->
     <delete id="deleteGpuByName"  parameterType="java.lang.Integer">
         delete from tb_gpu where  gpuName=#{gpuName}
+    </delete>
+
+    <!--删除-->
+    <delete id="deleteGpuByGpuCode"  parameterType="java.lang.String">
+        delete from tb_gpu where  gpuCode=#{gpuCode}
     </delete>
 
 </mapper>

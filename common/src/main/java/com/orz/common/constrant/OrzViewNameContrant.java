@@ -18,7 +18,7 @@ public interface OrzViewNameContrant {
     /**
      * 网站首页
      */
-    public static final String mainPage="main-page";
+    public static final String mainPage="index";
 
 
 

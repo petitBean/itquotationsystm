@@ -1,0 +1,75 @@
+#bookdetailOut{
+    height: 400px;
+    width: 800px;
+    margin: 0px;
+
+}
+#pictureBox{
+    float: left;
+
+    height: 400px;
+    width: 300px;
+}
+
+#bookdetail{
+    float: left;
+    height: 400px;
+    width: 500px;
+}
+
+#addmenu{
+    margin: 100px 0px 0px 10px;
+
+    float: left;
+    height: 100px;
+    width: 900px;
+}
+
+#pictureBox img{
+    margin: 40px 30px 40px 30px;
+}
+
+#bookDetailUl{
+    margin: 50px 0px 0px 0px;
+    width: 290px;
+    height: 200px;
+
+    background-color: cornsilk;
+}
+
+#decrease{
+   font-size: 45px;
+
+}
+#increase{
+    font-size: 25px;
+
+}
+#toCart{
+    font-size: 25px;
+}
+
+#bookNum{
+    font-size: 25px;
+}
+
+.addmenu_btn{
+    background-color: #a6e1ec;
+    float: left;
+    height: 50px;
+    width: 30px;
+}
+
+.addmenu_input{
+    background-color: #e7c3c3;
+    float: left;
+    height: 50px;
+    width: 60px;
+}
+
+.addmenu_submit{
+    background-color: #a6e1ec;
+    float: left;
+    height: 50px;
+    width: 30px;
+}

@@ -9,8 +9,16 @@
         select * from tb_product2
     </select>
 
+    <!--in查询-->
+    <select id="findListBypCodeList" resultType="com.orz.bean.Product2">
+        select * from tb_product2 where pCode in
+        <foreach collection="list" index="index" item="item" open="(" separator="," close=")">
+            #{item}
+        </foreach>
+    </select>
+
     <!--通过pFingeringEquipment查询一个Product2-->
-    <select id="findAllProduct2BypCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
+    <select id="findOneProduct2BypCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product2">
         select * from tb_product2
         where pCode=#{pCode}
     </select>
@@ -165,7 +173,7 @@
         insert into tb_product2(
         pCode,pFingeringEquipment,pKeyboard,pFingerprintIdentification,pBatteryType,
         pDuration,pPowerAdapter,pWeight,pLengh,pWidth,pThickness,pShellMaterial,
-        pShellDescription,pSafety,pDissipation,pSoftware,pSoftware,pPackagingList,
+        pShellDescription,pSafety,pDissipation,pSoftware,pPackagingList,
         pGuarantee,pWarranty,pWarrantyRemark,pTel,pTelRemark,pDatail,pPicture
         )
         values (#{pCode},#{pFingeringEquipment},#{pKeyboard},#{pFingerprintIdentification},#{pBatteryType},
@@ -184,7 +192,7 @@
         pThickness=#{pThickness},pShellMaterial=#{pShellMaterial},pShellDescription=#{pShellDescription},pSafety=#{pSafety},pDissipation=#{pDissipation},
         pSoftware=#{pSoftware},pPackagingList=#{pPackagingList},pGuarantee=#{pGuarantee},pWarranty=#{pWarranty},pWarrantyRemark=#{pWarrantyRemark},
         pTel=#{pTel},pTelRemark=#{pTelRemark},pDatail=#{pDatail},pPicture=#{pPicture}
-
+        where pCode=#{pCode}
     </update>
 
     <!--删除-->

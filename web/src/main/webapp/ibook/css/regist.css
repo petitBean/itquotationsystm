@@ -1,0 +1,32 @@
+.registContainer{
+    height: 1000px;
+    width: 1500px;
+    background: #c0c0c0;
+}
+
+.registform input{
+    width: 280px;
+    height: 35px;
+}
+
+.inputcontainer{
+    float: left;
+    background: #2aabd2;
+    margin: 15px 120px 0px 120px;
+    width: 350px;
+    height: 40px;
+}
+
+.registform label{
+    background-color: red;
+    width: 60px;
+    height: 40px;
+    border: 1px;
+}
+#regist-form-container{
+    width: 600px;
+    height: 400px;
+    background-color: white;
+    float:left;
+    margin: 100px 200px 0px 300px;
+}

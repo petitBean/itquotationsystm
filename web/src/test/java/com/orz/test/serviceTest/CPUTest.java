@@ -39,6 +39,17 @@ public class CPUTest {
         Assert.assertEquals(1,cpuList.size());
     }
 
+    @Test
+    public void findByCode(){
+        CPU cpu=CPUService.findOneCPUByCPUCode("00001");
+        Assert.assertNotNull(cpu);
+    }
 
+    @Test
+    public void upDate() throws Exception{
+        CPU cpu=CPUService.findOneCPUByCPUCode("00001");
+        cpu.setCPUFactory("mmmmmmmmmm");
+        CPUService.updateCPUByCode(cpu);
+    }
 
 }

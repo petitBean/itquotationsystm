@@ -30,6 +30,12 @@ public class GpuTest {
     }
 
     @Test
+    public void findOneByGpuCode(){
+        Gpu gpu=gpuService.findOneByGpuCode("000002");
+        Assert.assertNotNull(gpu);
+    }
+
+    @Test
     public void insert() throws Exception{
        Gpu gpu=new Gpu();
        gpu.setGpuCode("000002");
@@ -37,6 +43,15 @@ public class GpuTest {
        gpu.setGpuName("bbb");
        gpuService.insertOneGpu(gpu);
     }
+
+    @Test
+    public void updateGpuByGpuCode() throws Exception{
+        Gpu gpu=gpuService.findOneByGpuCode("000002");
+        gpu.setOther2("up");
+        gpuService.updateGpuByGpuCode(gpu);
+    }
+
+
 
 
 }

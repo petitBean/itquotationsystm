@@ -20,7 +20,7 @@ public interface Product2Dao {
      * 查询所有通过pCode
      * @return
      */
-    List<Product2> findAllProduct2BypCode(String pCode);
+    Product2 findOneProduct2BypCode(String pCode);
 
     /**
      * 查询所有通过pFingeringEquipment
@@ -35,6 +35,12 @@ public interface Product2Dao {
      */
     List<Product2> findAllProduct2BypKeyboard();
 
+    /**
+     * In查询
+     * @param pCodeList
+     * @return
+     */
+    List<Product2> findListBypCodeList(List<String> pCodeList);
 
     /**
      * 查询所有通过pFingerprintIdentification
@@ -161,7 +167,6 @@ public interface Product2Dao {
      * @return
      */
     List<Product2> findAllProduct2BypPicture();
-
 
     /**
      * 插入一个新Product2

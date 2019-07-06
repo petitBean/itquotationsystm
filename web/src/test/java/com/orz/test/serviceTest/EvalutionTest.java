@@ -43,4 +43,25 @@ public class EvalutionTest {
         List<Evalution> evalutionList=evalutionService.findAllEvalution();
         Assert.assertEquals(1,evalutionList.size());
     }
+
+    @Test
+    public void findAllEvalutionByuserId(){
+        List<Evalution> evalutionList=evalutionService.findAllEvalutionByuserId(0);
+        Assert.assertEquals(1,evalutionList.size());
+    }
+
+
+    @Test
+    public void  findOneEvalutionBypCode(){
+        Evalution evalutionList=evalutionService. findOneEvalutionBypCode("1111");
+        Assert.assertNotNull(evalutionList);
+    }
+
+    @Test
+    public void updateEvalutionBypCode() throws Exception{
+        Evalution evalutionList=evalutionService. findOneEvalutionBypCode("11111");
+        evalutionList.setOther1("hhhh");
+        evalutionService.updateEvalutionBypCode(evalutionList);
+    }
+
 }

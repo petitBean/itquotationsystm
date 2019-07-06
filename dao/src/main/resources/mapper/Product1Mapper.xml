@@ -3,15 +3,65 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.orz.dao.Product1Dao">
 
+    <!--连接查询resultMap-->
+    <resultMap id="joinFindListBypCodeMap" type="com.orz.bean.Product1">
+        <id property="pCode" column="pCode"></id>
+        <result property="pPosition" column="pPosition"></result>
+        <result property="pName" column="pName"></result>
+
+        <association property="product2" javaType="com.orz.bean.Product2">
+            <id property="pCode" column="pCode"></id>
+            <result property="pPicture" column="pPicture"></result>
+        </association>
+        <association property="product3" javaType="com.orz.bean.Product3">
+            <id property="pCode" column="pCode"></id>
+            <result property="pCode2" column="pCode2"></result>
+            <result property="pPrice" column="pPrice"></result>
+
+        </association>
+    </resultMap>
+    
 
     <!--查询所有Product1信息-->
     <select id="findAllProduct1" parameterType="java.lang.Integer" resultType="com.orz.bean.Product1">
     select * from tb_product1
    </select>
 
+    <select id="findpCodeListBypNameLike" parameterType="java.lang.String" resultType="java.lang.String">
+        select pCode from tb_product1
+        where pName like #{keyword}
+    </select>
+    
+    <!--连接查询-->
+    <select id="joinFindListBypCode"  resultMap="joinFindListBypCodeMap">
+        select tb_product1.pCode, tb_product1.pName, tb_product1.pPosition,tb_product2.pPicture,tb_product3.pCode2,tb_product3.pPrice from tb_product1
+        inner join tb_product2 on tb_product1.pCode=tb_product2.pCode
+        inner join tb_product3 on tb_product1.pCode=tb_product3.pCode
+        where tb_product1.pCode in
+        <foreach collection="list" index="index" item="ite" open="(" separator="," close=")">
+            #{ite}
+        </foreach>
+    </select>
+
+     <select id="findpCodeListByTmCodeList"  resultType="java.lang.String">
+         SELECT pCode from tb_product1
+         where tmCode in
+         <foreach collection="list" index="index" item="ite" open="(" separator="," close=")">
+         #{ite}
+        </foreach>
+     </select>
+
+    <select id="findOnePage" parameterType="java.lang.Integer" resultType="com.orz.bean.Product1">
+        select * from tb_product1 limit #{0}, #{1}
+    </select>
+
+    <!--查询一页pCoede-->
+    <select id="findOnePagepCode" parameterType="java.lang.Integer" resultType="java.lang.String">
+        select pCode from tb_product1 limit #{0}, #{1}
+    </select>
 
     <!--通过pCode查询Gpu-->
-    <select id="findAllProduct1BypCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
+    <select id="findOneProduct1BypCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product1">
         select * from tb_product1
         where pCode=#{pCode}
     </select>
@@ -148,9 +198,9 @@
 
     <!--插入一个Product1-->
     <insert id="insertOneProduct1" parameterType="com.orz.bean.Product1">
-     insert into tb_product1 (pCode,tmCode,publishTime,pType,pPosition,pOS,pChipset,pTouch,pScreenSize, pScreenResolution,
+     insert into tb_product1 (pCode,pName,tmCode,publishTime,pType,pPosition,pOS,pChipset,pTouch,pScreenSize, pScreenResolution,
        pTechnology,pCamera,pAudio,pSpeaker,pMike,pWlan,pLan,pBluetooth,pDataInterface,pAudioInterface,pVideoInterface,pOtherInterface)
-      values (#{pCode},#{tmCode},#{publishTime},#{pType},#{pPosition},#{pOS},#{pChipset},#{pTouch},#{pScreenSize},#{pScreenResolution},
+      values (#{pCode},#{pName},#{tmCode},#{publishTime},#{pType},#{pPosition},#{pOS},#{pChipset},#{pTouch},#{pScreenSize},#{pScreenResolution},
       #{pTechnology},#{pCamera},#{pAudio},#{pSpeaker},#{pMike},#{pWlan},#{pLan},#{pBluetooth},#{pDataInterface},#{pAudioInterface},#{pVideoInterface},
       #{pOtherInterface})
     </insert>
@@ -158,11 +208,11 @@
     <!--GpuName通过更新一个Gpu-->
     <update id="updateProduct1BypCode" parameterType="com.orz.bean.Product1" >
         update tb_product1
-        set pCode=#{pCode},tmCode=#{tmCode},publishTime=#{publishTime},pType=#{pType},pPosition=#{pPosition},pOS=#{pOS},pChipset=#{pChipset},
+        set pCode=#{pCode},pName=#{pName}，tmCode=#{tmCode},publishTime=#{publishTime},pType=#{pType},pPosition=#{pPosition},pOS=#{pOS},pChipset=#{pChipset},
         pTouch=#{pTouch},pScreenSize=#{pScreenSize},pScreenResolution=#{pScreenResolution},pTechnology=#{pTechnology},pCamera=#{pCamera},
         pAudio=#{pAudio},pSpeaker=#{pSpeaker},pMike=#{pMike},pWlan=#{pWlan},pLan=#{pLan},pBluetooth=#{pBluetooth},pDataInterface=#{pDataInterface},
         pAudioInterface=#{pAudioInterface},pVideoInterface=#{pVideoInterface},pOtherInterface=#{pOtherInterface}
-
+        where pCode=#{pCode}
     </update>
 
     <!--删除-->

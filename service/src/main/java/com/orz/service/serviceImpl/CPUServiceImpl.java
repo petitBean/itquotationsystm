@@ -47,6 +47,41 @@ public class CPUServiceImpl implements CPUService {
         }
     }
 
+    @Override
+    public CPU findOneCPUByCPUCode(String CPUCode) {
+        return CPUDao.findOneCPUByCPUCode(CPUCode);
+    }
 
+    @Override
+    public List<CPU> findAllCPUByCPUFactory(String CPUFactory) {
+        return null;
+    }
 
+    @Override
+    public List<CPU> findAllCPUByCPUSeries(String CPUSeries) {
+        return null;
+    }
+
+    @Override
+    public CPU findOneCPUByCPUi(String CPUi) {
+        return null;
+    }
+
+    @Override
+    public CPU findOneCPUByCPUGenerationn(Integer CPUGenerationn) {
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public void updateCPUByCode(CPU CPU) throws Exception{
+        try{
+            CPUDao.updateCPUByCode(CPU);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getCause());
+            throw new OrzException(OrzExceptionEnum.UPDATE_DATA_FAILED);
+        }
+    }
 }

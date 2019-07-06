@@ -12,6 +12,12 @@ public class Product1 {
      * 产品编码
      */
     private String pCode;
+
+    /**
+     * 名称
+     */
+    private String pName;
+
     /**
      * 品牌编码
      */
@@ -118,7 +124,33 @@ public class Product1 {
     private String other5;
 
 
+    Product2 product2; //级联查询需要
 
+    Product3 product3;
+
+    public String getpName() {
+        return pName;
+    }
+
+    public void setpName(String pName) {
+        this.pName = pName;
+    }
+
+    public Product3 getProduct3() {
+        return product3;
+    }
+
+    public void setProduct3(Product3 product3) {
+        this.product3 = product3;
+    }
+
+    public Product2 getProduct2() {
+        return product2;
+    }
+
+    public void setProduct2(Product2 product2) {
+        this.product2 = product2;
+    }
 
     public String getpCode() {
         return pCode;

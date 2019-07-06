@@ -1,0 +1,36 @@
+
+.search_container {
+    background: aqua;
+    height: 70px;
+}
+.parent {
+    position: relative;
+}
+
+.search {
+    display: block;
+    float: right;
+    width: 300px;
+    height: 40px;
+    border-radius: 18px;
+    outline: none;
+    border: 1px solid #ccc;
+    padding-left: 20px;
+    position: absolute;
+}
+.btn1 {
+    height: 35px;
+    width: 35px;
+    position: absolute;
+    background: url("/ibook/photo/search.png");
+    top: 6px;
+    left: 260px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.btn1:focus{
+    outline: none;
+    border: none;
+}
+

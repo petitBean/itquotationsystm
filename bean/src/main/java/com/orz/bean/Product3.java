@@ -14,8 +14,14 @@ public class Product3 {
      * 产品编码
      */
     private String pCode;
+
     /**
-     * CPU编码
+     *
+     */
+    private float pPrice;
+
+    /**
+     * 编码
      */
     private String CPUCode;
     /**
@@ -164,6 +170,14 @@ public class Product3 {
     private String other9;
 
     public Product3() {
+    }
+
+    public float getpPrice() {
+        return pPrice;
+    }
+
+    public void setpPrice(float pPrice) {
+        this.pPrice = pPrice;
     }
 
     public String getpCode2() {

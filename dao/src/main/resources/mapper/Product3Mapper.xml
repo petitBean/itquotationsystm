@@ -8,26 +8,31 @@
     <select id="findAllProduct3" resultType="com.orz.bean.Product3">
         select * from tb_product3
     </select>
-    <!--通过pCode2查询一个product3-->
-    <select id="findOneProduct3pCode2" parameterType="java.lang.String"  resultType="com.orz.bean.Product3">
+
+    <!--查询一个product3-->
+    <select id="findOneProduct3BypCode2AndpCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product3">
         select * from tb_product3
-        where pCode2=#{pCode2}
+        where pCode=#{0}and pCode2=#{1}
     </select>
+
     <!--通过pCode查找一个product3-->
     <select id="findOneProduct3BypCode" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
          select * from tb_product3
         where pCode=#{pCode}
     </select>
+
     <!--通过pCPUCode查找一个product3-->
     <select id="findOneProduct3ByCPUCode" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
          select * from tb_product3
         where pCPUCode=#{pCPUCode}
     </select>
+
     <!--通过pGPUCode查找一个product3-->
     <select id="findOneProduct3ByGPUCode" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
          select * from tb_product3
         where pGPUCode=#{pGPUCode}
     </select>
+
     <!--通过pCPUFactory查找product3-->
     <select id="findAllProduct3BypCpuFactory" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
          select * from tb_product3
@@ -160,27 +165,44 @@
     </select>
     <!--插入一个product3-->
     <insert id="insertOneProduct3" parameterType="com.orz.bean.Product3">
-        insert into tb_product3 (pCode2,pCode,CPUCode,GPUCode,pCpuFactory,pCpuSeries,cpUi,pCpuGeneration,pCpuType,pCpuhz,pCpumhz,pCpuAmount,pTread,pCache,pBus,pStructure,pCraft,pConsumption,pRam,pRamc,pRamType,pSsd,pDisk,pRomDescription,pCd,pGpuType,pGpuName,pGpuram,pGddr,pGpuBit,other1,other2,other3,other4,other5,other6,other7,other8,other9)
-        values (#{pCode2},#{pCode},#{CPUCode},#{GPUCode},#{pCpuFactory},#{pCpuSeries},#{cpUi},#{pCpuGeneration},#{pCpuType},#{pCpuhz},#{pCpumhz},#{pCpuAmount},#{pTread},#{pCache},#{pBus},#{pStructure},#{pCraft},#{pConsumption},#{pRam},#{pRamc},#{pRamType},#{pSsd},#{pDisk},#{pRomDescription},#{pCd},#{pGpuType},#{pGpuName},#{pGpuram},#{pGddr},#{pGpuBit},#{other1},#{other2},#{other3},#{other4},#{other5},#{other6},#{other7},#{other8},#{other9})
-
+        insert into tb_product3 (pCode2,pCode,pPrice,CPUCode,GPUCode,pCPUFactory,pCPUSeries,CPUi,pCPUGeneration,pCPUType,pCPUhz,pCPUmhz,pCPUAmount,pTread,pCache,pBus,pStructure,pCraft,pConsumption,pRam,pRamc,pRamType,pSsd,pDisk,pRomDescription,pCd,pGpuType,pGpuName,pGpuram,pGddr,pGpuBit,other1,other2,other3,other4,other5,other6,other7,other8,other9)
+        values (#{pCode2},#{pCode},#{pPrice},#{CPUCode},#{GPUCode},#{pCPUFactory},#{pCPUSeries},#{CPUi},#{pCPUGeneration},#{pCPUType},#{pCPUhz},#{pCPUmhz},#{pCPUAmount},#{pTread},#{pCache},#{pBus},#{pStructure},#{pCraft},#{pConsumption},#{pRam},#{pRamc},#{pRamType},#{pSsd},#{pDisk},#{pRomDescription},#{pCd},#{pGpuType},#{pGpuName},#{pGpuram},#{pGddr},#{pGpuBit},#{other1},#{other2},#{other3},#{other4},#{other5},#{other6},#{other7},#{other8},#{other9})
     </insert>
-    <update id="updateProduct3BypCode2" parameterType="com.orz.bean.Product3" >
-        update tb_product3
-        set  pCode=#{pCode},CPUCode=#{CPUCode},GPUCode=#{GPUCode},pCpuFactory=#{pCpuFactory},pCpuSeries=#{pCpuSeries},cpUi=#{cpUi},pCpuGeneration=#{pCpuGeneration},pCpuType=#{pCpuType},pCpuhz=#{pCpuhz},pCpumhz=#{pCpumhz},pCpuAmount=#{pCpuAmount},pTread=#{pTread},pCache=#{pCache},pBus=#{pBus},pStructure=#{pStructure},pCraft=#{pCraft},pConsumption=#{pConsumption},pRam=#{pRam},pRamc=#{pRamc},pRamType=#{pRamType},pSsd=#{pSsd},pDisk=#{pDisk},pRomDescription=#{pRomDescription},pCd=#{pCd},pGpuType=#{pGpuType},pGpuName=#{pGpuName},pGpuram=#{pGpuram},pGddr=#{pGddr},pGpuBit=#{pGpuBit}
 
-    </update>
+
     <update id="updateProduct3BypCode" parameterType="com.orz.bean.Product3" >
         update tb_product3
-        set  pCode2=#{pCode2},CPUCode=#{CPUCode},GPUCode=#{GPUCode},pCpuFactory=#{pCpuFactory},pCpuSeries=#{pCpuSeries},cpUi=#{cpUi},pCpuGeneration=#{pCpuGeneration},pCpuType=#{pCpuType},pCpuhz=#{pCpuhz},pCpumhz=#{pCpumhz},pCpuAmount=#{pCpuAmount},pTread=#{pTread},pCache=#{pCache},pBus=#{pBus},pStructure=#{pStructure},pCraft=#{pCraft},pConsumption=#{pConsumption},pRam=#{pRam},pRamc=#{pRamc},pRamType=#{pRamType},pSsd=#{pSsd},pDisk=#{pDisk},pRomDescription=#{pRomDescription},pCd=#{pCd},pGpuType=#{pGpuType},pGpuName=#{pGpuName},pGpuram=#{pGpuram},pGddr=#{pGddr},pGpuBit=#{pGpuBit}
-
+        set  pCode2=#{pCode2},pPrice=#{pPrice},CPUCode=#{CPUCode},GPUCode=#{GPUCode},pCpuFactory=#{pCpuFactory},pCpuSeries=#{pCpuSeries},cpUi=#{cpUi},pCpuGeneration=#{pCpuGeneration},pCpuType=#{pCpuType},pCpuhz=#{pCpuhz},pCpumhz=#{pCpumhz},pCpuAmount=#{pCpuAmount},pTread=#{pTread},pCache=#{pCache},pBus=#{pBus},pStructure=#{pStructure},pCraft=#{pCraft},pConsumption=#{pConsumption},pRam=#{pRam},pRamc=#{pRamc},pRamType=#{pRamType},pSsd=#{pSsd},pDisk=#{pDisk},pRomDescription=#{pRomDescription},pCd=#{pCd},pGpuType=#{pGpuType},pGpuName=#{pGpuName},pGpuram=#{pGpuram},pGddr=#{pGddr},pGpuBit=#{pGpuBit}
+        where pCode=#{pCode}
     </update>
+
+    <update id="updateProduct3BypCode2" parameterType="com.orz.bean.Product3" >
+        update tb_product3
+        set  pCode=#{pCode},pPrice=#{pPrice},CPUCode=#{CPUCode},GPUCode=#{GPUCode},pCPUFactory=#{pCPUFactory},CPUSeries=#{pCPUSeries},CPUi=#{CPU},pCPUGeneration=#{pCPUGeneration},pCPUType=#{pCPUType},pCPUhz=#{pCPUhz},pCPUmhz=#{pCPUmhz},pCPUAmount=#{pCPUAmount},pTread=#{pTread},pCache=#{pCache},pBus=#{pBus},pStructure=#{pStructure},pCraft=#{pCraft},pConsumption=#{pConsumption},pRam=#{pRam},pRamc=#{pRamc},pRamType=#{pRamType},pSsd=#{pSsd},pDisk=#{pDisk},pRomDescription=#{pRomDescription},pCd=#{pCd},pGpuType=#{pGpuType},pGpuName=#{pGpuName},pGpuram=#{pGpuram},pGddr=#{pGddr},pGpuBit=#{pGpuBit}
+        where pCode2=#{pCode2}
+    </update>
+
+    <!--通过code和code2更新-->
+    <update id="updateProduct3BypCodeAndpCode2" parameterType="com.orz.bean.Product3" >
+        update tb_product3
+        set  CPUCode=#{CPUCode},pPrice=#{pPrice},GPUCode=#{GPUCode},pCPUFactory=#{pCPUFactory},pCPUSeries=#{pCPUSeries},CPUi=#{CPUi},pCPUGeneration=#{pCPUGeneration},pCPUType=#{pCPUType},pCPUhz=#{pCPUhz},pCPUmhz=#{pCPUmhz},pCPUAmount=#{pCPUAmount},pTread=#{pTread},pCache=#{pCache},pBus=#{pBus},pStructure=#{pStructure},pCraft=#{pCraft},pConsumption=#{pConsumption},pRam=#{pRam},pRamc=#{pRamc},pRamType=#{pRamType},pSsd=#{pSsd},pDisk=#{pDisk},pRomDescription=#{pRomDescription},pCd=#{pCd},pGpuType=#{pGpuType},pGpuName=#{pGpuName},pGpuram=#{pGpuram},pGddr=#{pGddr},pGpuBit=#{pGpuBit}
+        where pCode=#{pCode}and pCode2=#{pCode2}
+    </update>
+
+    <delete id=" deleteProduct3BypCodeAndpCode2" parameterType="com.orz.bean.Product3" >
+        delete * from tb_product3
+        where pCode=#{0}and pCode2=#{1}
+     </delete>
+
+    <delete id="deleteProduct3BypCode" parameterType="com.orz.bean.Product3" >
+       delete * from tb_product3
+        where pCode=#{pCode}
+     </delete>
+
     <delete id="deleteProduct3BypCode2" parameterType="com.orz.bean.Product3" >
         delete * from tb_product3
         where pCode2=#{pCode2}
-     </delete>
-    <delete id="deleteProduct3BypCode" parameterType="com.orz.bean.Product3" >
-      delete * from tb_product3
-        where pCode=#{pCode}
-        </delete>
+    </delete>
+
 
 </mapper>

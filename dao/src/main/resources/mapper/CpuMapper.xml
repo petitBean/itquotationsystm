@@ -7,6 +7,12 @@
            select * from tb_CPU
        </select>
 
+    <!--删除-->
+    <delete id="deleteByCPUCode" parameterType="java.lang.String">
+        delete from tb_CPU
+        where CPUCode=#{CPUCode}
+    </delete>
+
     <select id="findOneCPUByCPUCode" parameterType="java.lang.String"  resultType="com.orz.bean.CPU">
         select * from tb_CPU
         where CPUCode=#{CPUCode}

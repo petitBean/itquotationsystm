@@ -1,0 +1,18 @@
+.logintop{
+
+}
+
+.inner-bg{
+    background: url("/ibook/photo/loginback.jpg") no-repeat;
+}
+
+.logonh{
+    font-family: 华文琥珀;
+    font-size: 40px;
+    color: red;
+}
+
+.toregister{
+    display: block;
+    color: red;
+}

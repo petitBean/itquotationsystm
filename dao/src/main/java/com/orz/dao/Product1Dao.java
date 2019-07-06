@@ -1,6 +1,7 @@
 package com.orz.dao;
 
 import com.orz.bean.Product1;
+import com.orz.bean.Product2;
 
 import java.util.Date;
 import java.util.List;
@@ -14,11 +15,40 @@ public interface Product1Dao {
     List<Product1> findAllProduct1();
 
     /**
-     * 通过pCode查找所有Product1
+     * 模糊查询
+     * @param keyword
+     * @return
+     */
+   List<String> findpCodeListBypNameLike(String keyword);
+
+    /**
+     * 通过pCode查找Product1
      * @param pCode
      * @return
      */
-    List<Product1>findAllProduct1BypCode(String pCode);
+    Product1 findOneProduct1BypCode(String pCode);
+
+    /**
+     * 连接查询
+     * @param list
+     * @return
+     */
+    List<Product1> joinFindListBypCode(List<String> list);
+
+    /**
+     * 查询pCodeList
+     * @param tmCodeList
+     * @return
+     */
+    List<String> findpCodeListByTmCodeList(List<String> tmCodeList);
+
+    /**
+     * 查询一页pCode
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    List<String> findOnePagepCode(Integer page,Integer pageSize);
 
     /**
      * 通过tmCode查找所有Product1
@@ -26,6 +56,14 @@ public interface Product1Dao {
      * @return
      */
     List<Product1>findAllProduct1BytmCode(String tmCode);
+
+    /**
+     * 查询一页
+     * @param page
+     * @param pageSize
+     * @return
+     */
+    List<Product1> findOnePage(Integer page,Integer pageSize);
 
     /**
      * 通过publishTime查找所有一个Product1

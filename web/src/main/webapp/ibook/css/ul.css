@@ -1,0 +1,63 @@
+#outerUl li{
+    height: 50px;
+    background-color: darkred;
+    display: block;
+    margin: 0px;
+    list-style-type: none;
+    font-size: 20px;
+}
+#outerUl li:hover{
+    background-color: firebrick;
+}
+#outerUl a{
+    color: white;
+    display: block;
+    height: 50px;
+}
+#outerUl a:hover{
+    color: cadetblue;
+    text-decoration: none;
+}
+#topBar ul li{
+    font-size: 20px;
+}
+
+#topBar3 ul li {
+    font-family: 华文新魏;
+    margin: 5px 10px 5px 40px;
+    float: left;
+    display: block;
+    list-style-type: none;
+}
+
+#topBar1 ul li{
+    margin: 5px 20px 5px 20px;
+    float: left;
+    display: block;
+    list-style-type: none;
+}
+
+#topBar a:hover{
+    color: red;
+}
+#topBar a{
+    color: black;
+}
+h1{
+    font-family: 华文琥珀;
+    font-size: 40px;
+}
+
+h2{
+    font-family: "Microsoft YaHei UI Light";
+    font-size: 20px;
+}
+
+#left input {
+    height: 30px ;width: 200px;margin: 10px 0px 0px 48px;
+    text-align: center;
+    font-size: 18px;
+    border: none;
+    background-color: crimson;
+
+}

@@ -16,6 +16,7 @@ public interface GpuService {
      */
     List<Gpu> findAllGpu();
 
+
     /**
      * 查询所有通过gpuCode
      * @return
@@ -34,7 +35,6 @@ public interface GpuService {
      */
     List<Gpu>findAllGpuBygpuName();
 
-
     /**
      * 插入一个新Gpu
      * @param gpu
@@ -47,11 +47,31 @@ public interface GpuService {
      */
     void updateGpuByName(Gpu gpu)throws Exception ;
 
+    /**
+     * 通过GPUCode更新
+     * @param gpu
+     * @throws Exception
+     */
+    public void updateGpuByGpuCode(Gpu gpu)throws Exception;
 
     /**
      * 通过Gpu名字删除gpu信息
      * @param gpu
      */
     void deleteGpuByName(Gpu gpu)throws Exception ;
+
+    /**
+     * 通过GPU代码查找一个
+     * @param gpuCode
+     * @return
+     */
+    Gpu findOneByGpuCode(String gpuCode);
+
+    /**
+     * 通过Gpu代码删除
+     * @param gpuCode
+     */
+    void deleteGpuByGpuCode(String gpuCode);
+
 
 }
