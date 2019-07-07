@@ -17,6 +17,7 @@ public enum OrzExceptionEnum {
     UPDATE_DATA_FAILED(108,"更新数据数据失败"),
     DELETE_DATA_FAILED(109,"删除数据数据失败"),
     FILE_UPLOAD_FAIED(121,"文件上传失败"),
+    AUTHRIZATION_FAILED(122,"用户未登录"),
     ; //
 
     private Integer code;

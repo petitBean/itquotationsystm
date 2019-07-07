@@ -16,6 +16,8 @@ public interface Product3Service {
 
     List<Product3> findListBypCode(String pCode);
 
+    List<Product3> findListBypCode2(String pCode2);
+
 
     /**
      * 通过主键查找

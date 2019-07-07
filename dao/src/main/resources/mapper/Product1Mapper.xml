@@ -20,6 +20,8 @@
 
         </association>
     </resultMap>
+
+
     
 
     <!--查询所有Product1信息-->
@@ -31,7 +33,14 @@
         select pCode from tb_product1
         where pName like #{keyword}
     </select>
-    
+
+
+   <select id="findCodeListByPosition" parameterType="java.lang.String" resultType="java.lang.String">
+       SELECT pCode from tb_product1
+       where pPosition=#{pPosition}
+   </select>
+
+
     <!--连接查询-->
     <select id="joinFindListBypCode"  resultMap="joinFindListBypCodeMap">
         select tb_product1.pCode, tb_product1.pName, tb_product1.pPosition,tb_product1.other1,tb_product2.pPicture,tb_product3.pCode2,tb_product3.pPrice from tb_product1
@@ -208,7 +217,7 @@
     <!--GpuName通过更新一个Gpu-->
     <update id="updateProduct1BypCode" parameterType="com.orz.bean.Product1" >
         update tb_product1
-        set pCode=#{pCode},pName=#{pName}，tmCode=#{tmCode},publishTime=#{publishTime},pType=#{pType},pPosition=#{pPosition},pOS=#{pOS},pChipset=#{pChipset},
+        set pName=#{pName},tmCode=#{tmCode},publishTime=#{publishTime},pType=#{pType},pPosition=#{pPosition},pOS=#{pOS},pChipset=#{pChipset},
         pTouch=#{pTouch},pScreenSize=#{pScreenSize},pScreenResolution=#{pScreenResolution},pTechnology=#{pTechnology},pCamera=#{pCamera},
         pAudio=#{pAudio},pSpeaker=#{pSpeaker},pMike=#{pMike},pWlan=#{pWlan},pLan=#{pLan},pBluetooth=#{pBluetooth},pDataInterface=#{pDataInterface},
         pAudioInterface=#{pAudioInterface},pVideoInterface=#{pVideoInterface},pOtherInterface=#{pOtherInterface}

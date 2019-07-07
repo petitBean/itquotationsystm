@@ -21,6 +21,7 @@ public class TrademarkServiceImpl implements TrademarkService {
     @Autowired
     private TrademarkDao trademarkDao;
 
+
     @Override
     public List<Trademark> findAllTrademark() {
         return trademarkDao.findAllTrademark();
@@ -81,6 +82,10 @@ public class TrademarkServiceImpl implements TrademarkService {
         }
     }
 
+    @Override
+    public Trademark findOneByName(String tmName) {
+        return trademarkDao.findOneByName(tmName);
+    }
 
     ///-----------------------业务逻辑-------------//
 

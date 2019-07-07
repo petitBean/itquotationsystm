@@ -16,4 +16,15 @@ public class KeyUtil {
         return key;
     }
 
+    /**
+     * 产生20位的随机字符串
+     * @return
+     */
+    public static String getPCodeKey(){
+        Random random=new Random();
+       // long number=random.nextInt(100000)+100000;
+        String key=String.valueOf(System.currentTimeMillis());
+        return key.substring(key.length()-7,key.length());
+    }
+
 }

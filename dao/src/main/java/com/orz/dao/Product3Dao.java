@@ -13,6 +13,8 @@ public interface Product3Dao {
      */
    List<Product3> findAllProduct3();
 
+ public List<Product3> findListBypCode2(String pCode2);
+
     /**
      * 通过主键查找
      * @param pCode2

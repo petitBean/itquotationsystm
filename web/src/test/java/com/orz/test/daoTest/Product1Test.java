@@ -24,6 +24,13 @@ public class Product1Test {
     private Product1Dao product1Dao;
 
     @Test
+    public void findProductVoListByPosition(){
+       // List<Product1> product1List=product1Dao.findProductVoListByPosition("0001");
+        List<String> codeListByPosition = product1Dao.findCodeListByPosition("0001");
+        return;
+    }
+
+    @Test
     public void join(){
        List<Product1> product1List= product1Dao.joinFindListBypCode(Arrays.asList("1111","11111","0001","0002","0003"));
         Assert.assertNotNull(product1List);

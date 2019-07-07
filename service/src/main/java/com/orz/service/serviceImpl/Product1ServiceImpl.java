@@ -288,4 +288,20 @@ public class Product1ServiceImpl implements Product1Service {
             return findIndexPageProductListBypCodeList(pCodeList);
         }
     }
+
+    @Override
+    public List<IndexPageProductVO> findProductVoListByPosition(Integer pageNum, Integer pageSize, String pPosition) {
+        //return null;
+        List<String> pCodeList=product1Dao.findCodeListByPosition(pPosition);
+        if(pCodeList.size()==0){
+            return null;
+        }
+        if (pCodeList.size()==0){
+            return null;
+        }
+        else {
+            PageHelper.startPage(pageNum,pageSize);
+            return findIndexPageProductListBypCodeList(pCodeList);
+        }
+    }
 }

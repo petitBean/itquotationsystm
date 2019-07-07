@@ -13,6 +13,8 @@ public interface TrademarkDao {
      */
     List<Trademark> findAllTrademark();
 
+
+    public Trademark findOneByName(String tmName);
     /**
      * 查询所有通过tmName
      * @return

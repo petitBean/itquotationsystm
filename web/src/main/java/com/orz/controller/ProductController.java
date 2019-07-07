@@ -72,6 +72,25 @@ public class ProductController {
     }
 
 
+    @RequestMapping("/findListBypPosition.do")
+    public ModelAndView findListBypPosition(@RequestParam(value = "pPosition",defaultValue = "0") String pPosition,
+                                            @RequestParam(value = "pageNum",defaultValue = "1") Integer pageNum ,
+                                            @RequestParam(value = "pageSize",defaultValue = "5") Integer pageSize,
+                                            HttpServletRequest request, HttpServletResponse response){
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("store");
+       List<IndexPageProductVO> productVoList =null;
+        productVoList=product1Service.findProductVoListByPosition(pageNum, pageSize,pPosition);
+
+        PageInfo pageInfo=new PageInfo(productVoList);
+        modelAndView.addObject("pageInfo",pageInfo);
+       // modelAndView.addObject("tmCode",tmCode);
+        //System.out.println("bbbbbbbbbbbbbbbbbb："+tmCode);
+        return modelAndView;
+    }
+
+
     @RequestMapping(value = "/searcheProductListByKeyWord.do")
     public ModelAndView searcheProductListByKeyWord(@RequestParam(value = "keyword",defaultValue = "") String keyword){
        List<IndexPageProductVO> resultVOList=product1Service.findProductVoListBypNameLike(keyword);
@@ -144,7 +163,6 @@ public class ProductController {
         Gpu gpu=gpuService.findOneByGpuCode(gpuCode);
         ModelAndView modelAndView=new ModelAndView();
         //modelAndView.setViewName("product");
-        modelAndView.setViewName("product");
         modelAndView.addObject("product",indexPageProductVOList.get(0));
         modelAndView.addObject("cpu",cpu);
         modelAndView.addObject("gpu",gpu);
@@ -164,6 +182,8 @@ public class ProductController {
         List<Evalution> evalutionList=evalutionService.findOnePageByHeuper(pageNum,pageSize,pCode);
         PageInfo pageInfo=new PageInfo(evalutionList);
         modelAndView.addObject("pageInfo",pageInfo);
+
+        modelAndView.setViewName("product");
 
         return modelAndView;
     }

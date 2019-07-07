@@ -38,4 +38,10 @@ public class TreadmarkTest {
         Assert.assertEquals(2,trademarkList.size());
     }
 
+    @Test
+    public void findOneByName(){
+        Trademark byName = trademarkService.findOneByName("惠普");
+        return;
+    }
+
 }

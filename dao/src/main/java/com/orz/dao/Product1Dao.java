@@ -14,6 +14,8 @@ public interface Product1Dao {
      */
     List<Product1> findAllProduct1();
 
+    List<String> findCodeListByPosition(String pPosition);
+
     /**
      * 模糊查询
      * @param keyword

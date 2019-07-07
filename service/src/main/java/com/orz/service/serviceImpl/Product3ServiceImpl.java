@@ -22,6 +22,11 @@ public class Product3ServiceImpl implements Product3Service {
     private Product3Dao product3Dao;
 
     @Override
+    public List<Product3> findListBypCode2(String pCode2) {
+        return product3Dao.findListBypCode2(pCode2);
+    }
+
+    @Override
     public List<Product3> findAllProduct3() {
         return product3Dao.findAllProduct3();
     }

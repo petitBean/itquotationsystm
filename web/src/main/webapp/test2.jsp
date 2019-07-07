@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@page isELIgnored="false"%>
+<%@page isELIgnored="false" %>
 <html>
 <head>
     <title>笔记本电脑详细参数</title>
@@ -33,7 +33,7 @@
         }
     })();</script>
     <%--<link href="http://s.zol-img.com.cn/d/Pro/Pro_seriesParam_v4.css?v=43515" rel="stylesheet"/>--%>
-    <%--<link href="${pageContext.request.contextPath}/css/pro_seriesParam_v4.css?v=43515" rel="stylesheet">--%>
+<%--    <link href="${pageContext.request.contextPath}/css/pro_seriesParam_v4.css?v=43515" rel="stylesheet">--%>
 
     <script type="text/javascript" src="http://icon.zol-img.com.cn/swfobject.js"></script>
     <script type="text/javascript" src="http://p.zol-img.com.cn/detail_ad/detail.js"></script>
@@ -67,26 +67,35 @@
 <body>
 
 
-
 <div class="wrapper clearfix">
     <div class="section">
 
         <div class="mod_bd mod_series_param">
             <div id="seriesParamTableFixed1">
 
+                <%--===============传输列表名称 productP productListP==============--%>
+
                 <table class="series_param_detail">
                     <tr class="nohover base_tr">
                         <th>型号</th>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1057TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1064TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1057TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1064TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1057TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1064TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
+
+                        <%--===============================--%>
+                        <%--                        <c:forEach var="item" items="${productListP}">
+                                                    <c:choose>
+                                                        <c:when test="${item.pName == null}">
+                                                            <td class="pro_name"></td>
+                                                        </c:when>
+                                                        <c:otherwise>
+                                                            <td class="pro_name">${item.pName}</td>
+                                                        </c:otherwise>
+                                                    </c:choose>
+                                                </c:forEach>--%>
+                        <%--===============--%>
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td class="pro_name">${productP.pName}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
 
                     </tr>
                 </table>
@@ -96,66 +105,34 @@
                 <table class="series_param_detail">
                     <tr class="nohover base_tr">
                         <th>价格/商家</th>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">8799</b></span>
-                                <span class="price-status">[请选择请选择]</span> <span class="date">2019-07-03</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">6299</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">7599</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">7299</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">8299</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">6999</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">5799</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">7299</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">6599</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">8099</b></span>
-                                <span class="date">2019-05-14</span>
-                            </div>
-                        </td>
+
+                        <%--==============================--%>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pPrice == null}">
+                                    <td>
+                                        <div class="price_td">
+                                            <span class="price"><b class=""></b></span>
+                                            <span class="date"></span>
+                                        </div>
+                                    </td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>
+                                        <div class="price_td">
+                                            <span class="price">￥<b class="">${item.pPrice}</b></span>
+
+<%--
+                                        <span class="date">${item.publishTime}</span>
+--%>
+
+                                        </div>
+                                    </td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                        <%--====================================--%>
+
                     </tr>
                 </table>
             </div>
@@ -165,1133 +142,769 @@
                     <tr class="nohover base_tr">
                         <th data-num="param1_1">型号</th>
 
-
-           <%--             &lt;%&ndash;===============================&ndash;%&gt;
-                        <c:forEach var="item" items="${productListP}">
-                            <c:choose>
-                                <c:when test="${item.pName == null}">
-                                    <td class="pro_name"></td>
-                                </c:when>
-                                <c:otherwise>
-                                    <td class="pro_name">${item.pName}</td>
-                                </c:otherwise>
-                            </c:choose>
-                        </c:forEach>
-                        &lt;%&ndash;===============&ndash;%&gt;--%>
-                        <c:forEach begin="1" end="${productListP.size()}"  >
+                        <c:forEach begin="1" end="${productListP.size()}">
                             <td class="pro_name">${productP.pName}</td>
                         </c:forEach>
-                        <%--======================================--%>
-<%--
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>--%>
+                        <%--====================================--%>
                     </tr>
 
                     <tr class="nohover base_tr">
                         <th data-num="param1_2">图片</th>
-                        <td><a href="/notebook/index1235182.shtml"><img width="80" height="60"
-                                                                        src="https://2f.zol-img.com.cn/product/198_80x60/237/ceSFWL0eEpH3g.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273975.shtml"><img width="80" height="60"
-                                                                        src="https://2b.zol-img.com.cn/product/198_80x60/353/ceM0FtcBKxIg.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273968.shtml"><img width="80" height="60"
-                                                                        src="https://2c.zol-img.com.cn/product/198_80x60/354/celqCFMwMLLE.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273971.shtml"><img width="80" height="60"
-                                                                        src="https://2c.zol-img.com.cn/product/198_80x60/384/cet5f88VIxIDA.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273965.shtml"><img width="80" height="60"
-                                                                        src="https://2c.zol-img.com.cn/product/198_80x60/402/ce99BuZ8z0RxQ.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273972.shtml"><img width="80" height="60"
-                                                                        src="https://2c.zol-img.com.cn/product/198_80x60/372/ceCRgT7yjaXAg.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273974.shtml"><img width="80" height="60"
-                                                                        src="https://2a.zol-img.com.cn/product/198_80x60/346/ceeOdDqfthRE.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273969.shtml"><img width="80" height="60"
-                                                                        src="https://2c.zol-img.com.cn/product/198_80x60/390/ceXv4ac8eCSE.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273973.shtml"><img width="80" height="60"
-                                                                        src="https://2c.zol-img.com.cn/product/198_80x60/468/cexGsUTRbOog.jpg"></a>
-                        </td>
-                        <td><a href="/notebook/index1273966.shtml"><img width="80" height="60"
-                                                                        src="https://2b.zol-img.com.cn/product/198_80x60/347/ce6N0M7gAdgo.jpg"></a>
-                        </td>
+
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td><a href="${pageContext.request.contextPath}/img/${productP.pPicture}"><img width="80"
+                                                                                                           height="60"></a>
+                            </td>
+                        </c:forEach>
+                        <%--====================================--%>
+
                     </tr>
 
                     <tr class="nohover base_tr">
                         <th data-num="param1_3">价格/商家</th>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">8799</b></span>
-                                <span class="price-status">[请选择请选择]</span>
-
-                                <span class="date">2019-07-03</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">6299</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">7599</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">7299</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">8299</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">6999</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">5799</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">7299</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">6599</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
-                        <td>
-                            <div class="price_td">
-                                <span class="price">￥<b class="">8099</b></span>
-
-
-                                <span class="date">2019-05-14</span>
-
-                            </div>
-                        </td>
+                        <%--==============================--%>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCode== null}">
+<%--
+                                <c:when test="${item.pCode== null}">
+--%>
+                                    <td>
+                                        <div class="price_td">
+                                            <span class="price"><b class=""></b></span>
+                                            <span class="date"></span>
+                                        </div>
+                                    </td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>
+                                        <div class="price_td">
+                                            <span class="price">￥<b class="">${item.pPrice}</b></span>
+<%--
+                                            <span class="date">${item.publishTime}</span>
+--%>
+                                        </div>
+                                    </td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                        <%--====================================--%>
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'1"><span>基本参数</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_1_1'>上市时间</th>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
-                        <td>2019年05月</td>
+
+                        <%--==============================--%>
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.publishTime}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_1_2'>产品类型</th>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
-                        <td>家用</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pType}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_1_3'>产品定位</th>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
-                        <td>游戏本</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pPosition}</td>
+                        </c:forEach>
+                        <%--======================================--%>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_1_4'>操作系统</th>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
-                        <td>预装Windows 10 Home Basic 64bit（64位家庭普通版）</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pOS}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_1_5'>主板芯片组</th>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
-                        <td>Intel HM370</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pChipset}</td>
+                        </c:forEach>
+                        <%--======================================--%>
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'2"><span>处理器</span></th>
                     </tr>
                     <tr class=''>
                         <th data-num='param_2_6'>CPU系列</th>
-                        <td>英特尔 酷睿i7 9代系列</td>
-                        <td>英特尔 酷睿i5 9代系列</td>
-                        <td>英特尔 酷睿i5 9代系列</td>
-                        <td>英特尔 酷睿i7 9代系列</td>
-                        <td>英特尔 酷睿i7 9代系列</td>
-                        <td>英特尔 酷睿i7 9代系列</td>
-                        <td>英特尔 酷睿i5 9代系列</td>
-                        <td>英特尔 酷睿i5 9代系列</td>
-                        <td>英特尔 酷睿i5 9代系列</td>
-                        <td>英特尔 酷睿i5 9代系列</td>
+
+                        <%--===============================================--%>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCPUSeries == null}">
+                                    <td></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>${item.pCPUSeries}</td>
+
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                        <%--==============================--%>
                     </tr>
                     <tr class=''>
                         <th data-num='param_2_7'>CPU型号</th>
-                        <td>Intel 酷睿i7 9750H</td>
-                        <td>Intel 酷睿i5 9300H</td>
-                        <td>Intel 酷睿i5 9300H</td>
-                        <td>Intel 酷睿i7 9750H</td>
-                        <td>Intel 酷睿i7 9750H</td>
-                        <td>Intel 酷睿i7 9750H</td>
-                        <td>Intel 酷睿i5 9300H</td>
-                        <td>Intel 酷睿i5 9300H</td>
-                        <td>Intel 酷睿i5 9300H</td>
-                        <td>Intel 酷睿i5 9300H</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCPUType == null}">
+                                    <td></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>${item.pCPUType}</td>
+
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                        <%--==============================--%>
+
                     </tr>
                     <tr class=''>
                         <th data-num='param_2_8'>CPU主频</th>
-                        <td>2.6GHz</td>
-                        <td>2.4GHz</td>
-                        <td>2.4GHz</td>
-                        <td>2.6GHz</td>
-                        <td>2.6GHz</td>
-                        <td>2.6GHz</td>
-                        <td>2.4GHz</td>
-                        <td>2.4GHz</td>
-                        <td>2.4GHz</td>
-                        <td>2.4GHz</td>
+
+                        <%--===============================================--%>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCPUHZ == null}">
+                                    <td></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>${item.pCPUHZ}</td>
+
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+
                     </tr>
                     <tr class=''>
                         <th data-num='param_2_9'>最高睿频</th>
-                        <td>4.5GHz</td>
-                        <td>4.1GHz</td>
-                        <td>4.1GHz</td>
-                        <td>4.5GHz</td>
-                        <td>4.5GHz</td>
-                        <td>4.5GHz</td>
-                        <td>4.1GHz</td>
-                        <td>4.1GHz</td>
-                        <td>4.1GHz</td>
-                        <td>4.1GHz</td>
+
+                        <%--===============================================--%>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCPUMHZ == null}">
+                                    <td></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>${item.pCPUMHZ}</td>
+
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                        <%--==============================--%>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class=''>
                         <th data-num='param_2_10'>核心/线程数</th>
-                        <td>六核心/十二线程</td>
-                        <td>四核心/八线程</td>
-                        <td>四核心/八线程</td>
-                        <td>六核心/十二线程</td>
-                        <td>六核心/十二线程</td>
-                        <td>六核心/十二线程</td>
-                        <td>四核心/八线程</td>
-                        <td>四核心/八线程</td>
-                        <td>四核心/八线程</td>
-                        <td>四核心/八线程</td>
+
+                        <%--===============================================--%>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCPUAmount == null&&item.pTread}">
+                                    <td></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td>${item.pCPUAmount}核心/${item.pTread}线程</td>
+
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+
                     </tr>
                     <tr class=''>
                         <th data-num='param_2_11'>三级缓存</th>
-                        <td>12MB</td>
-                        <td>8MB</td>
-                        <td>8MB</td>
-                        <td>12MB</td>
-                        <td>12MB</td>
-                        <td>12MB</td>
-                        <td>8MB</td>
-                        <td>8MB</td>
-                        <td>8MB</td>
-                        <td>8MB</td>
+
+
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCache == null}">
+                                    <td class="pro_pCache"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pCache">${item.pCache}MB</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_2_12'>总线规格</th>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
-                        <td>DMI 8 GT/s</td>
+
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pBus == null}">
+                                    <td class="pro_pBus"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pBus">${item.pBus}</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_2_13'>核心架构</th>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
-                        <td>Coffee Lake</td>
+
+
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pStructure == null}">
+                                    <td class="pro_pStructure"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pStructure">${item.pStructure}</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_2_14'>制程工艺</th>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
-                        <td>14nm</td>
+
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pCraft == null}">
+                                    <td class="pro_pCraft"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pCraft">${item.pCraft}nm</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_2_15'>功耗</th>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
-                        <td>45W</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pConsumption == null}">
+                                    <td class="pro_pConsumption"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pConsumption">${item.pConsumption}W</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'3"><span>存储设备</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_3_16'>内存容量</th>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
-                        <td>8GB（8GB×1）</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pRAM == null}">
+                                    <td class="pro_pRam"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pRam">${item.pRAM}G</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_3_17'>内存类型</th>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
-                        <td>DDR4 2666MHz</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pRAM == null}">
+                                    <td class="pro_pRamType"></td>
+                                    pRamType
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pRamType">LPDDR3（低功耗版）${item.pRAMType}MHz</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_3_18'>硬盘容量</th>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
-                        <td>512GB</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pSSD == null}">
+                                    <td class="pro_pSSD"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pSSD">${item.pSSD}GB</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_3_19'>硬盘描述</th>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
-                        <td>PCIe NVMe M.2 SSD固态硬盘</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pROMDescription == null}">
+                                    <td class="pro_pROMDescription"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pROMDescription">${item.pROMDescription}</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class='same'>
+
+
+
                         <th data-num='param_3_20'>光驱类型</th>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
-                        <td>无内置光驱</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+<%--
+                            <td class="pro_pCD">${productP.pCD}</td>
+--%>
+                        </c:forEach>
+                        <%--======================================--%>
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'4"><span>显示屏</span></th>
                     </tr>
+                    <%--***********************--%>
+
+
                     <tr class='same'>
                         <th data-num='param_4_21'>触控屏</th>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
-                        <td>不支持触控</td>
+
+                        <%--==============================--%>
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pTouch}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_4_22'>屏幕尺寸</th>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                        <td>15.6英寸</td>
-                    </tr>
-                    <tr class='same'>
-                        <th data-num='param_4_23'>显示比例</th>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                        <td>16:9</td>
-                    </tr>
+                        <%--==============================--%>
+                        <c:forEach begin="1" end="${productListP.size()}">
+                        <td>${productP.pScreenSize}</td>
+                        </c:forEach>
+
+                        <%--                </tr>
+                                        <tr class='same'>
+                                            <th data-num='param_4_23'>显示比例</th>
+
+                                            &lt;%&ndash;==============================&ndash;%&gt;
+                                            <c:forEach begin="1" end="${productListP.size()}">
+                                                <td>${productP.}</td>
+                                            </c:forEach>
+
+                                        </tr>--%>
                     <tr class='same'>
                         <th data-num='param_4_24'>屏幕分辨率</th>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
-                        <td>1920x1080</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td class="pro_pScreenResolution">${productP.pScreenResolution}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class=''>
                         <th data-num='param_4_25'>屏幕技术</th>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，144Hz，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，144Hz，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，144Hz，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，144Hz，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，144Hz，80%屏占比</td>
-                        <td>FHD，WLED背光，防炫目屏，IPS屏，4.99mm超窄边框，144Hz，80%屏占比</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td class="pro_pTechnology">${productP.pTechnology}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'5"><span>显卡</span></th>
                     </tr>
+
+
+                    <%--*************************--%>
+
                     <tr class=''>
                         <th data-num='param_5_26'>显卡类型</th>
-                        <td>发烧级独立显卡</td>
-                        <td>发烧级独立显卡</td>
-                        <td>发烧级独立显卡</td>
-                        <td>发烧级独立显卡</td>
-                        <td>发烧级独立显卡</td>
-                        <td>发烧级独立显卡</td>
-                        <td>性能级独立显卡</td>
-                        <td>发烧级独立显卡</td>
-                        <td>发烧级独立显卡</td>
-                        <td>发烧级独立显卡</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pGPUType == null}">
+                                    <td class="pro_pGPUType"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pGPUType">${item.pGPUType}</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class=''>
                         <th data-num='param_5_27'>显卡芯片</th>
-                        <td>NVIDIA GeForce RTX 2060</td>
-                        <td>NVIDIA GeForce GTX 1650</td>
-                        <td>NVIDIA GeForce GTX 1660Ti</td>
-                        <td>NVIDIA GeForce GTX 1650</td>
-                        <td>NVIDIA GeForce GTX 1660Ti</td>
-                        <td>NVIDIA GeForce GTX 1650</td>
-                        <td>NVIDIA GeForce GTX 1050</td>
-                        <td>NVIDIA GeForce GTX 1660Ti</td>
-                        <td>NVIDIA GeForce GTX 1650</td>
-                        <td>NVIDIA GeForce RTX 2060</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pGPUName== null}">
+                                    <td class="pro_pGPUName"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pGPUName">${item.pGPUName}</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class=''>
                         <th data-num='param_5_28'>显存容量</th>
-                        <td>6GB</td>
-                        <td>4GB</td>
-                        <td>6GB</td>
-                        <td>4GB</td>
-                        <td>6GB</td>
-                        <td>4GB</td>
-                        <td>4GB</td>
-                        <td>6GB</td>
-                        <td>4GB</td>
-                        <td>6GB</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pGPURAM== null}">
+                                    <td class="pro_pGPURam"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pGPURam">${item.pGPURAM}G</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class=''>
                         <th data-num='param_5_29'>显存类型</th>
-                        <td>GDDR6</td>
-                        <td>GDDR5</td>
-                        <td>GDDR6</td>
-                        <td>GDDR5</td>
-                        <td>GDDR6</td>
-                        <td>GDDR5</td>
-                        <td>GDDR5</td>
-                        <td>GDDR6</td>
-                        <td>GDDR5</td>
-                        <td>GDDR6</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pGDDR== null}">
+                                    <td class="pro_pGDDR"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pGDDR">${item.pGDDR}</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class=''>
                         <th data-num='param_5_30'>显存位宽</th>
-                        <td>192bit</td>
-                        <td>128bit</td>
-                        <td></td>
-                        <td>192bit</td>
-                        <td></td>
-                        <td>192bit</td>
-                        <td>128bit</td>
-                        <td></td>
-                        <td>192bit</td>
-                        <td>192bit</td>
+                        <c:forEach var="item" items="${productListP}">
+                            <c:choose>
+                                <c:when test="${item.pGPUBit== null}">
+                                    <td class="pro_pGPUbit"></td>
+                                </c:when>
+                                <c:otherwise>
+                                    <td class="pro_pGPUbit">${item.pGPUBit}</td>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'6"><span>多媒体设备</span></th>
                     </tr>
+
+
+                    <%--88888888888888888888888888888888888888888888--%>
                     <tr class='same'>
                         <th data-num='param_6_31'>摄像头</th>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
-                        <td>720p HD摄像头</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pCamera}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_6_32'>音频系统</th>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
-                        <td>B&O音效，Audio Boost，DTS Headphone:X</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pAudio}</td>
+                        </c:forEach>
+                        <%--======================================--%>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_6_33'>扬声器</th>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
-                        <td>内置双扬声器</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pSpeaker}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_6_34'>麦克风</th>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
-                        <td>集成双阵列数字麦克风</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pMike}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'7"><span>网络通信</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_7_35'>无线网卡</th>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
-                        <td>Intel 9560 AC，支持802.11a/b/g/n/ac(2x2)</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pWlan}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_7_36'>有线网卡</th>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
-                        <td>1000Mbps以太网卡</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pLan}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_7_37'>蓝牙</th>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
-                        <td>支持，蓝牙5.0模块</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pBluetooth}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'8"><span>I/O接口</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_8_38'>数据接口</th>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
-                        <td>2×USB3.1Gen1接口，雷电3接口</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pDataInterface}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_8_39'>视频接口</th>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
-                        <td>HDMI，Mini DisplayPort</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pAudioInterface}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_8_40'>音频接口</th>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
-                        <td>耳机输出接口，麦克风输入接口</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pVideoInterface}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_8_41'>其它接口</th>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
-                        <td>RJ45（网络接口），电源接口</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pOtherInterface}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'9"><span>输入设备</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_9_42'>指取设备</th>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
-                        <td>多点触摸手势的触摸板</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pFingeringEquipment}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_9_43'>键盘描述</th>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
-                        <td>带数字小键盘的全尺寸岛式火龙红传奇2区照明红背光键盘</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pKeyboard}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'10"><span>电源描述</span></th>
                     </tr>
                     <tr class=''>
                         <th data-num='param_10_44'>电池类型</th>
-                        <td>4芯锂电池，70瓦时</td>
-                        <td>3芯锂电池，52瓦时</td>
-                        <td>4芯锂电池，70瓦时</td>
-                        <td>3芯锂电池，52瓦时</td>
-                        <td>4芯锂电池，70瓦时</td>
-                        <td>3芯锂电池，52瓦时</td>
-                        <td>3芯锂电池，52瓦时</td>
-                        <td>4芯锂电池，70瓦时</td>
-                        <td>3芯锂电池，52瓦时</td>
-                        <td>4芯锂电池，70瓦时</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pBatteryType}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_10_45'>续航时间</th>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
-                        <td>视具体使用环境而定</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pDuration}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class=''>
                         <th data-num='param_10_46'>电源适配器</th>
-                        <td>100V-240V 200W 自适应交流电源适配器</td>
-                        <td>100V-240V 150W 自适应交流电源适配器</td>
-                        <td>100V-240V 200W 自适应交流电源适配器</td>
-                        <td>100V-240V 150W 自适应交流电源适配器</td>
-                        <td>100V-240V 200W 自适应交流电源适配器</td>
-                        <td>100V-240V 150W 自适应交流电源适配器</td>
-                        <td>100V-240V 135W 自适应交流电源适配器</td>
-                        <td>100V-240V 200W 自适应交流电源适配器</td>
-                        <td>100V-240V 150W 自适应交流电源适配器</td>
-                        <td>100V-240V 200W 自适应交流电源适配器</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pPowerAdapter}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'11"><span>外观</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_11_47'>笔记本重量</th>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
-                        <td>2.32Kg</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pWeight}kg</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_11_48'>长度</th>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
-                        <td>360mm</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pLengh}mm</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_11_49'>宽度</th>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
-                        <td>263mm</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pWidth}mm</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_11_50'>厚度</th>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
-                        <td>26mm</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pThickness}mm</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_11_51'>外壳材质</th>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
-                        <td>复合材质</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pShellMaterial}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_11_52'>外壳描述</th>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
-                        <td>黑色</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pShellDescription}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'12"><span>其他</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_12_53'>安全性能</th>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
-                        <td>安全锁孔</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pSafety}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_12_54'>散热系统</th>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
-                        <td>四热管散热<br/>
-                            散热模式：均衡模式，酷冷模式，狂暴模式
-                        </td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pDissipation}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_12_55'>附带软件</th>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
-                        <td>McAfee LiveSafe，McAfee LiveSafe 12 个月免费试用（需要连接互联网） 包括12个月之后的实时更新需要订购。）</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pSoftware}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'13"><span>笔记本附件</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_13_56'>包装清单</th>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
-                        <td>笔记本主机&nbsp;x1<br/>
-                            电池&nbsp;x1<br/>
-                            电源适配器&nbsp;x1<br/>
-                            电源线&nbsp;x1<br/>
-                            说明书&nbsp;x1<br/>
-                            保修卡&nbsp;x1
-                        </td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pPackagingList}</td>
+                        </c:forEach>
+                        <%--======================================--%>
+
                     </tr>
                     <tr class="nohover param_type_tr">
                         <th class="param_type" colspan="11" data-num="param2_'14"><span>保修信息</span></th>
                     </tr>
                     <tr class='same'>
                         <th data-num='param_14_57'>保修政策</th>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
-                        <td>全国联保，享受三包服务</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pGuarantee}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_14_58'>质保时间</th>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
-                        <td>1年</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pWarranty}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_14_59'>质保备注</th>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
-                        <td>对于个人消费者用户，惠普将严格按照三包规定，提供一年整机保修，两年主要部件保修的售后服务</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pWarrantyRemark}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_14_60'>客服电话</th>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
-                        <td>800-810-3888；400-610-3888</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pTel}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_14_61'>电话备注</th>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
-                        <td>周一至周五：8:30-21:00（节假日休息）</td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pTelRemark}</td>
+                        </c:forEach>
+
                     </tr>
                     <tr class='same'>
                         <th data-num='param_14_62'>详细内容</th>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
-                        <td>
-                            售后服务由品牌厂商提供，支持全国联保，可享有三包服务。如出现产品质量问题或故障，您可查询最近的维修点，由厂商售后解决。也可凭厂商维修中心或特约维修点所提供的质量检测证明，享受7日内退货，15日内换货。超过15日又在质保期内，可享受免费保修等三包服务政策。惠普笔记本不同型号产品保修年限不同，以保修卡为准，可拨打客服电话具体查询。<a
-                                href=http://www8.hp.com/cn/zh/support-drivers/esupport/e800.html
-                                target=_blank>进入官网>></a></td>
+
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td>${productP.pDatail}</td>
+                        </c:forEach>
+
+
+
+
+
                     </tr>
                     <tr class="nohover base_tr">
                         <th data-num="param3_1">型号</th>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1068TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1057TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1064TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1062TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1067TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1061TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1055TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1063TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1060TX</td>
-                        <td class="pro_name">惠普暗影精灵5 OMEN 15-dc1066TX</td>
+                        <c:forEach begin="1" end="${productListP.size()}">
+                            <td class="pro_name">${productP.pName}</td>
+                        </c:forEach>
                     </tr>
                 </table>
             </div>
@@ -1301,16 +914,6 @@
         </div>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
 
 
 <div id="seriesParamTableFixed3">
@@ -1569,8 +1172,10 @@
 <script src="http://s.zol-img.com.cn/d/Pro/Pro_seriesParam_v4_Old.js?v=43515"></script>
 <div class="wrapper">
     <script>var __publicNavWidth = 1200;</script>
-    <script language="JavaScript" type="text/javascript" src="http://icon.zol-img.com.cn/public/js/web_footc.js"></script>
-    <script language="JavaScript" type="text/javascript" src="http://icon.zol-img.com.cn/public/js/web_foot_d.js"></script>
+    <script language="JavaScript" type="text/javascript"
+            src="http://icon.zol-img.com.cn/public/js/web_footc.js"></script>
+    <script language="JavaScript" type="text/javascript"
+            src="http://icon.zol-img.com.cn/public/js/web_foot_d.js"></script>
     <script>
         var _dxt = _dxt || [];
         var ipCkStr = document.cookie.match(/ip_ck=([^;$]+)/)[1];

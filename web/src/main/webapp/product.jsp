@@ -77,8 +77,8 @@
                 <%
                 }else{
                 %>
-                <li><a href="#"><i></i>登陆</a></li>
-                <li><a href="#"><i></i>注销</a></li>
+                <li><a href="${pageContext.request.contextPath}/toLogin.do"><i></i>登陆</a></li>
+                <li><a href="${pageContext.request.contextPath}/logout.do"><i></i>注销</a></li>
                 <%
                     }
                 %>
@@ -432,7 +432,7 @@
                                                 <li>
                                                     <div class="_j_param_inner">
                                                         <strong>CPU主频：</strong>
-                                                        <span>${product3.pCPUhz}Hz</span>
+                                                        <span>${product3.pCPUHZ}Hz</span>
                                                     </div>
                                                 </li>
                                             </ul>

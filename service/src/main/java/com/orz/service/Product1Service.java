@@ -25,6 +25,8 @@ public interface Product1Service {
      */
     List<Product1> findAllProduct1();
 
+    List<IndexPageProductVO> findProductVoListByPosition(Integer pageNum, Integer pageSize,String pPosition);
+
     /**
      * 连接查询
      *

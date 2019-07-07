@@ -63,8 +63,8 @@
             <%
                 }else{
                         %>
-                <li><a href="#"><i></i>登陆</a></li>
-                <li><a href="#"><i></i>注销</a></li>
+                <li><a href="${pageContext.request.contextPath}/toLogin.do"><i></i>登陆</a></li>
+                <li><a href="${pageContext.request.contextPath}/logout.do"><i></i>注销</a></li>
 <%
                     }
 %>
@@ -283,10 +283,10 @@
                     <div class="section-nav">
                         <ul class="section-tab-nav tab-nav">
                             <li class="active"><a data-toggle="tab" href="#tab1">产品定位</a></li>
-                            <li><a data-toggle="tab" href="#tab1">游戏本</a></li>
-                            <li><a data-toggle="tab" href="#tab1">轻薄笔记本</a></li>
-                            <li><a data-toggle="tab" href="#tab1">商务办公本</a></li>
-                            <li><a data-toggle="tab" href="#tab1">影音娱乐本</a></li>
+                            <li><a data-toggle="tab" href="${pageContext.request.contextPath}/findListBypPosition.do?pPosition=游戏本">游戏本</a></li>
+                            <li><a data-toggle="tab" href="${pageContext.request.contextPath}/findListBypPosition.do?pPosition=轻薄笔记本">轻薄笔记本</a></li>
+                            <li><a data-toggle="tab" href="${pageContext.request.contextPath}/findListBypPosition.do?pPosition=商务办公本">商务办公本</a></li>
+                            <li><a data-toggle="tab" href="${pageContext.request.contextPath}/findListBypPosition.do?pPosition=影音娱乐本">影音娱乐本</a></li>
                         </ul>
                     </div>
                 </div>

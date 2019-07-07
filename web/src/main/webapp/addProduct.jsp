@@ -220,10 +220,10 @@
 <!-- /HEADER -->
 <div class="wrapper">
 
-    <form action="#" method="post">
+    <form action="${pageContext.request.contextPath}/addOneProduct.do" method="post">
 
     <div class="s_condition clearfix" id="s_filter">
-        <div class="title_ser"><strong>笔记本电脑高级搜索</strong><span></span>
+        <div class="title_ser"><strong>添加产品</strong><span></span>
         </div>
 
 
@@ -233,99 +233,100 @@
         <dl id="manuSer">
             <dt>笔记本电脑品牌</dt>
             <dd>
-                <label for="manu_160" title="联想"><input type="radio" id="manu_160" name="trademark" value="联想">联想</label>
-                <label for="manu_223" title="惠普"><input type="radio" id="manu_223" name="trademark" value="惠普">惠普</label>
-                <label for="manu_21" title="戴尔"><input type="radio" id="manu_21" name="trademark" value="戴尔">戴尔</label>
-                <label for="manu_613" title="华为"><input type="radio" id="manu_613" name="trademark" value="华为">华为</label>
-                <label for="manu_227" title="华硕"><input type="radio" id="manu_227" name="trademark" value="华硕">华硕</label>
-                <label for="manu_218" title="Acer宏碁"><input type="radio" id="manu_218" name="trademark" value="Acer宏基">Acer宏碁</label>
-                <label for="manu_364" title="微软"><input type="radio" id="manu_364" name="trademark" value="微软">微软</label>
-                <label for="manu_544" title="苹果"><input type="radio" id="manu_544" name="trademark" value="苹果">苹果</label>
-                <label for="manu_32108" title="ThinkPad"><input type="radio" id="manu_32108" name="trademark" value="ThinkPad">ThinkPad</label>
-                <label for="manu_33520" title="Alienware"><input type="radio" id="manu_33520" name="trademark" value="Alienware">Alienware</label>
-                <label for="manu_1191" title="神舟"><input type="radio" id="manu_1191" name="trademark" value="神州">神舟</label>
-                <label for="manu_35578" title="机械革命"><input type="radio" id="manu_35578" name="trademark" value="机械革命">机械革命</label>
-                <label for="manu_98" title="三星"><input type="radio" id="manu_98" name="trademark" value="三星">三星</label>
-                <label for="manu_35393" title="雷神"><input type="radio" id="manu_35393" name="trademark" value="雷神">雷神</label>
-                <label for="manu_36359" title="机械师"><input type="radio" id="manu_36359" name="trademark" value="机械师">机械师</label>
-                <label for="manu_133" title="MSI微星"><input type="radio" id="manu_133" name="trademark" value="MSI微星">MSI微星</label>
-                <label for="manu_41373" title="ROG"><input type="radio" id="manu_41373" name="trademark" value="ROG">ROG</label>
-                <label for="manu_50840" title="荣耀"><input type="radio" id="manu_50840" name="trademark" value="荣耀">荣耀</label>
-                <label for="manu_34645" title="小米"><input type="radio" name="trademark" id="manu_34645" value="小米">小米</label>
-                <label for="manu_36793" title="中柏"><input type="radio" id="manu_36793" name="trademark" value="中柏">中柏</label>
-                <label for="manu_1590" title="雷蛇"><input type="radio" id="manu_1590" name="trademark" value="雷蛇">雷蛇</label>
+                <label for="manu_160" title="联想"><input type="radio" id="manu_160" name="tmName" value="联想">联想</label>
+                <label for="manu_223" title="惠普"><input type="radio" id="manu_223" name="tmName" value="惠普">惠普</label>
+                <label for="manu_21" title="戴尔"><input type="radio" id="manu_21" name="tmName" value="戴尔">戴尔</label>
+                <label for="manu_613" title="华为"><input type="radio" id="manu_613" name="tmName" value="华为">华为</label>
+                <label for="manu_227" title="华硕"><input type="radio" id="manu_227" name="tmName" value="华硕">华硕</label>
+                <label for="manu_218" title="Acer宏碁"><input type="radio" id="manu_218" name="tmName" value="Acer宏基">Acer宏碁</label>
+                <label for="manu_364" title="微软"><input type="radio" id="manu_364" name="tmName" value="微软">微软</label>
+                <label for="manu_544" title="苹果"><input type="radio" id="manu_544" name="tmName" value="苹果">苹果</label>
+                <label for="manu_32108" title="ThinkPad"><input type="radio" id="manu_32108" name="tmName" value="ThinkPad">ThinkPad</label>
+                <label for="manu_33520" title="Alienware"><input type="radio" id="manu_33520" name="tmName" value="Alienware">Alienware</label>
+                <label for="manu_1191" title="神舟"><input type="radio" id="manu_1191" name="tmName" value="神舟">神舟</label>
+                <label for="manu_35578" title="机械革命"><input type="radio" id="manu_35578" name="tmName" value="机械革命">机械革命</label>
+                <label for="manu_98" title="三星"><input type="radio" id="manu_98" name="tmName" value="三星">三星</label>
+                <label for="manu_35393" title="雷神"><input type="radio" id="manu_35393" name="tmName" value="雷神">雷神</label>
+                <label for="manu_36359" title="机械师"><input type="radio" id="manu_36359" name="tmName" value="机械师">机械师</label>
+                <label for="manu_133" title="MSI微星"><input type="radio" id="manu_133" name="tmName" value="MSI微星">MSI微星</label>
+                <label for="manu_41373" title="ROG"><input type="radio" id="manu_41373" name="tmName" value="ROG">ROG</label>
+                <label for="manu_50840" title="荣耀"><input type="radio" id="manu_50840" name="tmName" value="荣耀">荣耀</label>
+                <label for="manu_34645" title="小米"><input type="radio" name="tmName" id="manu_34645" value="小米">小米</label>
+                <label for="manu_36793" title="中柏"><input type="radio" id="manu_36793" name="tmName" value="中柏">中柏</label>
+                <label for="manu_1590" title="雷蛇"><input type="radio" id="manu_1590" name="tmName" value="雷蛇">雷蛇</label>
                 <%--=====================================================================--%>
 
-                <label for="manu_24" title="清华同方"><input type="radio" id="manu_24" name="trademark" value="m24">清华同方</label>
-                <label for="manu_36391" title="炫龙"><input type="radio" id="manu_36391" name="trademark" value="m36391">炫龙</label>
-                <label for="manu_143" title="LG"><input type="radio" id="manu_143" name="trademark" value="m143">LG</label>
-                <label for="manu_55731" title="红米"><input type="radio" id="manu_55731" name="trademark" value="m55731">红米</label>
-                <label for="manu_54255" title="a豆"><input type="radio" id="manu_54255" name="trademark" value="m54255">a豆</label>
-                <label for="manu_53851" title="吾空"><input type="radio" id="manu_53851" name="trademark" value="m53851">吾空</label>
-                <label for="manu_221" title="海尔"><input type="radio" id="manu_221" name="trademark" value="m221">海尔</label>
-                <label for="manu_36607" title="火影"><input type="radio" id="manu_36607" name="trademark" value="m36607">火影</label>
-                <label for="manu_37353" title="麦本本"><input type="radio" id="manu_37353" name="trademark" value="m37353">麦本本</label>
-                <label for="manu_50829" title="VAIO"><input type="radio" id="manu_50829" name="trademark" value="m50829">VAIO</label>
-                <label for="manu_34305" title="Terrans Force"><input type="radio" id="manu_34305" name="trademark" value="m34305">Terrans Force</label>
-                <label for="manu_234" title="技嘉"><input type="radio" id="manu_234" name="trademark" value="m234">技嘉</label>
-                <label for="manu_209" title="东芝"><input type="radio" id="manu_209" name="trademark" value="m209">东芝</label>
-                <label for="manu_54562" title="壹号本"><input type="radio" id="manu_54562" name="trademark" value="m54562">壹号本</label>
-                <label for="manu_283" title="富士通"><input type="radio" id="manu_283" name="trademark" value="m283">富士通</label>
-                <label for="manu_1922" title="谷歌"><input type="radio" id="manu_1922" name="trademark" value="m1922">谷歌</label>
-                <label for="manu_34329" title="锡恩帝"><input type="radio" name="trademark" id="manu_34329" value="m34329">锡恩帝</label>
-                <label for="manu_265" title="昂达"><input type="radio" id="manu_265" name="trademark" value="m265">昂达</label>
-                <label for="manu_84" title="松下"><input type="radio" id="manu_84" name="trademark" value="m84">松下</label>
-                <label for="manu_47841" title="宝扬"><input type="radio" id="manu_47841" name="trademark" value="m47841">宝扬</label>
-                <label for="manu_35232" title="海鲅"><input type="radio" id="manu_35232" name="trademark" value="m35232">海鲅</label>
-                <label for="manu_2251" title="酷比魔方"><input type="radio" id="manu_2251" name="trademark" value="m2251">酷比魔方</label>
-                <label for="manu_52061" title="博本"><input type="radio" id="manu_52061" name="trademark" value="m52061">博本</label>
-                <label for="manu_51642" title="ENZ"><input type="radio" id="manu_51642" name="trademark" value="m51642">ENZ</label>
-                <label for="manu_50972" title="爱尔轩"><input type="radio" id="manu_50972" name="trademark" value="m50972">爱尔轩</label>
-                <label for="manu_34055" title="索立信"><input type="radio" id="manu_34055" name="trademark" value="m34055">索立信</label>
-                <label for="manu_47070" title="刀客"><input type="radio" id="manu_47070" name="trademark" value="m47070">刀客</label>
-                <label for="manu_34130" title="镭波"><input type="radio" id="manu_34130" name="trademark" value="m34130">镭波</label>
-                <label for="manu_49394" title="紫麦"><input type="radio" id="manu_49394" name="trademark" value="m49394">紫麦</label>
-                <label for="manu_54916" title="AVITA"><input type="radio" id="manu_54916" name="trademark" value="m54916">AVITA</label>
-                <label for="manu_51268" title="金属大师"><input type="radio" id="manu_51268" name="trademark" value="m51268">金属大师</label>
-                <label for="manu_33832" title="SOSOON"><input type="radio" id="manu_33832" name="trademark" value="m33832">SOSOON</label>
-                <label for="manu_26" title="长城"><input type="radio" id="manu_26" name="trademark" value="m26">长城</label>
-                <label for="manu_23" title="七喜"><input type="radio" id="manu_23" name="trademark" value="m23">七喜</label>
-                <label for="manu_171" title="TCL"><input type="radio" id="manu_171" name="trademark" value="m171">TCL</label>
-                <label for="manu_212" title="方正"><input type="radio" id="manu_212" name="trademark" value="m212">方正</label>
-                <label for="manu_249" title="紫光"><input type="radio" id="manu_249" name="trademark" value="m249">紫光</label>
-                <label for="manu_167" title="索尼"><input type="radio" id="manu_167" name="trademark" value="m167">索尼</label>
-                <label for="manu_151" title="NEC"><input type="radio" id="manu_151" name="trademark" value="m151">NEC</label>
-                <label for="manu_51186" title="翼昇"><input type="radio" id="manu_51186" name="trademark" value="m51186">翼昇</label>
-                <label for="manu_125" title="Intel"><input type="radio" id="manu_125" name="trademark" value="m125">Intel</label>
-                <label for="manu_300" title="夏普"><input type="radio" id="manu_300" name="trademark" value="m300">夏普</label>
-                <label for="manu_314" title="优派"><input type="radio" id="manu_314" name="trademark" value="m314">优派</label>
-                <label for="manu_34021" title="科之光"><input type="radio" id="manu_34021" name="trademark" value="m34021">科之光</label>
-                <label for="manu_34018" title="明唐"><input type="radio" id="manu_34018" name="trademark" value="m34018">明唐</label>
-                <label for="manu_19776" title="瀚斯宝丽"><input type="radio" id="manu_19776" name="trademark" value="m19776">瀚斯宝丽</label>
-                <label for="manu_33677" title="典籍"><input type="radio" id="manu_33677" name="trademark" value="m33677">典籍</label>
-                <label for="manu_32479" title="索泰"><input type="radio" id="manu_32479" name="trademark" value="m32479">索泰</label>
-                <label for="manu_33033" title="现代IT世家"><input type="radio" id="manu_33033" name="trademark" value="m33033">现代IT世家</label>
-                <label for="manu_34201" title="富登"><input type="radio" id="manu_34201" name="trademark" value="m34201">富登</label>
-                <label for="manu_34264" title="万顺达"><input type="radio" id="manu_34264" name="trademark" value="m34264">万顺达</label>
-                <label for="manu_36595" title="联想扬天"><input type="radio" id="manu_36595" name="trademark" value="m36595">联想扬天</label>
-                <label for="manu_407" title="明基"><input type="radio" id="manu_407" name="trademark" value="m407">明基</label>
-                <label for="manu_813" title="Gateway"><input type="radio" id="manu_813" name="trademark" value="m813">Gateway</label>
-                <label for="manu_833" title="多彩"><input type="radio" id="manu_833" name="trademark" value="m833">多彩</label>
-                <label for="manu_34946" title="Wbin"><input type="radio" id="manu_34946" name="trademark" value="m34946">Wbin</label>
-                <label for="manu_34842" title="DCMOFA"><input type="radio" id="manu_34842" name="trademark" value="m34842">DCMOFA</label>
-                <label for="manu_34681" title="神酷"><input type="radio" id="manu_34681" name="trademark" value="m34681">神酷</label>
-                <label for="manu_974" title="新蓝"><input type="radio" id="manu_974" name="trademark" value="m974">新蓝</label>
-                <label for="manu_33046" title="eMachines"><input type="radio" id="manu_33046" name="trademark" value="m33046">eMachines</label>
-                <label for="manu_970" title="台电"><input type="radio" id="manu_970" name="trademark" value="m970">台电</label>
-                <label for="manu_33057" title="HD Computer"><input type="radio" id="manu_33057" name="trademark" value="m33057">HD Computer</label>
-                <label for="manu_33168" title="COYOB"><input type="radio" id="manu_33168" name="trademark" value="m33168">COYOB</label>
-                <label for="manu_33141" title="磐正Q-Mi"><input type="radio" id="manu_33141" name="trademark" value="m33141">磐正Q-Mi</label>
-                <label for="manu_1071" title="万利达"><input type="radio" id="manu_1071" name="trademark" value="m1071">万利达</label>
-                <label for="manu_33967" title="索华"><input type="radio" name="trademark" id="manu_33967" value="m33967">索华</label>
-                <label for="manu_413" title="七彩虹"><input type="radio" id="manu_413" name="trademark" value="m413">七彩虹</label>
-                <label for="manu_33922" title="天玑"><input type="radio" id="manu_33922" name="trademark" value="m33922">天玑</label>
-                <label for="manu_34002" title="ESER宇朔"><input type="radio" id="manu_34002" name="trademark" value="m34002">ESER宇朔</label>
-                <label for="manu_33290" title="睿逸"><input type="radio" id="manu_33290" name="trademark" value="m33290">睿逸</label>
+
+                <label for="manu_24" title="清华同方"><input type="radio" id="manu_24" name="tmName" value="清华同方">清华同方</label>
+                <label for="manu_36391" title="炫龙"><input type="radio" id="manu_36391" name="tmName" value="炫龙">炫龙</label>
+                <label for="manu_143" title="LG"><input type="radio" id="manu_143" name="tmName" value="LG">LG</label>
+                <label for="manu_55731" title="红米"><input type="radio" id="manu_55731" name="tmName" value="红米">红米</label>
+                <label for="manu_54255" title="a豆"><input type="radio" id="manu_54255" name="tmName" value="a豆">a豆</label>
+                <label for="manu_53851" title="吾空"><input type="radio" id="manu_53851" name="tmName" value="吾空">吾空</label>
+                <label for="manu_221" title="海尔"><input type="radio" id="manu_221" name="tmName" value="海尔">海尔</label>
+                <label for="manu_36607" title="火影"><input type="radio" id="manu_36607" name="tmName" value="火影">火影</label>
+                <label for="manu_37353" title="麦本本"><input type="radio" id="manu_37353" name="tmName" value="麦本本">麦本本</label>
+                <label for="manu_50829" title="VAIO"><input type="radio" id="manu_50829" name="tmName" value="VAIO">VAIO</label>
+                <label for="manu_34305" title="Terrans Force"><input type="radio" id="manu_34305" name="tmName" value="Terrans Force">Terrans Force</label>
+                <label for="manu_234" title="技嘉"><input type="radio" id="manu_234" name="tmName" value="技嘉">技嘉</label>
+                <label for="manu_209" title="东芝"><input type="radio" id="manu_209" name="tmName" value="东芝">东芝</label>
+                <label for="manu_54562" title="壹号本"><input type="radio" id="manu_54562" name="tmName" value="壹号本">壹号本</label>
+                <label for="manu_283" title="富士通"><input type="radio" id="manu_283" name="tmName" value="富士通">富士通</label>
+                <label for="manu_1922" title="谷歌"><input type="radio" id="manu_1922" name="tmName" value="谷歌">谷歌</label>
+                <label for="manu_34329" title="锡恩帝"><input type="radio" name="tmName" id="manu_34329" value="锡恩帝">锡恩帝</label>
+                <label for="manu_265" title="昂达"><input type="radio" id="manu_265" name="tmName" value="昂达">昂达</label>
+                <label for="manu_84" title="松下"><input type="radio" id="manu_84" name="tmName" value="松下">松下</label>
+                <label for="manu_47841" title="宝扬"><input type="radio" id="manu_47841" name="tmName" value="宝扬">宝扬</label>
+                <label for="manu_35232" title="海鲅"><input type="radio" id="manu_35232" name="tmName" value="海鲅">海鲅</label>
+                <label for="manu_2251" title="酷比魔方"><input type="radio" id="manu_2251" name="tmName" value="酷比魔方">酷比魔方</label>
+                <label for="manu_52061" title="博本"><input type="radio" id="manu_52061" name="tmName" value="博本">博本</label>
+                <label for="manu_51642" title="ENZ"><input type="radio" id="manu_51642" name="tmName" value="ENZ">ENZ</label>
+                <label for="manu_50972" title="爱尔轩"><input type="radio" id="manu_50972" name="tmName" value="爱尔轩">爱尔轩</label>
+                <label for="manu_34055" title="索立信"><input type="radio" id="manu_34055" name="tmName" value="索立信">索立信</label>
+                <label for="manu_47070" title="刀客"><input type="radio" id="manu_47070" name="tmName" value="刀客">刀客</label>
+                <label for="manu_34130" title="镭波"><input type="radio" id="manu_34130" name="tmName" value="镭波">镭波</label>
+                <label for="manu_49394" title="紫麦"><input type="radio" id="manu_49394" name="tmName" value="紫麦">紫麦</label>
+                <label for="manu_54916" title="AVITA"><input type="radio" id="manu_54916" name="tmName" value="AVITA">AVITA</label>
+                <label for="manu_51268" title="金属大师"><input type="radio" id="manu_51268" name="tmName" value="金属大师">金属大师</label>
+                <label for="manu_33832" title="SOSOON"><input type="radio" id="manu_33832" name="tmName" value="SOSOON">SOSOON</label>
+                <label for="manu_26" title="长城"><input type="radio" id="manu_26" name="tmName" value="长城">长城</label>
+                <label for="manu_23" title="七喜"><input type="radio" id="manu_23" name="tmName" value="七喜">七喜</label>
+                <label for="manu_171" title="TCL"><input type="radio" id="manu_171" name="tmName" value="TCL">TCL</label>
+                <label for="manu_212" title="方正"><input type="radio" id="manu_212" name="tmName" value="方正">方正</label>
+                <label for="manu_249" title="紫光"><input type="radio" id="manu_249" name="tmName" value="紫光">紫光</label>
+                <label for="manu_167" title="索尼"><input type="radio" id="manu_167" name="tmName" value="索尼">索尼</label>
+                <label for="manu_151" title="NEC"><input type="radio" id="manu_151" name="tmName" value="NEC">NEC</label>
+                <label for="manu_51186" title="翼昇"><input type="radio" id="manu_51186" name="tmName" value="翼昇">翼昇</label>
+                <label for="manu_125" title="Intel"><input type="radio" id="manu_125" name="tmName" value="Intel">Intel</label>
+                <label for="manu_300" title="夏普"><input type="radio" id="manu_300" name="tmName" value="夏普">夏普</label>
+                <label for="manu_314" title="优派"><input type="radio" id="manu_314" name="tmName" value="优派">优派</label>
+                <label for="manu_34021" title="科之光"><input type="radio" id="manu_34021" name="tmName" value="科之光">科之光</label>
+                <label for="manu_34018" title="明唐"><input type="radio" id="manu_34018" name="tmName" value="明唐">明唐</label>
+                <label for="manu_19776" title="瀚斯宝丽"><input type="radio" id="manu_19776" name="tmName" value="瀚斯宝丽">瀚斯宝丽</label>
+                <label for="manu_33677" title="典籍"><input type="radio" id="manu_33677" name="tmName" value="典籍">典籍</label>
+                <label for="manu_32479" title="索泰"><input type="radio" id="manu_32479" name="tmName" value="索泰">索泰</label>
+                <label for="manu_33033" title="现代IT世家"><input type="radio" id="manu_33033" name="tmName" value="现代IT世家">现代IT世家</label>
+                <label for="manu_34201" title="富登"><input type="radio" id="manu_34201" name="tmName" value="富登">富登</label>
+                <label for="manu_34264" title="万顺达"><input type="radio" id="manu_34264" name="tmName" value="万顺达">万顺达</label>
+                <label for="manu_36595" title="联想扬天"><input type="radio" id="manu_36595" name="tmName" value="联想扬天">联想扬天</label>
+                <label for="manu_407" title="明基"><input type="radio" id="manu_407" name="tmName" value="明基">明基</label>
+                <label for="manu_813" title="Gateway"><input type="radio" id="manu_813" name="tmName" value="Gateway">Gateway</label>
+                <label for="manu_833" title="多彩"><input type="radio" id="manu_833" name="tmName" value="多彩">多彩</label>
+                <label for="manu_34946" title="Wbin"><input type="radio" id="manu_34946" name="tmName" value="Wbin">Wbin</label>
+                <label for="manu_34842" title="DCMOFA"><input type="radio" id="manu_34842" name="tmName" value="DCMOFA">DCMOFA</label>
+                <label for="manu_34681" title="神酷"><input type="radio" id="manu_34681" name="tmName" value="神酷">神酷</label>
+                <label for="manu_974" title="新蓝"><input type="radio" id="manu_974" name="tmName" value="新蓝">新蓝</label>
+                <label for="manu_33046" title="eMachines"><input type="radio" id="manu_33046" name="tmName" value="eMachines">eMachines</label>
+                <label for="manu_970" title="台电"><input type="radio" id="manu_970" name="tmName" value="台电">台电</label>
+                <label for="manu_33057" title="HD Computer"><input type="radio" id="manu_33057" name="tmName" value="HD Computer">HD Computer</label>
+                <label for="manu_33168" title="COYOB"><input type="radio" id="manu_33168" name="tmName" value="COYOB">COYOB</label>
+                <label for="manu_33141" title="磐正Q-Mi"><input type="radio" id="manu_33141" name="tmName" value="磐正Q-Mi">磐正Q-Mi</label>
+                <label for="manu_1071" title="万利达"><input type="radio" id="manu_1071" name="tmName" value="万利达">万利达</label>
+                <label for="manu_33967" title="索华"><input type="radio" name="tmName" id="manu_33967" value="索华">索华</label>
+                <label for="manu_413" title="七彩虹"><input type="radio" id="manu_413" name="tmName" value="七彩虹">七彩虹</label>
+                <label for="manu_33922" title="天玑"><input type="radio" id="manu_33922" name="tmName" value="天玑">天玑</label>
+                <label for="manu_34002" title="ESER宇朔"><input type="radio" id="manu_34002" name="tmName" value=">ESER宇朔">ESER宇朔</label>
+                <label for="manu_33290" title="睿逸"><input type="radio" id="manu_33290" name="tmName" value="睿逸">睿逸</label>
             </dd>
         </dl>
 
@@ -345,10 +346,12 @@
         <dl>
             <dt>产品类型</dt>
             <dd>
+            <dd>
                 <label for="param_5900" title="商用"><input type="radio" id="param_5900" name="pType"
                                                           value="商用">商用</label>
                 <label for="param_5901" title="家用"><input type="radio" id="param_5901" name="pType"
                                                           value="家用">家用</label>
+            </dd>
             </dd>
         </dl>
 
@@ -372,17 +375,17 @@
         <dl>
             <dt>操作系统</dt>
             <dd>
-                <label for="param_6313" title="Windows 10"><input type="radio" id="param_6313" name="OS"
+                <label for="param_6313" title="Windows 10"><input type="radio" id="param_6313" name="pOS"
                                                                   value="Windows 10" checked>Windows 10</label>
-                <label for="param_5218" title="Windows 8/8.1"><input type="radio" id="param_5218" name="OS"
+                <label for="param_5218" title="Windows 8/8.1"><input type="radio" id="param_5218" name="pOS"
                                                                      value="Windows 8/8.1">Windows 8/8.1</label>
-                <label for="param_6580" title="Windows 7"><input type="radio" id="param_6580" name="OS"
+                <label for="param_6580" title="Windows 7"><input type="radio" id="param_6580" name="pOS"
                                                                  value="Windows 7">Windows 7</label>
-                <label for="param_2411" title="DOS/Linux"><input type="radio" id="param_2411" name="OS"
+                <label for="param_2411" title="DOS/Linux"><input type="radio" id="param_2411" name="pOS"
                                                                  value="DOS/Linux">DOS/Linux</label>
-                <label for="param_2413" title="Mac OS苹果系统"><input type="radio" id="param_2413" name="OS"
+                <label for="param_2413" title="Mac OS苹果系统"><input type="radio" id="param_2413" name="pOS"
                                                                   value="Mac OS苹果系统">Mac OS苹果系统</label>
-                <label for="param_5529" title="Google Chrome OS"><input type="radio" id="param_5529" name="OS"
+                <label for="param_5529" title="Google Chrome OS"><input type="radio" id="param_5529" name="pOS"
                                                                         value="Google Chrome OS">Google Chrome
                     OS</label>
             </dd>
@@ -391,7 +394,7 @@
         <dl>
             <dt>主板芯片组</dt>
             <dd>
-                <input type="text" name="chipset"></dd>
+                <input type="text" name="pChipset"></dd>
         </dl>
         <%--基本参数--%>
 
@@ -399,8 +402,8 @@
         <dl>
             <dt>触控支持</dt>
             <dd>
-                <label for="touch_1" title="不支持触控"><input type="radio" id="touch_1" name="pTouch" value="1" checked>不支持触控</label>
-                <label for="touch_0" title="支持触控"><input type="radio" id="touch_0" name="pTouch" value="0">支持触控</label>
+                <label for="touch_1" title="不支持触控"><input type="radio" id="touch_1" name="pTouch" value="0" checked>不支持触控</label>
+                <label for="touch_0" title="支持触控"><input type="radio" id="touch_0" name="pTouch" value="1">支持触控</label>
             </dd>
         </dl>
 
@@ -491,23 +494,23 @@
             <dt>蓝牙</dt>
             <dd>
                 <label for="Bluetooth5.0" title="蓝牙5.0"><input type="radio" id="Bluetooth5.0" name="pBluetooth"
-                                                               value="s7577">蓝牙5.0</label>
+                                                               value="蓝牙5.0">蓝牙5.0</label>
                 <label for="Bluetooth4.2" title="蓝牙4.2"><input type="radio" id="Bluetooth4.2" name="pBluetooth"
-                                                               value="s6651">蓝牙4.2</label>
+                                                               value="蓝牙4.2">蓝牙4.2</label>
                 <label for="Bluetooth4.1" title="蓝牙4.1"><input type="radio" id="Bluetooth4.1" name="pBluetooth"
-                                                               value="s6470">蓝牙4.1</label>
+                                                               value="蓝牙4.1">蓝牙4.1</label>
                 <label for="Bluetooth4.0" title="蓝牙4.0"><input type="radio" id="Bluetooth4.0" name="pBluetooth"
-                                                               value="s4113">蓝牙4.0</label>
+                                                               value="蓝牙4.0">蓝牙4.0</label>
                 <label for="Bluetooth3.0" title="蓝牙5.0"><input type="radio" id="Bluetooth3.0" name="pBluetooth"
-                                                               value="s7577">蓝牙3.0</label>
+                                                               value="蓝牙3.0">蓝牙3.0</label>
                 <label for="Bluetooth2.1" title="蓝牙5.0"><input type="radio" id="Bluetooth2.1" name="pBluetooth"
-                                                               value="s7577">蓝牙2.1</label>
+                                                               value="蓝牙2.1">蓝牙2.1</label>
                 <label for="Bluetooth2.0" title="蓝牙5.0"><input type="radio" id="Bluetooth2.0" name="pBluetooth"
-                                                               value="s7577">蓝牙2.0</label>
+                                                               value="蓝牙2.0">蓝牙2.0</label>
                 <label for="Bluetooth1.2" title="蓝牙5.0"><input type="radio" id="Bluetooth1.2" name="pBluetooth"
-                                                               value="s7577">蓝牙1.2</label>
+                                                               value="蓝牙1.2">蓝牙1.2</label>
                 <label for="Bluetooth1.0" title="蓝牙5.0"><input type="radio" id="Bluetooth1.0" name="pBluetooth"
-                                                               value="s7577">蓝牙1.0</label>
+                                                               value="蓝牙1.0">蓝牙1.0</label>
 
             </dd>
         </dl>
@@ -561,8 +564,8 @@
         <dl>
             <dt>指纹识别</dt>
             <dd>
-                <label for="pFI1" title="指纹识别"><input type="radio" id="pFI1" name="pFI" value="1">支持指纹识别</label>
-                <label for="pFI2" title="指纹识别"><input type="radio" id="pFI2" name="pFI" value="0">不支持指纹识别</label>
+                <label for="pFI1" title="指纹识别"><input type="radio" id="pFI1" name="pFingerprintIdentific" value="1">支持指纹识别</label>
+                <label for="pFI2" title="指纹识别"><input type="radio" id="pFI2" name="ppFingerprintIdentific" value="0">不支持指纹识别</label>
             </dd>
         </dl>
         <%--输入设备--%>
@@ -728,121 +731,121 @@
         <dl>
             <dt>CPU型号</dt>
             <dd>
-                <label for="param_8136" title="酷睿i9 9880H"><input type="radio" id="param_8136" name="CPU" value="s8136">酷睿i9 9880H</label>
-                <label for="param_8135" title="酷睿i9 9980HK"><input type="radio" id="param_8135" name="CPU" value="s8135">酷睿i9 9980HK</label>
-                <label for="param_7927" title="酷睿i9 9900K"><input type="radio" id="param_7927" name="CPU" value="s7927">酷睿i9 9900K</label>
-                <label for="param_8071" title="酷睿i7 9750H"><input type="radio" id="param_8071" name="CPU" value="s8071">酷睿i7 9750H</label>
-                <label for="param_8073" title="酷睿i5 9300H"><input type="radio" id="param_8073" name="CPU" value="s8073">酷睿i5 9300H</label>
-                <label for="param_8072" title="酷睿i5 9400"><input type="radio" id="param_8072" name="CPU" value="s8072">酷睿i5 9400</label>
-                <label for="param_7926" title="酷睿i7 9700K"><input type="radio" id="param_7926" name="CPU" value="s7926">酷睿i7 9700K</label>
-                <label for="param_7925" title="酷睿i5 9600K"><input type="radio" id="param_7925" name="CPU" value="s7925">酷睿i5 9600K</label>
-                <label for="param_7842" title="酷睿i7 8565U"><input type="radio" id="param_7842" name="CPU" value="s7842">酷睿i7 8565U</label>
-                <label for="param_7841" title="酷睿i5 8265U"><input type="radio" id="param_7841" name="CPU" value="s7841">酷睿i5 8265U</label>
-                <label for="param_7843" title="酷睿i3 8145U"><input type="radio" id="param_7843" name="CPU" value="s7843">酷睿i3 8145U</label>
-                <label for="param_7642" title="酷睿i9 8950HK"><input type="radio" id="param_7642" name="CPU" value="s7642">酷睿i9 8950HK</label>
-                <label for="param_7641" title="酷睿i7 8750H"><input type="radio" id="param_7641" name="CPU" value="s7641">酷睿i7 8750H</label>
-                <label for="param_7354" title="酷睿i7 8550U"><input type="radio" id="param_7354" name="CPU" value="s7354">酷睿i7 8550U</label>
-                <label for="param_7644" title="酷睿i5 8300H"><input type="radio" id="param_7644" name="CPU" value="s7644">酷睿i5 8300H</label>
-                <label for="param_7701" title="酷睿i3 8100"><input type="radio" id="param_7701" name="CPU" value="s7701">酷睿i3 8100</label>
-                <label for="param_7350" title="酷睿i5 8250U"><input type="radio" id="param_7350" name="CPU" value="s7350">酷睿i5 8250U</label>
-                <label for="param_7294" title="酷睿i7 7820HK"><input type="radio" id="param_7294" name="CPU" value="s7294">酷睿i7 7820HK</label>
-                <label for="param_7293" title="酷睿i7 7700HQ"><input type="radio" id="param_7293" name="CPU" value="s7293">酷睿i7 7700HQ</label>
-                <label for="param_7292" title="酷睿i5 7300HQ"><input type="radio" id="param_7292" name="CPU" value="s7292">酷睿i5 7300HQ</label>
-                <label for="param_6992" title="酷睿i7 7500U"><input type="radio" id="param_6992" name="CPU" value="s6992">酷睿i7 7500U</label>
-                <label for="param_6991" title="酷睿i5 7200U"><input type="radio" id="param_6991" name="CPU" value="s6991">酷睿i5 7200U</label>
-                <label for="param_6330" title="酷睿i7 6820HK"><input type="radio" id="param_6330" name="CPU" value="s6330">酷睿i7 6820HK</label>
-                <label for="param_6614" title="酷睿i7 6700K"><input type="radio" id="param_6614" name="CPU" value="s6614">酷睿i7 6700K</label>
-                <label for="param_6435" title="酷睿i7 6700HQ"><input type="radio" id="param_6435" name="CPU" value="s6435">酷睿i7 6700HQ</label>
-                <label for="param_6613" title="酷睿i7 6600U"><input type="radio" id="param_6613" name="CPU" value="s6613">酷睿i7 6600U</label>
-                <label for="param_6612" title="酷睿i7 6560U"><input type="radio" id="param_6612" name="CPU" value="s6612">酷睿i7 6560U</label>
-                <label for="param_6326" title="酷睿i7 6500U"><input type="radio" id="param_6326" name="CPU" value="s6326">酷睿i7 6500U</label>
-                <label for="param_6436" title="酷睿i5 6300HQ"><input type="radio" id="param_6436" name="CPU" value="s6436">酷睿i5 6300HQ</label>
-                <label for="param_6611" title="酷睿i5 6300U"><input type="radio" id="param_6611" name="CPU" value="s6611">酷睿i5 6300U</label>
-                <label for="param_6325" title="酷睿i5 6200U"><input type="radio" id="param_6325" name="CPU" value="s6325">酷睿i5 6200U</label>
-                <label for="param_6610" title="酷睿i3 6100U"><input type="radio" id="param_6610" name="CPU" value="s6610">酷睿i3 6100U</label>
-                <label for="param_6298" title="酷睿i7 5700HQ"><input type="radio" id="param_6298" name="CPU" value="s6298">酷睿i7 5700HQ</label>
-                <label for="param_6300" title="酷睿i7 5600U"><input type="radio" id="param_6300" name="CPU" value="s6300">酷睿i7 5600U</label>
-                <label for="param_6303" title="酷睿i7 5500U"><input type="radio" id="param_6303" name="CPU" value="s6303">酷睿i7 5500U</label>
-                <label for="param_6295" title="酷睿i5 5300U"><input type="radio" id="param_6295" name="CPU" value="s6295">酷睿i5 5300U</label>
-                <label for="param_6294" title="酷睿i5 5200U"><input type="radio" id="param_6294" name="CPU" value="s6294">酷睿i5 5200U</label>
-                <label for="param_6287" title="酷睿i3 5010U"><input type="radio" id="param_6287" name="CPU" value="s6287">酷睿i3 5010U</label>
-                <label for="param_6286" title="酷睿i3 5005U"><input type="radio" id="param_6286" name="CPU" value="s6286">酷睿i3 5005U</label>
-                <label for="param_5056" title="酷睿i3 4005U"><input type="radio" id="param_5056" name="CPU" value="s5056">酷睿i3 4005U</label>
-                <label for="param_5587" title="酷睿i3 4030U"><input type="radio" id="param_5587" name="CPU" value="s5587">酷睿i3 4030U</label>
-                <label for="param_5667" title="酷睿i5 4210M"><input type="radio" id="param_5667" name="CPU" value="s5667">酷睿i5 4210M</label>
-                <label for="param_4721" title="酷睿i5 4200U"><input type="radio" id="param_4721" name="CPU" value="s4721">酷睿i5 4200U</label>
-                <label for="param_5589" title="酷睿i5 4210U"><input type="radio" id="param_5589" name="CPU" value="s5589">酷睿i5 4210U</label>
-                <label for="param_6609" title="酷睿i7 4510U"><input type="radio" id="param_6609" name="CPU" value="s6609">酷睿i7 4510U</label>
-                <label for="param_5596" title="酷睿i7 4710MQ"><input type="radio" id="param_5596" name="CPU" value="s5596">酷睿i7 4710MQ</label>
-                <label for="param_5776" title="酷睿i7 4710HQ"><input type="radio" id="param_5776" name="CPU" value="s5776">酷睿i7 4710HQ</label>
-                <label for="param_6607" title="酷睿M7 6Y75"><input type="radio" id="param_6607" name="CPU" value="s6607">酷睿M7 6Y75</label>
-                <label for="param_6606" title="酷睿M5 6Y57"><input type="radio" id="param_6606" name="CPU" value="s6606">酷睿M5 6Y57</label>
-                <label for="param_6605" title="酷睿M5 6Y54"><input type="radio" id="param_6605" name="CPU" value="s6605">酷睿M5 6Y54</label>
-                <label for="param_6604" title="酷睿M3 6Y30"><input type="radio" id="param_6604" name="CPU" value="s6604">酷睿M3 6Y30</label>
-                <label for="param_6603" title="酷睿M 5Y71"><input type="radio" id="param_6603" name="CPU" value="s6603">酷睿M 5Y71</label>
-                <label for="param_6602" title="酷睿M 5Y51"><input type="radio" id="param_6602" name="CPU" value="s6602">酷睿M 5Y51</label>
-                <label for="param_6601" title="酷睿M 5Y10"><input type="radio" id="param_6601" name="CPU" value="s6601">酷睿M 5Y10</label>
-                <label for="param_6439" title="奔腾四核 N3700"><input type="radio" id="param_6439" name="CPU" value="s6439">奔腾四核 N3700</label>
-                <label for="param_6438" title="奔腾四核 N3540"><input type="radio" id="param_6438" name="CPU" value="s6438">奔腾四核 N3540</label>
-                <label for="param_5624" title="奔腾双核 3558U"><input type="radio" id="param_5624" name="CPU" value="s5624">奔腾双核 3558U</label>
-                <label for="param_6440" title="赛扬双核 N3050"><input type="radio" id="param_6440" name="CPU" value="s6440">赛扬双核 N3050</label>
-                <label for="param_6442" title="赛扬双核 N2840"><input type="radio" id="param_6442" name="CPU" value="s6442">赛扬双核 N2840</label>
-                <label for="param_6441" title="赛扬双核 3205U"><input type="radio" id="param_6441" name="CPU" value="s6441">赛扬双核 3205U</label>
-                <label for="param_6444" title="赛扬四核 N3150"><input type="radio" id="param_6444" name="CPU" value="s6444">赛扬四核 N3150</label>
-                <label for="param_6443" title="赛扬四核 N2940"><input type="radio" id="param_6443" name="CPU" value="s6443">赛扬四核 N2940</label>
-                <label for="param_6600" title="Atom Z8300"><input type="radio" id="param_6600" name="CPU" value="s6600">Atom Z8300</label>
+                <label for="param_8136" title="酷睿i9 9880H"><input type="radio" id="param_8136" name="CPU" value="酷睿i9 9880H">酷睿i9 9880H</label>
+                <label for="param_8135" title="酷睿i9 9980HK"><input type="radio" id="param_8135" name="CPU" value="酷睿i9 9980HK">酷睿i9 9980HK</label>
+                <label for="param_7927" title="酷睿i9 9900K"><input type="radio" id="param_7927" name="CPU" value="酷睿i9 9900K">酷睿i9 9900K</label>
+                <label for="param_8071" title="酷睿i7 9750H"><input type="radio" id="param_8071" name="CPU" value="酷睿i7 9750H">酷睿i7 9750H</label>
+                <label for="param_8073" title="酷睿i5 9300H"><input type="radio" id="param_8073" name="CPU" value="酷睿i5 9300H">酷睿i5 9300H</label>
+                <label for="param_8072" title="酷睿i5 9400"><input type="radio" id="param_8072" name="CPU" value="酷睿i5 9400">酷睿i5 9400</label>
+                <label for="param_7926" title="酷睿i7 9700K"><input type="radio" id="param_7926" name="CPU" value="酷睿i7 9700K">酷睿i7 9700K</label>
+                <label for="param_7925" title="酷睿i5 9600K"><input type="radio" id="param_7925" name="CPU" value="酷睿i5 9600K">酷睿i5 9600K</label>
+                <label for="param_7842" title="酷睿i7 8565U"><input type="radio" id="param_7842" name="CPU" value="酷睿i7 8565U">酷睿i7 8565U</label>
+                <label for="param_7841" title="酷睿i5 8265U"><input type="radio" id="param_7841" name="CPU" value="酷睿i5 8265U">酷睿i5 8265U</label>
+                <label for="param_7843" title="酷睿i3 8145U"><input type="radio" id="param_7843" name="CPU" value="酷睿i3 8145U">酷睿i3 8145U</label>
+                <label for="param_7642" title="酷睿i9 8950HK"><input type="radio" id="param_7642" name="CPU" value="酷睿i9 8950HK">酷睿i9 8950HK</label>
+                <label for="param_7641" title="酷睿i7 8750H"><input type="radio" id="param_7641" name="CPU" value="酷睿i7 8750H">酷睿i7 8750H</label>
+                <label for="param_7354" title="酷睿i7 8550U"><input type="radio" id="param_7354" name="CPU" value="酷睿i7 8550U">酷睿i7 8550U</label>
+                <label for="param_7644" title="酷睿i5 8300H"><input type="radio" id="param_7644" name="CPU" value="酷睿i5 8300H">酷睿i5 8300H</label>
+                <label for="param_7701" title="酷睿i3 8100"><input type="radio" id="param_7701" name="CPU" value="酷睿i3 8100">酷睿i3 8100</label>
+                <label for="param_7350" title="酷睿i5 8250U"><input type="radio" id="param_7350" name="CPU" value="酷睿i5 8250U">酷睿i5 8250U</label>
+                <label for="param_7294" title="酷睿i7 7820HK"><input type="radio" id="param_7294" name="CPU" value="酷睿i7 7820HK">酷睿i7 7820HK</label>
+                <label for="param_7293" title="酷睿i7 7700HQ"><input type="radio" id="param_7293" name="CPU" value="酷睿i7 7700HQ">酷睿i7 7700HQ</label>
+                <label for="param_7292" title="酷睿i5 7300HQ"><input type="radio" id="param_7292" name="CPU" value="酷睿i5 7300HQ">酷睿i5 7300HQ</label>
+                <label for="param_6992" title="酷睿i7 7500U"><input type="radio" id="param_6992" name="CPU" value="酷睿i7 7500U">酷睿i7 7500U</label>
+                <label for="param_6991" title="酷睿i5 7200U"><input type="radio" id="param_6991" name="CPU" value="酷睿i5 7200U">酷睿i5 7200U</label>
+                <label for="param_6330" title="酷睿i7 6820HK"><input type="radio" id="param_6330" name="CPU" value="酷睿i7 6820HK">酷睿i7 6820HK</label>
+                <label for="param_6614" title="酷睿i7 6700K"><input type="radio" id="param_6614" name="CPU" value="酷睿i7 6700K">酷睿i7 6700K</label>
+                <label for="param_6435" title="酷睿i7 6700HQ"><input type="radio" id="param_6435" name="CPU" value="酷睿i7 6700HQ">酷睿i7 6700HQ</label>
+                <label for="param_6613" title="酷睿i7 6600U"><input type="radio" id="param_6613" name="CPU" value="酷睿i7 6600U">酷睿i7 6600U</label>
+                <label for="param_6612" title="酷睿i7 6560U"><input type="radio" id="param_6612" name="CPU" value="酷睿i7 6560U">酷睿i7 6560U</label>
+                <label for="param_6326" title="酷睿i7 6500U"><input type="radio" id="param_6326" name="CPU" value="酷睿i7 6500U">酷睿i7 6500U</label>
+                <label for="param_6436" title="酷睿i5 6300HQ"><input type="radio" id="param_6436" name="CPU" value="酷睿i5 6300HQ">酷睿i5 6300HQ</label>
+                <label for="param_6611" title="酷睿i5 6300U"><input type="radio" id="param_6611" name="CPU" value="酷睿i5 6300U">酷睿i5 6300U</label>
+                <label for="param_6325" title="酷睿i5 6200U"><input type="radio" id="param_6325" name="CPU" value="酷睿i5 6200U">酷睿i5 6200U</label>
+                <label for="param_6610" title="酷睿i3 6100U"><input type="radio" id="param_6610" name="CPU" value="酷睿i3 6100U">酷睿i3 6100U</label>
+                <label for="param_6298" title="酷睿i7 5700HQ"><input type="radio" id="param_6298" name="CPU" value="酷睿i7 5700HQ">酷睿i7 5700HQ</label>
+                <label for="param_6300" title="酷睿i7 5600U"><input type="radio" id="param_6300" name="CPU" value="酷睿i7 5600U">酷睿i7 5600U</label>
+                <label for="param_6303" title="酷睿i7 5500U"><input type="radio" id="param_6303" name="CPU" value="酷睿i7 5500U">酷睿i7 5500U</label>
+                <label for="param_6295" title="酷睿i5 5300U"><input type="radio" id="param_6295" name="CPU" value="酷睿i5 5300U">酷睿i5 5300U</label>
+                <label for="param_6294" title="酷睿i5 5200U"><input type="radio" id="param_6294" name="CPU" value="酷睿i5 5200U">酷睿i5 5200U</label>
+                <label for="param_6287" title="酷睿i3 5010U"><input type="radio" id="param_6287" name="CPU" value="酷睿i3 5010U">酷睿i3 5010U</label>
+                <label for="param_6286" title="酷睿i3 5005U"><input type="radio" id="param_6286" name="CPU" value="酷睿i3 5005U">酷睿i3 5005U</label>
+                <label for="param_5056" title="酷睿i3 4005U"><input type="radio" id="param_5056" name="CPU" value="酷睿i3 4005U">酷睿i3 4005U</label>
+                <label for="param_5587" title="酷睿i3 4030U"><input type="radio" id="param_5587" name="CPU" value="酷睿i3 4030U">酷睿i3 4030U</label>
+                <label for="param_5667" title="酷睿i5 4210M"><input type="radio" id="param_5667" name="CPU" value="酷睿i5 4210M">酷睿i5 4210M</label>
+                <label for="param_4721" title="酷睿i5 4200U"><input type="radio" id="param_4721" name="CPU" value="酷睿i5 4200U">酷睿i5 4200U</label>
+                <label for="param_5589" title="酷睿i5 4210U"><input type="radio" id="param_5589" name="CPU" value="酷睿i5 4210U">酷睿i5 4210U</label>
+                <label for="param_6609" title="酷睿i7 4510U"><input type="radio" id="param_6609" name="CPU" value="酷睿i7 4510U">酷睿i7 4510U</label>
+                <label for="param_5596" title="酷睿i7 4710MQ"><input type="radio" id="param_5596" name="CPU" value="酷睿i7 4710MQ">酷睿i7 4710MQ</label>
+                <label for="param_5776" title="酷睿i7 4710HQ"><input type="radio" id="param_5776" name="CPU" value="酷睿i7 4710HQ">酷睿i7 4710HQ</label>
+                <label for="param_6607" title="酷睿M7 6Y75"><input type="radio" id="param_6607" name="CPU" value="酷睿M7 6Y75">酷睿M7 6Y75</label>
+                <label for="param_6606" title="酷睿M5 6Y57"><input type="radio" id="param_6606" name="CPU" value="酷睿M5 6Y57">酷睿M5 6Y57</label>
+                <label for="param_6605" title="酷睿M5 6Y54"><input type="radio" id="param_6605" name="CPU" value="酷睿M5 6Y54">酷睿M5 6Y54</label>
+                <label for="param_6604" title="酷睿M3 6Y30"><input type="radio" id="param_6604" name="CPU" value="酷睿M3 6Y30">酷睿M3 6Y30</label>
+                <label for="param_6603" title="酷睿M 5Y71"><input type="radio" id="param_6603" name="CPU" value="酷睿M 5Y71">酷睿M 5Y71</label>
+                <label for="param_6602" title="酷睿M 5Y51"><input type="radio" id="param_6602" name="CPU" value="酷睿M 5Y51">酷睿M 5Y51</label>
+                <label for="param_6601" title="酷睿M 5Y10"><input type="radio" id="param_6601" name="CPU" value="睿M 5Y10">酷睿M 5Y10</label>
+                <label for="param_6439" title="奔腾四核 N3700"><input type="radio" id="param_6439" name="CPU" value="奔腾四核 N3700">奔腾四核 N3700</label>
+                <label for="param_6438" title="奔腾四核 N3540"><input type="radio" id="param_6438" name="CPU" value="奔腾四核 N3540">奔腾四核 N3540</label>
+                <label for="param_5624" title="奔腾双核 3558U"><input type="radio" id="param_5624" name="CPU" value="腾双核 3558U">奔腾双核 3558U</label>
+                <label for="param_6440" title="赛扬双核 N3050"><input type="radio" id="param_6440" name="CPU" value="赛扬双核 N3050">赛扬双核 N3050</label>
+                <label for="param_6442" title="赛扬双核 N2840"><input type="radio" id="param_6442" name="CPU" value="赛扬双核 N2840">赛扬双核 N2840</label>
+                <label for="param_6441" title="赛扬双核 3205U"><input type="radio" id="param_6441" name="CPU" value="赛扬双核 3205U">赛扬双核 3205U</label>
+                <label for="param_6444" title="赛扬四核 N3150"><input type="radio" id="param_6444" name="CPU" value="赛扬四核 N3150">赛扬四核 N3150</label>
+                <label for="param_6443" title="赛扬四核 N2940"><input type="radio" id="param_6443" name="CPU" value="扬四核 N2940">赛扬四核 N2940</label>
+                <label for="param_6600" title="Atom Z8300"><input type="radio" id="param_6600" name="CPU" value="Atom Z8300">Atom Z8300</label>
 
                 <%--=========================================================================--%>
                 <label for="param_6599" title="Atom Z3735F"><input type="radio" id="param_6599"
-                                                                   value="s6599">Atom
+                                                                   value="Atom Z3735F">Atom
                     Z3735F</label>
                 <label for="param_8082" title="Ryzen 7-3750H"><input type="radio" id="param_8082"
-                                                                     value="s8082">Ryzen
+                                                                     value="Ryzen 7-3750H">Ryzen
                     7-3750H</label>
                 <label for="param_8081" title="Ryzen 5 3500U"><input type="radio" id="param_8081"
-                                                                     value="s8081">Ryzen 5
+                                                                     value="Ryzen 5 3500U">Ryzen 5
                     3500U</label>
                 <label for="param_8080" title="Ryzen 5-3550H"><input type="radio" id="param_8080"
-                                                                     value="s8080">Ryzen
+                                                                     value="Ryzen 5-3550H">Ryzen
                     5-3550H</label>
                 <label for="param_7767" title="Ryzen 7 2700U"><input type="radio" id="param_7767"
-                                                                     value="s7767">Ryzen 7
+                                                                     value="Ryzen 7 2700U">Ryzen 7
                     2700U</label>
                 <label for="param_7766" title="Ryzen 5 2500U"><input type="radio" id="param_7766"
-                                                                     value="s7766">Ryzen 5
+                                                                     value="Ryzen 5 2500U">Ryzen 5
                     2500U</label>
                 <label for="param_7768" title="Ryzen 3 2300U"><input type="radio" id="param_7768"
-                                                                     value="s7768">Ryzen 3
+                                                                     value="Ryzen 3 2300U">Ryzen 3
                     2300U</label>
                 <label for="param_7769" title="Ryzen 7 1700"><input type="radio" id="param_7769"
-                                                                    value="s7769">Ryzen 7
+                                                                    value="Ryzen 7 1700">Ryzen 7
                     1700</label>
                 <label for="param_6454" title="A10-8700P"><input type="radio" id="param_6454"
-                                                                 value="s6454">A10-8700P</label>
+                                                                 value="A10-8700P">A10-8700P</label>
                 <label for="param_5533" title="A10-7300"><input type="radio" id="param_5533"
-                                                                value="s5533">A10-7300</label>
+                                                                value="A10-7300">A10-7300</label>
                 <label for="param_6598" title="A8-8600P"><input type="radio" id="param_6598"
-                                                                value="s6598">A8-8600P</label>
+                                                                value="A8-8600P">A8-8600P</label>
                 <label for="param_6597" title="A8-7410"><input type="radio" id="param_6597"
-                                                               value="s6597">A8-7410</label>
+                                                               value="A8-7410">A8-7410</label>
                 <label for="param_5787" title="A8-7100"><input type="radio" id="param_5787"
-                                                               value="s5787">A8-7100</label>
+                                                               value="A8-7100">A8-7100</label>
                 <label for="param_5788" title="A8-6410"><input type="radio" id="param_5788"
-                                                               value="s5788">A8-6410</label>
+                                                               value="sA8-6410">A8-6410</label>
                 <label for="param_6596" title="A6-7310"><input type="radio" id="param_6596"
-                                                               value="s6596">A6-7310</label>
+                                                               value="A6-7310">A6-7310</label>
                 <label for="param_5786" title="A6-6310"><input type="radio" id="param_5786"
-                                                               value="s5786">A6-6310</label>
+                                                               value="A6-6310">A6-6310</label>
                 <label for="param_6595" title="A4-7210"><input type="radio" id="param_6595"
-                                                               value="s6595">A4-7210</label>
+                                                               value=">A4-7210">A4-7210</label>
                 <label for="param_6594" title="A4-6210"><input type="radio" id="param_6594"
-                                                               value="s6594">A4-6210</label>
+                                                               value="A4-6210">A4-6210</label>
                 <label for="param_6593" title="FX-8800P"><input type="radio" id="param_6593"
-                                                                value="s6593">FX-8800P</label>
+                                                                value="FX-8800P">FX-8800P</label>
                 <label for="param_5793" title="E2-6110"><input type="radio" id="param_5793"
-                                                               value="s5793">E2-6110</label>
+                                                               value="E2-6110">E2-6110</label>
                 <label for="param_5792" title="E1-6010"><input type="radio" id="param_5792"
-                                                               value="s5792">E1-6010</label>
+                                                               value="E1-6010">E1-6010</label>
         </dl>
 
         <dl>
@@ -892,18 +895,18 @@
         <dl>
             <dt>核心架构</dt>
             <dd>
-                <label for="param_7840" title="Whiskey Lake"><input type="radio" id="param_7840" name="Structure" value="Whiskey Lake">Whiskey Lake</label>
-                <label for="param_7512" title="Coffee Lake"><input type="radio" id="param_7512" name="Structure" value="Coffee Lake">Coffee Lake</label>
-                <label for="param_7352" title="Kaby Lake R"><input type="radio" id="param_7352" name="Structure" value="Kaby Lake R">Kaby Lake R</label>
-                <label for="param_7351" title="Kaby Lake"><input type="radio" id="param_7351" name="Structure" value="Kaby Lake">Kaby Lake</label>
-                <label for="param_6329" title="Skylake"><input type="radio" id="param_6329" name="Structure" value="Skylake">Skylake</label>
-                <label for="param_6572" title="Cherry Trail"><input type="radio" id="param_6572" name="Structure" value="Cherry Trail">Cherry Trail</label>
-                <label for="param_6317" title="Broadwell"><input type="radio" id="param_6317" name="Structure" value="Broadwell">Broadwell</label>
-                <label for="param_6328" title="Braswell"><input type="radio" id="param_6328" name="Structure" value="Braswell">Braswell</label>
-                <label for="param_4697" title="Haswell"><input type="radio" id="param_4697" name="Structure" value="Haswell">Haswell</label>
-                <label for="param_5561" title="Bay Trail"><input type="radio" id="param_5561" name="Structure" value="Bay Trail">Bay Trail</label>
-                <label for="param_4290" title="Ivy Bridge"><input type="radio" id="param_4290" name="Structure" value="Ivy Bridge">Ivy Bridge</label>
-                <label for="param_6573" title="Sandy Bridge"><input type="radio" id="param_6573" name="Structure" value="Sandy Bridge">Sandy Bridge</label>
+                <label for="param_7840" title="Whiskey Lake"><input type="radio" id="param_7840" name="pStructure" value="Whiskey Lake">Whiskey Lake</label>
+                <label for="param_7512" title="Coffee Lake"><input type="radio" id="param_7512" name="pStructure" value="Coffee Lake">Coffee Lake</label>
+                <label for="param_7352" title="Kaby Lake R"><input type="radio" id="param_7352" name="pStructure" value="Kaby Lake R">Kaby Lake R</label>
+                <label for="param_7351" title="Kaby Lake"><input type="radio" id="param_7351" name="pStructure" value="Kaby Lake">Kaby Lake</label>
+                <label for="param_6329" title="Skylake"><input type="radio" id="param_6329" name="pStructure" value="Skylake">Skylake</label>
+                <label for="param_6572" title="Cherry Trail"><input type="radio" id="param_6572" name="pStructure" value="Cherry Trail">Cherry Trail</label>
+                <label for="param_6317" title="Broadwell"><input type="radio" id="param_6317" name="pStructure" value="Broadwell">Broadwell</label>
+                <label for="param_6328" title="Braswell"><input type="radio" id="param_6328" name="pStructure" value="Braswell">Braswell</label>
+                <label for="param_4697" title="Haswell"><input type="radio" id="param_4697" name="pStructure" value="Haswell">Haswell</label>
+                <label for="param_5561" title="Bay Trail"><input type="radio" id="param_5561" name="pStructure" value="Bay Trail">Bay Trail</label>
+                <label for="param_4290" title="Ivy Bridge"><input type="radio" id="param_4290" name="pStructure" value="Ivy Bridge">Ivy Bridge</label>
+                <label for="param_6573" title="Sandy Bridge"><input type="radio" id="param_6573" name="pStructure" value="Sandy Bridge">Sandy Bridge</label>
             </dd>
         </dl>
 
@@ -1077,12 +1080,12 @@
         </dl>
         <%--显卡--%>
 
-        <dl>
+       <%-- <dl>
             <dt>图片</dt>
             <dd>
                 <label><input type="file" name="pPicture" ></label>
             </dd>
-        </dl>
+        </dl>--%>
 
 
 
@@ -1091,8 +1094,8 @@
 
 
     <div style="alignment: center;position: center;margin:0 auto; width:180px; height:20px;">
-        <input type="submit" style="background-color: #5bc0de;width: 80px;alignment: center;position: center">
-        <input type="reset" style="background-color: #5bc0de;width: 80px;alignment: center;position: center">
+        <input type="submit" value="添加" style="background-color: #5bc0de;width: 80px;alignment: center;position: center">
+        <input type="reset"  style="background-color: #5bc0de;width: 80px;alignment: center;position: center">
     </div>
     </form>
 

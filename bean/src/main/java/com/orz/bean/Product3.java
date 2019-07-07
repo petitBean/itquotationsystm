@@ -51,11 +51,11 @@ public class Product3 {
     /**
      * CPU主锁
      */
-    private Double pCPUhz;
+    private Double pCPUHZ;
     /**
      * 最高音频
      */
-    private Double pCPUmhz;
+    private Double pCPUMHZ;
     /**
      * 核心数
      */
@@ -87,19 +87,19 @@ public class Product3 {
     /**
      * 内存容量
      */
-    private Integer pRam;
+    private Integer pRAM;
     /**
      * 内存条数量
      */
-    private Integer pRamc;
+    private Integer pRAMC;
     /**
      * 内存类型
      */
-    private String pRamType;
+    private String pRAMType;
     /**
      * SSD
      */
-    private Integer pSsd;
+    private Integer pSSD;
     /**
      * disk
      */
@@ -107,31 +107,31 @@ public class Product3 {
     /**
      * 硬盘描述
      */
-    private String pRomDescription;
+    private String pROMDescription;
     /**
      * 光驱
      */
-    private String pCd;
+    private String pCD;
     /**
      * 显卡类型
      */
-    private Integer pGpuType;
+    private Integer pGPUType;
     /**
      * 显卡芯片
      */
-    private String pGpuName;
+    private String pGPUName;
     /**
      * 显存容量
      */
-    private Integer pGpuram;
+    private Integer pGPURAM;
     /**
      * 显存类型
      */
-    private Integer pGddr;
+    private Integer pGDDR;
     /**
      * 显存位宽
      */
-    private Integer pGpuBit;
+    private Integer pGPUBit;
     /**
      * 其他1
      */
@@ -252,20 +252,20 @@ public class Product3 {
         this.pCPUType = pCPUType;
     }
 
-    public Double getpCPUhz() {
-        return pCPUhz;
+    public Double getpCPUHZ() {
+        return pCPUHZ;
     }
 
-    public void setpCPUhz(Double pCPUhz) {
-        this.pCPUhz = pCPUhz;
+    public void setpCPUHZ(Double pCPUHZ) {
+        this.pCPUHZ = pCPUHZ;
     }
 
-    public Double getpCPUmhz() {
-        return pCPUmhz;
+    public Double getpCPUMHZ() {
+        return pCPUMHZ;
     }
 
-    public void setpCPUmhz(Double pCPUmhz) {
-        this.pCPUmhz = pCPUmhz;
+    public void setpCPUMHZ(Double pCPUMHZ) {
+        this.pCPUMHZ = pCPUMHZ;
     }
 
     public Integer getpCPUAmount() {
@@ -324,36 +324,36 @@ public class Product3 {
         this.pConsumption = pConsumption;
     }
 
-    public Integer getpRam() {
-        return pRam;
+    public Integer getpRAM() {
+        return pRAM;
     }
 
-    public void setpRam(Integer pRam) {
-        this.pRam = pRam;
+    public void setpRAM(Integer pRAM) {
+        this.pRAM = pRAM;
     }
 
-    public Integer getpRamc() {
-        return pRamc;
+    public Integer getpRAMC() {
+        return pRAMC;
     }
 
-    public void setpRamc(Integer pRamc) {
-        this.pRamc = pRamc;
+    public void setpRAMC(Integer pRAMC) {
+        this.pRAMC = pRAMC;
     }
 
-    public String getpRamType() {
-        return pRamType;
+    public String getpRAMType() {
+        return pRAMType;
     }
 
-    public void setpRamType(String pRamType) {
-        this.pRamType = pRamType;
+    public void setpRAMType(String pRAMType) {
+        this.pRAMType = pRAMType;
     }
 
-    public Integer getpSsd() {
-        return pSsd;
+    public Integer getpSSD() {
+        return pSSD;
     }
 
-    public void setpSsd(Integer pSsd) {
-        this.pSsd = pSsd;
+    public void setpSSD(Integer pSSD) {
+        this.pSSD = pSSD;
     }
 
     public Integer getpDisk() {
@@ -364,60 +364,60 @@ public class Product3 {
         this.pDisk = pDisk;
     }
 
-    public String getpRomDescription() {
-        return pRomDescription;
+    public String getpROMDescription() {
+        return pROMDescription;
     }
 
-    public void setpRomDescription(String pRomDescription) {
-        this.pRomDescription = pRomDescription;
+    public void setpROMDescription(String pROMDescription) {
+        this.pROMDescription = pROMDescription;
     }
 
-    public String getpCd() {
-        return pCd;
+    public String getpCD() {
+        return pCD;
     }
 
-    public void setpCd(String pCd) {
-        this.pCd = pCd;
+    public void setpCD(String pCD) {
+        this.pCD = pCD;
     }
 
-    public Integer getpGpuType() {
-        return pGpuType;
+    public Integer getpGPUType() {
+        return pGPUType;
     }
 
-    public void setpGpuType(Integer pGpuType) {
-        this.pGpuType = pGpuType;
+    public void setpGPUType(Integer pGPUType) {
+        this.pGPUType = pGPUType;
     }
 
-    public String getpGpuName() {
-        return pGpuName;
+    public String getpGPUName() {
+        return pGPUName;
     }
 
-    public void setpGpuName(String pGpuName) {
-        this.pGpuName = pGpuName;
+    public void setpGPUName(String pGPUName) {
+        this.pGPUName = pGPUName;
     }
 
-    public Integer getpGpuram() {
-        return pGpuram;
+    public Integer getpGPURAM() {
+        return pGPURAM;
     }
 
-    public void setpGpuram(Integer pGpuram) {
-        this.pGpuram = pGpuram;
+    public void setpGPURAM(Integer pGPURAM) {
+        this.pGPURAM = pGPURAM;
     }
 
-    public Integer getpGddr() {
-        return pGddr;
+    public Integer getpGDDR() {
+        return pGDDR;
     }
 
-    public void setpGddr(Integer pGddr) {
-        this.pGddr = pGddr;
+    public void setpGDDR(Integer pGDDR) {
+        this.pGDDR = pGDDR;
     }
 
-    public Integer getpGpuBit() {
-        return pGpuBit;
+    public Integer getpGPUBit() {
+        return pGPUBit;
     }
 
-    public void setpGpuBit(Integer pGpuBit) {
-        this.pGpuBit = pGpuBit;
+    public void setpGPUBit(Integer pGPUBit) {
+        this.pGPUBit = pGPUBit;
     }
 
     public String getOther1() {
@@ -504,8 +504,8 @@ public class Product3 {
                 ", CPUi='" + CPUi + '\'' +
                 ", pCPUGeneration=" + pCPUGeneration +
                 ", pCPUType='" + pCPUType + '\'' +
-                ", pCPUhz=" + pCPUhz +
-                ", pCPUmhz=" + pCPUmhz +
+                ", pCPUHZ=" + pCPUHZ +
+                ", pCPUMHZ=" + pCPUMHZ +
                 ", pCPUAmount=" + pCPUAmount +
                 ", pTread=" + pTread +
                 ", pCache=" + pCache +
@@ -513,18 +513,18 @@ public class Product3 {
                 ", pStructure='" + pStructure + '\'' +
                 ", pCraft=" + pCraft +
                 ", pConsumption=" + pConsumption +
-                ", pRam=" + pRam +
-                ", pRamc=" + pRamc +
-                ", pRamType='" + pRamType + '\'' +
-                ", pSsd=" + pSsd +
+                ", pRAM=" + pRAM +
+                ", pRAMC=" + pRAMC +
+                ", pRAMType='" + pRAMType + '\'' +
+                ", pSSD=" + pSSD +
                 ", pDisk=" + pDisk +
-                ", pRomDescription='" + pRomDescription + '\'' +
-                ", pCd='" + pCd + '\'' +
-                ", pGpuType=" + pGpuType +
-                ", pGpuName='" + pGpuName + '\'' +
-                ", pGpuram=" + pGpuram +
-                ", pGddr=" + pGddr +
-                ", pGpuBit=" + pGpuBit +
+                ", pROMDescription='" + pROMDescription + '\'' +
+                ", pCD='" + pCD + '\'' +
+                ", pGPUType=" + pGPUType +
+                ", pGPUName='" + pGPUName + '\'' +
+                ", pGPURAM=" + pGPURAM +
+                ", pGDDR=" + pGDDR +
+                ", pGPUBit=" + pGPUBit +
                 ", other1='" + other1 + '\'' +
                 ", other2='" + other2 + '\'' +
                 ", other3='" + other3 + '\'' +
@@ -539,12 +539,12 @@ public class Product3 {
 
     public Product3(String pCode2, String pCode, String CPUCode, String GPUCode,
                     String pCPUFactory, String pCPUSeries, String CPUi, Integer pCPUGeneration,
-                    String pCPUType, Double pCPUhz, Double pCPUmhz, Integer pCPUAmount,
+                    String pCPUType, Double pCPUHZ, Double pCPUMHZ, Integer pCPUAmount,
                     Integer pTread, Integer pCache, String pBus, String pStructure, Integer pCraft,
-                    Integer pConsumption, Integer pRam, Integer pRamc, String pRamType,
-                    Integer pSsd, Integer pDisk, String pRomDescription, String pCd,
-                    Integer pGpuType, String pGpuName, Integer pGpuram, Integer pGddr,
-                    Integer pGpuBit, String other1, String other2, String other3, String other4,
+                    Integer pConsumption, Integer pRAM, Integer pRAMC, String pRAMType,
+                    Integer pSSD, Integer pDisk, String pROMDescription, String pCD,
+                    Integer pGPUType, String pGPUName, Integer pGPURAM, Integer pGDDR,
+                    Integer pGPUBit, String other1, String other2, String other3, String other4,
                     String other5, String other6, String other7, String other8, String other9) {
         this.pCode2 = pCode2;
         this.pCode = pCode;
@@ -555,8 +555,8 @@ public class Product3 {
         this.CPUi = CPUi;
         this.pCPUGeneration = pCPUGeneration;
         this.pCPUType = pCPUType;
-        this.pCPUhz = pCPUhz;
-        this.pCPUmhz = pCPUmhz;
+        this.pCPUHZ = pCPUHZ;
+        this.pCPUMHZ = pCPUMHZ;
         this.pCPUAmount = pCPUAmount;
         this.pTread = pTread;
         this.pCache = pCache;
@@ -564,18 +564,18 @@ public class Product3 {
         this.pStructure = pStructure;
         this.pCraft = pCraft;
         this.pConsumption = pConsumption;
-        this.pRam = pRam;
-        this.pRamc = pRamc;
-        this.pRamType = pRamType;
-        this.pSsd = pSsd;
+        this.pRAM = pRAM;
+        this.pRAMC = pRAMC;
+        this.pRAMType = pRAMType;
+        this.pSSD = pSSD;
         this.pDisk = pDisk;
-        this.pRomDescription = pRomDescription;
-        this.pCd = pCd;
-        this.pGpuType = pGpuType;
-        this.pGpuName = pGpuName;
-        this.pGpuram = pGpuram;
-        this.pGddr = pGddr;
-        this.pGpuBit = pGpuBit;
+        this.pROMDescription = pROMDescription;
+        this.pCD = pCD;
+        this.pGPUType = pGPUType;
+        this.pGPUName = pGPUName;
+        this.pGPURAM = pGPURAM;
+        this.pGDDR = pGDDR;
+        this.pGPUBit = pGPUBit;
         this.other1 = other1;
         this.other2 = other2;
         this.other3 = other3;

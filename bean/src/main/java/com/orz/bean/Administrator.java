@@ -1,9 +1,12 @@
 package com.orz.bean;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 /**
  * @author Wangxingze
  * @date 2019-07-03 10:22
  */
+
 public class Administrator {
 
     private Integer aId;

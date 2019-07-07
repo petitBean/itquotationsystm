@@ -25,6 +25,8 @@ public class Product1ServiceTest {
     @Autowired
     private Product1Service product1Service;
 
+
+
     @Test
     public void findAll(){
         List<Product1> product1List=product1Service.findAllProduct1();

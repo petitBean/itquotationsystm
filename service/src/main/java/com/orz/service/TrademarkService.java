@@ -42,6 +42,7 @@ public interface TrademarkService {
      */
     void updateTrademarkBytmCode(Trademark trademark)throws Exception ;
 
+    Trademark findOneByName(String tmName);
     /**
      * 通过tmCode删除Trademark信息
      * @param trademarkId
