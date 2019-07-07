@@ -1,0 +1,117 @@
+.series-parameter {
+    margin-top: 20px;
+    alignment: center;
+    border: 5px solid #ededed;
+    border-bottom: 0 none;
+}
+
+.clearfixP:after {
+    content: ".";
+    display: block;
+    height: 1px;
+    clear: both;
+    visibility: hidden;
+    font-size: 0;
+}
+
+.clearfixP {
+    *zoom: 1;
+}
+
+
+.param-item {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: 85px;
+    border-bottom: 2px solid #ededed;
+    border-right: 2px solid #ededed;
+}
+
+.param-item-2n {
+    border-right: 1px solid #ededed;
+    width: 50%;
+}
+
+.param-item-hover {
+    z-index: 10;
+}
+
+.param-item-hover .param-list {
+    border: 1px solid #198ef6;
+    padding: 20px;
+    background: #fff;
+}
+
+.param-item-active .param-list {
+    height: auto;
+}
+
+.param-item-active .param-list li {
+    white-space: normal;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.param-item-active .param-list span {
+    display: inline-block;
+    word-break: break-all;
+}
+
+.param-item .view-more-param {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 32px;
+    height: 20px;
+    line-height: 20px;
+    background-color: #e6e6e6;
+    cursor: pointer;
+    color: #999;
+    text-align: center;
+}
+
+.param-item-hover .view-more-param {
+    color: #fff;
+    background-color: #198ef6;
+}
+
+.param-item-active .view-more-param {
+    display: none;
+}
+
+.param-list {
+    position: absolute;
+    left: -1px;
+    top: -1px;
+    padding: 15px;
+    width: 90%;
+    height: 90%;
+}
+
+
+.param-item-2n .param-list {
+    width: 90%;
+}
+
+.param-list li {
+    height: 24px;
+    font: 14px/24px 'Microsoft YaHei', arial;
+    color: #666;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.param-list li div {
+    display: inline;
+}
+
+.param-list li span {
+    margin-right: 18px;
+}
+
+.param-list li em {
+    margin-left: 5px;
+    color: #999;
+}
+

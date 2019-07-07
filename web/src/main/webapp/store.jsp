@@ -539,7 +539,7 @@
                 <!-- store products -->
                 <div class="row">
 
-                    <c:forEach var="item" items="${resultVOList}">
+                    <c:forEach var="item" items="${pageInfo.list}">
 
                     <!-- product -->
                     <div class="col-md-4 col-xs-6">
@@ -600,13 +600,13 @@
 
                         <li class="active">选中页码样式例子</li>
 
-                        <li href="${pageContext.request.contextPath}/*******?page=1&size=？？">首页</li>
+                        <li href="${pageContext.request.contextPath}/findListByTmCode.do?tmCode=${tmCode}&pageNum=1&size=2">首页</li>
                         <%--上一页--%>
-                        <li><a href="${pageContext.request.contextPath}/********?page=${pageInfo.pageNum-1}&size=？？"><i class="fa fa-angle-left"></i></a></li>
+                        <li><a href="${pageContext.request.contextPath}/findListByTmCode.do?tmCode=${tmCode}&pageNum=${pageInfo.pageNum-1}&size=2"><i class="fa fa-angle-left"></i></a></li>
 
                         <%--动态加入页码--%>
                         <c:forEach begin="1" end="${pageInfo.pages}" var="pageNumber">
-                            <li><a href="${pageContext.request.contextPath}/******?page=${pageNumber}&size=？？">${pageNumber}</a></li>
+                            <li><a href="${pageContext.request.contextPath}/findListByTmCode.do?tmCode=${tmCode}&pageNum=${pageNumber}&size=2">${pageNumber}</a></li>
                         </c:forEach>
 <%--                        <li class="active">1</li>
                         <li><a href="#">2</a></li>

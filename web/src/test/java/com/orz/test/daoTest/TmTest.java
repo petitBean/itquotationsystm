@@ -1,5 +1,7 @@
 package com.orz.test.daoTest;
 
+import com.orz.bean.Evalution;
+import com.orz.dao.EvalutionDao;
 import com.orz.dao.TrademarkDao;
 import com.orz.service.TrademarkService;
 import org.junit.Assert;
@@ -21,10 +23,18 @@ import java.util.List;
 public class TmTest {
     @Autowired
     private TrademarkDao trademarkDao;
+    @Autowired
+    private EvalutionDao evalutionDao;
 
     @Test
     public void  findTmCodeListByTmNameList(){
         List<String> tmCodeListByTmNameList = trademarkDao.findTmCodeListByTmNameList(Arrays.asList("苹果", "惠普"));
         Assert.assertNotNull(tmCodeListByTmNameList);
+    }
+
+    @Test
+   public void findOneEvalutionByuserIdAndpCode(){
+        Evalution code = evalutionDao.findOneEvalutionByuserIdAndpCode(1, "11");
+        return;
     }
 }

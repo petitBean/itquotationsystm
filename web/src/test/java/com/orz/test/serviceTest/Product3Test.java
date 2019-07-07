@@ -54,5 +54,18 @@ public class Product3Test {
 
 
 
+    @Test
+    public void findOneBypCode() {
+       Product3 product3=  product3Service.findOneBypCode("11111");
+       return;
+    }
+
+    @Test
+ public void findListBypCode(){
+     List<Product3> listBypCode = product3Service.findListBypCode("11111");
+     return;
+ }
+
+
 
 }

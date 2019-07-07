@@ -7,6 +7,16 @@
         select * from tb_evaluation
     </select>
 
+    <select id="findOneEvalutionByuserIdAndpCode" resultType="com.orz.bean.Evalution">
+        select * from tb_evaluation
+        where userId=#{0} and pCode=#{1}
+    </select>
+
+    <select id="findListBypCode" parameterType="java.lang.String" resultType="com.orz.bean.Evalution">
+        select * from tb_evaluation
+        where pCode=#{pCode}
+    </select>
+
     <select id="findAllEvalutionByuserId" parameterType="java.lang.Integer"  resultType="com.orz.bean.Evalution">
         select * from tb_evaluation
         where userId=#{userId}
@@ -39,6 +49,11 @@
         set eContent=#{eContent},eTime=#{eTime},other1=#{other1},other2=#{other2},other3=#{other3},other4=#{other4}
     </update>
 
+    <update id="updateEvalutionByUserIdAndpCode" parameterType="com.orz.bean.Evalution">
+         update tb_evaluation
+        set eContent=#{eContent},eTime=#{eTime},other1=#{other1},other2=#{other2},other3=#{other3},other4=#{other4}
+        where userId=#{userId} and pCode=#{pCode}
+    </update>
 
     <delete id="deleteEvalutionBypCode" parameterType="com.orz.bean.Evalution" >
     delete * from tb_evaluation

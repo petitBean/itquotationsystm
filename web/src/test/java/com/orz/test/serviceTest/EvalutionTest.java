@@ -1,5 +1,6 @@
 package com.orz.test.serviceTest;
 
+import com.github.pagehelper.PageInfo;
 import com.orz.bean.Evalution;
 import com.orz.service.EvalutionService;
 import org.junit.Assert;
@@ -59,9 +60,18 @@ public class EvalutionTest {
 
     @Test
     public void updateEvalutionBypCode() throws Exception{
-        Evalution evalutionList=evalutionService. findOneEvalutionBypCode("11111");
-        evalutionList.setOther1("hhhh");
-        evalutionService.updateEvalutionBypCode(evalutionList);
+        Evalution evalutionList=evalutionService. findOneEvalutionByuserIdAndpCode(1,"11111");
+        evalutionList.setOther1(10);
+        evalutionService.updateEvalutionByUserIdAndpCode(evalutionList);
+    }
+
+
+    @Test
+   public void findOnePageByHeuper(){
+        List<Evalution> onePageByHeuper = evalutionService.findOnePageByHeuper(0, 2, "11111");
+        PageInfo pageInfo=new PageInfo(onePageByHeuper);
+        pageInfo.getPages();
+
     }
 
 }

@@ -106,4 +106,15 @@ public class Product3ServiceImpl implements Product3Service {
         }
     }
 
+
+
+    @Override
+    public Product3 findOneBypCode(String pCode) {
+        return product3Dao.findOneBypCode(pCode);
+    }
+
+    @Override
+    public List<Product3> findListBypCode(String pCode) {
+        return product3Dao.findListBypCode(pCode);
+    }
 }

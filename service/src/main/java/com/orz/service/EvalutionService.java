@@ -50,4 +50,16 @@ public interface EvalutionService {
 
     List<Evalution> findAllEvalutionByeTime(Date eTime);
 
+    void updateEvalutionByUserIdAndpCode(Evalution evalution)throws Exception;
+
+    /**
+     * 分页查询
+     * @param page
+     * @param size
+     * @return
+     */
+    List<Evalution> findOnePageByHeuper(Integer page,Integer size,String pCode);
+
+    Evalution findOneEvalutionByuserIdAndpCode(Integer userId,String pCode);
+
 }

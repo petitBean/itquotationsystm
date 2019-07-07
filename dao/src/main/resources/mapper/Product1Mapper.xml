@@ -34,7 +34,7 @@
     
     <!--连接查询-->
     <select id="joinFindListBypCode"  resultMap="joinFindListBypCodeMap">
-        select tb_product1.pCode, tb_product1.pName, tb_product1.pPosition,tb_product2.pPicture,tb_product3.pCode2,tb_product3.pPrice from tb_product1
+        select tb_product1.pCode, tb_product1.pName, tb_product1.pPosition,tb_product1.other1,tb_product2.pPicture,tb_product3.pCode2,tb_product3.pPrice from tb_product1
         inner join tb_product2 on tb_product1.pCode=tb_product2.pCode
         inner join tb_product3 on tb_product1.pCode=tb_product3.pCode
         where tb_product1.pCode in

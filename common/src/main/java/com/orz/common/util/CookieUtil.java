@@ -42,6 +42,9 @@ public class CookieUtil {
     public static Cookie getCookieByName(String cookieName,HttpServletRequest request){
         //map不会为null
         Map<String,Cookie> cookieMap=readCookie(request);
+        if (cookieMap==null){
+            return null;
+        }
         if (cookieMap.containsKey(cookieName)){
             return cookieMap.get(cookieName);
         }

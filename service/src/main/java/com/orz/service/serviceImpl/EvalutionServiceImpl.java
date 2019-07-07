@@ -1,5 +1,6 @@
 package com.orz.service.serviceImpl;
 
+import com.github.pagehelper.PageHelper;
 import com.orz.bean.Evalution;
 import com.orz.common.enums.OrzExceptionEnum;
 import com.orz.common.exception.OrzException;
@@ -87,5 +88,33 @@ public class EvalutionServiceImpl implements EvalutionService {
         }
     }
 
+    /**
+     * 分页查询
+     * @param pageNum
+     * @param size
+     * @return
+     */
+    @Override
+    public List<Evalution> findOnePageByHeuper(Integer pageNum, Integer size ,String pCode) {
+        PageHelper.startPage(pageNum,size);
+        return evalutionDao.findListBypCode(pCode);
+    }
 
+    @Override
+    public Evalution findOneEvalutionByuserIdAndpCode(Integer userId, String pCode) {
+        return evalutionDao.findOneEvalutionByuserIdAndpCode(userId,pCode);
+    }
+
+    @Override
+    @Transactional
+    public void updateEvalutionByUserIdAndpCode(Evalution evalution) throws Exception {
+        try{
+            evalutionDao.updateEvalutionByUserIdAndpCode(evalution);
+        }
+        catch (Exception e){
+            e.printStackTrace();
+            System.out.println(e.getCause());
+            throw new OrzException(OrzExceptionEnum.UPDATE_DATA_FAILED);
+        }
+    }
 }

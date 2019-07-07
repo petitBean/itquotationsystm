@@ -14,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -36,7 +37,7 @@ public class UserController {
      * @param request
      */
     @RequestMapping(value = "/login.do")
-    public ModelAndView login(@Valid UserForm loginUserForm,
+    public ModelAndView login(UserForm loginUserForm,
                               HttpServletRequest request, HttpServletResponse response){
 
         System.out.println("【开始登陆】");
@@ -66,16 +67,28 @@ public class UserController {
         System.out.println("【用户密码】:"+user.getUserPsw());
         HttpSession session=request.getSession();
         //验证用户是否已经登录
-        String lastCookieName=(String)session.getAttribute(OrzConStrantEnum.LOGIN_SESSION_CONSTANT.getValue());
-        if (lastCookieName!=null &&lastCookieName!=""){
+        String lastCookieName=null;
+        try{
+          lastCookieName=(String)session.getAttribute(OrzConStrantEnum.LOGIN_SESSION_CONSTANT.getValue());
+       }
+        catch (Exception e){
+            modelAndView.setViewName(OrzViewNameContrant.userLoginPage);
+            modelAndView.addObject("message","系统异常，重新登录！");
+            System.out.println();
+            return modelAndView;
+        }
+        if (lastCookieName!=null &&lastCookieName!="系统异常，重新登录！"){
             //已经存在
             //比较用户名
-            String userNameInCookie=(CookieUtil.getCookieByName(lastCookieName,request)).getValue();
-            if (userNameInCookie.equals(loginUserForm.getUserName())){
-                //用户名一致
-                //跳转主页
-                modelAndView.setViewName(OrzViewNameContrant.mainPage);
-                return modelAndView;
+            Cookie cookie=CookieUtil.getCookieByName(lastCookieName,request);
+            if (cookie!=null){
+                String userNameInCookie=cookie.getValue();
+                if (userNameInCookie.equals(loginUserForm.getUserName())){
+                    //用户名一致
+                    //跳转主页
+                    modelAndView.setViewName(OrzViewNameContrant.mainPage);
+                    return modelAndView;
+                }
             }
         }
         if (user.getUserPsw().equals(loginUserForm.getUserPsw())){
@@ -84,7 +97,7 @@ public class UserController {
             //设置cookie名称
             String cookieName= KeyUtil.getUniqueKey();
             session.setAttribute(OrzConStrantEnum.LOGIN_SESSION_CONSTANT.getValue(),cookieName);
-           System.out.println("【用户登录Cookie】"+ session.getAttribute(OrzConStrantEnum.LOGIN_SESSION_CONSTANT.getValue()));
+          // System.out.println("【用户登录Cookie】"+ session.getAttribute(OrzConStrantEnum.LOGIN_SESSION_CONSTANT.getValue()));
             //有效时间
             session.setMaxInactiveInterval(60*60*60*2);
             //保存用户名到cookie

@@ -1,5 +1,6 @@
 package com.orz.service.serviceImpl;
 
+import com.github.pagehelper.PageHelper;
 import com.orz.bean.Product1;
 import com.orz.common.enums.OrzExceptionEnum;
 import com.orz.common.exception.OrzException;
@@ -244,6 +245,8 @@ public class Product1ServiceImpl implements Product1Service {
                 }
                 IndexPageProductVO indexPageProductVO =new IndexPageProductVO(product1.getProduct2().getpPicture(),product1.getpName()
                         ,product1.getpPosition(),product1.getProduct3().getpPrice());
+                indexPageProductVO.setpCode(product1.getpCode());
+                indexPageProductVO.setpDescription(product1.getOther1());
                 //添加数据
                 indexPageProductVOList.add(indexPageProductVO);
             }
@@ -252,12 +255,16 @@ public class Product1ServiceImpl implements Product1Service {
     }
 
     @Override
-    public List<IndexPageProductVO> findProductVoListByTmCodeList(Integer page, Integer pageSize, List<String> tmCodeList) {
+    public List<IndexPageProductVO> findProductVoListByTmCodeList(Integer pageNum, Integer pageSize, List<String> tmCodeList) {
+       if (tmCodeList.size()==0){
+           return null;
+       }
         List<String> pCodeList=findpCodeListByTmCodeList(tmCodeList);
         if (pCodeList.size()==0){
             return null;
         }
         else {
+            PageHelper.startPage(pageNum,pageSize);
             return findIndexPageProductListBypCodeList(pCodeList);
         }
     }

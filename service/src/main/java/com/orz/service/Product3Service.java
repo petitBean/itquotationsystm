@@ -14,6 +14,8 @@ public interface Product3Service {
      */
     List<Product3> findAllProduct3();
 
+    List<Product3> findListBypCode(String pCode);
+
 
     /**
      * 通过主键查找
@@ -39,6 +41,8 @@ public interface Product3Service {
      * @param product3
      */
     void updateProduct3BypCode(Product3 product3)throws Exception;
+
+    Product3 findOneBypCode(String pCode);
 
     /**
      * 根据code2更新

@@ -37,6 +37,9 @@ public interface GpuDao {
      */
     List<Gpu> findAllGpuBygpuName();
 
+
+
+
     /**
      * 插入一个新Gpu
      * @param gpu

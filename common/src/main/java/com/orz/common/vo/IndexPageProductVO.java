@@ -8,6 +8,12 @@ package com.orz.common.vo;
 public class IndexPageProductVO {
 
     /**
+     * 对应p1 other1
+     */
+    private  String pDescription;
+
+  private  String pCode;
+    /**
      * 产品图片
      */
    private String pPicture;
@@ -30,6 +36,14 @@ public class IndexPageProductVO {
     public IndexPageProductVO() {
     }
 
+    public String getpCode() {
+        return pCode;
+    }
+
+    public void setpCode(String pCode) {
+        this.pCode = pCode;
+    }
+
     public IndexPageProductVO(String pPicture, String pName, String pPosition, float pPrice) {
         this.pPicture = pPicture;
         this.pName = pName;
@@ -43,6 +57,14 @@ public class IndexPageProductVO {
 
     public void setpPicture(String pPicture) {
         this.pPicture = pPicture;
+    }
+
+    public String getpDescription() {
+        return pDescription;
+    }
+
+    public void setpDescription(String pDescription) {
+        this.pDescription = pDescription;
     }
 
     public String getpName() {

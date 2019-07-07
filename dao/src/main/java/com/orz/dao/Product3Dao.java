@@ -44,6 +44,8 @@ public interface Product3Dao {
      */
     void updateProduct3BypCode2(Product3 product3);
 
+    List<Product3> findListBypCode(String pCode);
+
     /**
      * 根据主键删除
      * @param pCode2
@@ -55,5 +57,7 @@ public interface Product3Dao {
      * @param pCode
      */
     void deleteProduct3BypCode(String pCode);
+
+    Product3 findOneBypCode(String pCode);
 
 }

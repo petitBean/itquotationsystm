@@ -198,7 +198,7 @@
         <div id="responsive-nav">
             <!-- NAV -->
             <ul class="main-nav nav navbar-nav">
-                <li class="active"><a href="#">主页</a></li>
+                <li class="active"><a href="${pageContext.request.contextPath}/mainPagelist.do">主页</a></li>
                 <li><a href="${pageContext.request.contextPath}/findListByTmCode.do?tmCode=联想">联想</a></li>
                 <li><a href="${pageContext.request.contextPath}/findListByTmCode.do?tmCode=惠普">惠普</a></li>
                 <li><a href="${pageContext.request.contextPath}/findListByTmCode.do?tmCode=戴尔">戴尔</a></li>

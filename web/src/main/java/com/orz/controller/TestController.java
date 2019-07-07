@@ -21,7 +21,7 @@ public class TestController {
         System.out.println("re"+request.getSession().getServletContext().getRealPath("\\img"));
         System.out.println(System.getProperty("serverDir"));
         ModelAndView modelAndView=new ModelAndView();
-        modelAndView.setViewName("store");
+        modelAndView.setViewName("product");
         return modelAndView;
     }
 

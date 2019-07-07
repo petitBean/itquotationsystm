@@ -17,6 +17,8 @@ public interface EvalutionDao {
      */
     List<Evalution> findAllEvalution();
 
+   Evalution findOneEvalutionByuserIdAndpCode(Integer userId,String pCode);
+
     /**
      * 通过用户id查找
      * @param userId
@@ -31,11 +33,15 @@ public interface EvalutionDao {
      */
     Evalution findOneEvalutionBypCode(String pCode);
 
+    List<Evalution> findListBypCode(String pCode);
     /**
      * 新增
      * @param evalution
      */
     void insertOneEvalution(Evalution evalution);
+
+    void updateEvalutionByUserIdAndpCode(Evalution evalution);
+
 
     /**
      * 根据产品代码更新

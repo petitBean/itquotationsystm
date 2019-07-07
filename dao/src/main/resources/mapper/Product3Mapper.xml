@@ -9,6 +9,16 @@
         select * from tb_product3
     </select>
 
+    <select id="findListBypCode" parameterType="java.lang.String" resultType="com.orz.bean.Product3">
+        SELECT * FROM tb_product3
+        WHERE pCode=#{pCode}
+    </select>
+
+    <select id="findOneBypCode" parameterType="String" resultType="com.orz.bean.Product3">
+        select * from tb_product3
+        where pCode=#{pCode}
+    </select>
+
     <!--查询一个product3-->
     <select id="findOneProduct3BypCode2AndpCode" parameterType="java.lang.String"  resultType="com.orz.bean.Product3">
         select * from tb_product3

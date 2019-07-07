@@ -182,6 +182,14 @@
             <version>5.1.2</version>
         </dependency>
 
+        <!--   分页架包      -->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+            <version>5.1.2</version>
+        </dependency>
+
+
     </dependencies>
 
 

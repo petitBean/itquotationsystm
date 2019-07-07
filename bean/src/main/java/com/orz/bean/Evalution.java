@@ -27,7 +27,7 @@ public class Evalution {
     /**
      * 其他1
      */
-    private String other1;
+    private float other1;
     /**
      * 其他2
      */
@@ -46,7 +46,7 @@ public class Evalution {
     }
 
     public Evalution(int userId, String pCode, String eContent, Date eTime,
-                     String other1, String other2, String other3, String other4) {
+                     float other1, String other2, String other3, String other4) {
         this.userId = userId;
         this.pCode = pCode;
         this.eContent = eContent;
@@ -89,11 +89,11 @@ public class Evalution {
         this.eTime = eTime;
     }
 
-    public String getOther1() {
+    public float getOther1() {
         return other1;
     }
 
-    public void setOther1(String other1) {
+    public void setOther1(float other1) {
         this.other1 = other1;
     }
 
